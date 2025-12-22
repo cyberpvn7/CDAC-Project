@@ -9,6 +9,13 @@ This project automates the pipeline from initial discovery to AI-driven risk ass
 * **Exploit correlation** (SearchSploit)
 * **AI-based predictive risk analysis** (Gemini)
 
+**Setup the labraries:**
+```bash
+bash setup.sh
+```
+
+
+
 **Phase-1** focuses on preparing the environment, ensuring all dependencies, tools, and permissions are correctly configured.
 
 ---

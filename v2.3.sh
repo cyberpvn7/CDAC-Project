@@ -8,7 +8,22 @@ MAGENTA='\033[0;35m'
 RED='\033[0;31m'
 NC='\033[0m'
 
-TARGET="192.168.100.135"
+# --- User Input ---
+echo -e "${YELLOW}Enter Target (IP or Domain): ${NC}"
+read TARGET
+
+if [ -z "$TARGET" ]; then
+    echo -e "${RED}[!] No target provided. Exiting.${NC}"
+    exit 1
+fi
+
+# Handle URL for nuclei
+if [[ "$TARGET" =~ ^http://|^https:// ]]; then
+    NUCLEI_TARGET="$TARGET"
+else
+    NUCLEI_TARGET="http://$TARGET"
+fi
+
 LOG_DIR="scan_results"
 mkdir -p "$LOG_DIR"
 
@@ -19,20 +34,22 @@ spinner() {
     while [ -d /proc/$PID_NMAP ] || [ -d /proc/$PID_NUCLEI ]; do
         local temp=${spinstr#?}
         printf "\r ${CYAN}[%c] Parallel Engines Running (Nmap + Nuclei)...${NC}" "$spinstr"
-        local spinstr=$temp${spinstr%"$temp"}
+        spinstr=$temp${spinstr%"$temp"}
         sleep $delay
     done
     printf "\r${GREEN}[✔] Service Discovery & Vuln Scanning Complete!          ${NC}\n"
 }
 
 echo -e "${MAGENTA}======================================================${NC}"
-echo -e "${CYAN}    PREDICTIVE INGESTOR v2.2 (Robust JSON Fix)${NC}"
+echo -e "${CYAN}    PREDICTIVE INGESTOR v2.3 (Dynamic Target)${NC}"
 echo -e "${MAGENTA}======================================================${NC}"
+echo -e "${CYAN}Target Set To:${NC} ${GREEN}$TARGET${NC}"
 
 # 1. Start background tasks
 (nmap -sV -T4 -p- -oX "$LOG_DIR/nmap.xml" "$TARGET" > /dev/null 2>&1) &
 PID_NMAP=$!
-(nuclei -u "http://$TARGET" -j -o "$LOG_DIR/nuclei.json" > /dev/null 2>&1) &
+
+(nuclei -u "$NUCLEI_TARGET" -j -o "$LOG_DIR/nuclei.json" > /dev/null 2>&1) &
 PID_NUCLEI=$!
 
 spinner
@@ -42,7 +59,7 @@ echo -e "${YELLOW}[>] Mapping Exploits...${NC}"
 searchsploit --nmap "$LOG_DIR/nmap.xml" --json > "$LOG_DIR/exploits_raw.json" 2>/dev/null
 echo -e "${GREEN}[✔] Exploit Mapping Complete!${NC}"
 
-# 3. RUN ROBUST NORMALIZATION
+# 3. Robust Normalization
 echo -e "${YELLOW}[>] Normalizing data into final.json for AI...${NC}"
 
 python3 <<EOF
@@ -67,7 +84,8 @@ if os.path.exists("$LOG_DIR/nmap.xml"):
                     "exploits": [],
                     "nuclei": []
                 })
-    except Exception as e: print(f"Nmap Error: {e}")
+    except Exception as e:
+        print(f"Nmap Error: {e}")
 
 # --- Step 2: Nuclei JSONL ---
 if os.path.exists("$LOG_DIR/nuclei.json"):
@@ -77,32 +95,30 @@ if os.path.exists("$LOG_DIR/nuclei.json"):
                 data = json.loads(line)
                 for fnd in final["findings"]:
                     if str(data.get("port")) == fnd["port"]:
-                        fnd["nuclei"].append(data["info"].get("name", "Unknown"))
-            except: continue
+                        fnd["nuclei"].append(
+                            data.get("info", {}).get("name", "Unknown")
+                        )
+            except:
+                continue
 
-# --- Step 3: SearchSploit Robust Multi-Object Parsing ---
+# --- Step 3: SearchSploit Robust Parsing ---
 if os.path.exists("$LOG_DIR/exploits_raw.json"):
     with open("$LOG_DIR/exploits_raw.json", "r") as f:
         content = f.read()
-        # Searchsploit often outputs: {obj1}{obj2} or {obj1}\n{obj2}
-        # We use a raw decoder to pull multiple objects from one string
-        decoder = json.JSONDecoder()
-        pos = 0
-        while pos < len(content):
-            content = content.lstrip()
-            if not content: break
-            try:
-                obj, index = decoder.raw_decode(content)
-                # Process the object (Searchsploit puts results in RESULTS_EXPLOIT)
-                for ex in obj.get("RESULTS_EXPLOIT", []):
-                    for fnd in final["findings"]:
-                        # Fuzzy match: check if service name is in exploit title
-                        if fnd["service"].lower() in ex["Title"].lower() and fnd["service"] != "unknown":
-                            if ex["Title"] not in fnd["exploits"]:
-                                fnd["exploits"].append(ex["Title"])
-                content = content[index:]
-            except Exception:
-                break
+
+    decoder = json.JSONDecoder()
+    idx = 0
+    while idx < len(content):
+        try:
+            obj, end = decoder.raw_decode(content, idx)
+            for ex in obj.get("RESULTS_EXPLOIT", []):
+                for fnd in final["findings"]:
+                    if fnd["service"] != "unknown" and fnd["service"].lower() in ex["Title"].lower():
+                        if ex["Title"] not in fnd["exploits"]:
+                            fnd["exploits"].append(ex["Title"])
+            idx = end
+        except:
+            break
 
 with open("final.json", "w") as f:
     json.dump(final, f, indent=2)
@@ -110,8 +126,9 @@ EOF
 
 if [ -f "final.json" ]; then
     echo -e "${MAGENTA}======================================================${NC}"
-    echo -e "${GREEN}SUCCESS: 'final.json' created! (${NC}$(du -h final.json | cut -f1)${GREEN})${NC}"
-    echo -e "${CYAN}Final JSON is now cleansed and compressed for AI analysis.${NC}"
+    echo -e "${GREEN}SUCCESS: final.json created! ($(du -h final.json | cut -f1))${NC}"
+    echo -e "${CYAN}Final JSON ready for AI analysis.${NC}"
 else
     echo -e "${RED}FAILED to create final.json${NC}"
 fi
+
