@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE nmaprun>
 <?xml-stylesheet href="file:///usr/share/nmap/nmap.xsl" type="text/xsl"?>
-<!-- Nmap 7.98 scan initiated Mon Dec 22 09:10:43 2025 as: /usr/lib/nmap/nmap -&#45;privileged -sV -T4 -p- -oX scan_results/nmap.xml 192.168.32.136 -->
-<nmaprun scanner="nmap" args="/usr/lib/nmap/nmap -&#45;privileged -sV -T4 -p- -oX scan_results/nmap.xml 192.168.32.136" start="1766412643" startstr="Mon Dec 22 09:10:43 2025" version="7.98" xmloutputversion="1.05">
+<!-- Nmap 7.98 scan initiated Mon Dec 22 13:09:48 2025 as: /usr/lib/nmap/nmap -&#45;privileged -sV -T4 -p- -oX scan_results/nmap.xml 192.168.32.136 -->
+<nmaprun scanner="nmap" args="/usr/lib/nmap/nmap -&#45;privileged -sV -T4 -p- -oX scan_results/nmap.xml 192.168.32.136" start="1766426988" startstr="Mon Dec 22 13:09:48 2025" version="7.98" xmloutputversion="1.05">
 <scaninfo type="syn" protocol="tcp" numservices="65535" services="1-65535"/>
 <verbose level="0"/>
 <debugging level="0"/>
@@ -12,13 +12,13 @@
 <hostnames>
 </hostnames>
 </hosthint>
-<host starttime="1766412646" endtime="1766412784"><status state="up" reason="arp-response" reason_ttl="0"/>
+<host starttime="1766426991" endtime="1766427127"><status state="up" reason="arp-response" reason_ttl="0"/>
 <address addr="192.168.32.136" addrtype="ipv4"/>
 <address addr="00:0C:29:29:38:3D" addrtype="mac" vendor="VMware"/>
 <hostnames>
 </hostnames>
-<ports><extraports state="closed" count="65504">
-<extrareasons reason="reset" count="65504" proto="tcp" ports="1-20,24,26-52,54-79,81-110,112-138,140-444,446-511,515-1098,1100-1523,1525-2048,2050-2120,2122-3305,3307-3631,3633-5431,5433-5899,5901-5999,6001-6199,6201-6666,6668-6696,6698-8008,8010-8179,8181-8786,8788-33682,33684-44042,44044-44834,44836-54584,54586-65535"/>
+<ports><extraports state="closed" count="65505">
+<extrareasons reason="reset" count="65505" proto="tcp" ports="1-20,24,26-52,54-79,81-110,112-138,140-444,446-511,515-1098,1100-1523,1525-2048,2050-2120,2122-3305,3307-3631,3633-5431,5433-5899,5901-5999,6001-6666,6668-6696,6698-8008,8010-8179,8181-8786,8788-33682,33684-44042,44044-44834,44836-54584,54586-65535"/>
 </extraports>
 <port protocol="tcp" portid="21"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="ftp" product="vsftpd" version="2.3.4" ostype="Unix" method="probed" conf="10"><cpe>cpe:/a:vsftpd:vsftpd:2.3.4</cpe></service></port>
 <port protocol="tcp" portid="22"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="ssh" product="OpenSSH" version="4.7p1 Debian 8ubuntu1" extrainfo="protocol 2.0" ostype="Linux" method="probed" conf="10"><cpe>cpe:/a:openbsd:openssh:4.7p1</cpe><cpe>cpe:/o:linux:linux_kernel</cpe></service></port>
@@ -41,7 +41,6 @@
 <port protocol="tcp" portid="5432"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="postgresql" product="PostgreSQL DB" version="8.3.0 - 8.3.7" method="probed" conf="10"><cpe>cpe:/a:postgresql:postgresql:8.3</cpe></service></port>
 <port protocol="tcp" portid="5900"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="vnc" product="VNC" extrainfo="protocol 3.3" method="probed" conf="10"/></port>
 <port protocol="tcp" portid="6000"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="X11" extrainfo="access denied" method="probed" conf="10"/></port>
-<port protocol="tcp" portid="6200"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="lm-x" servicefp="SF-Port6200-TCP:V=7.98%I=7%D=12/22%Time=6949517C%P=x86_64-pc-linux-gnu%r(GenericLines,42,&quot;sh:\x20line\x201:\x20\r:\x20command\x20not\x20found\nsh:\x20line\x202:\x20\r:\x20command\x20not\x20found\n&quot;);" method="table" conf="3"/></port>
 <port protocol="tcp" portid="6667"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="irc" product="UnrealIRCd" hostname="irc.Metasploitable.LAN" method="probed" conf="10"><cpe>cpe:/a:unrealircd:unrealircd</cpe></service></port>
 <port protocol="tcp" portid="6697"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="irc" product="UnrealIRCd" hostname="irc.Metasploitable.LAN" method="probed" conf="10"><cpe>cpe:/a:unrealircd:unrealircd</cpe></service></port>
 <port protocol="tcp" portid="8009"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="ajp13" product="Apache Jserv" extrainfo="Protocol v1.3" method="probed" conf="10"/></port>
@@ -52,8 +51,8 @@
 <port protocol="tcp" portid="44835"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="nlockmgr" version="1-4" extrainfo="RPC #100021" method="probed" conf="10"/></port>
 <port protocol="tcp" portid="54585"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="status" version="1" extrainfo="RPC #100024" method="probed" conf="10"/></port>
 </ports>
-<times srtt="2157" rttvar="1335" to="100000"/>
+<times srtt="2720" rttvar="103" to="100000"/>
 </host>
-<runstats><finished time="1766412784" timestr="Mon Dec 22 09:13:04 2025" summary="Nmap done at Mon Dec 22 09:13:04 2025; 1 IP address (1 host up) scanned in 140.80 seconds" elapsed="140.80" exit="success"/><hosts up="1" down="0" total="1"/>
+<runstats><finished time="1766427127" timestr="Mon Dec 22 13:12:07 2025" summary="Nmap done at Mon Dec 22 13:12:07 2025; 1 IP address (1 host up) scanned in 138.53 seconds" elapsed="138.53" exit="success"/><hosts up="1" down="0" total="1"/>
 </runstats>
 </nmaprun>
