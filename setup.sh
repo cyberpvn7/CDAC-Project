@@ -36,7 +36,7 @@ pip install google-generativeai --break-system-packages
 # 5. Project permissions
 # -------------------------------
 echo "[*] Fixing permissions..."
-chmod +x v2.2.sh
+chmod +x scanner.sh
 chmod +x setup.sh
 
 # -------------------------------
