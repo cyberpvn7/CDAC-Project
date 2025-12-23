@@ -37,7 +37,7 @@ pip install google-generativeai --break-system-packages
 # -------------------------------
 echo "[*] Fixing permissions..."
 chmod +x v2.2.sh
-chmod +x phase1_setup.sh
+chmod +x setup.sh
 
 # -------------------------------
 # 6. Directory sanity check
