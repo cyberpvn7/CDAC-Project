@@ -1,8 +1,9 @@
 import sqlite3
 import uuid
 import socket
+from config import CONFIG
 
-DB = "security_analysis.db"
+DB = CONFIG["database"]["path"]
 
 
 def resolve_domain(domain: str) -> list:

@@ -1,0 +1,1880 @@
+{
+  "target": "192.168.100.136",
+  "tech_stack": [
+    "HTTPServer",
+    "X-Powered-By",
+    "IP",
+    "Country",
+    "Title",
+    "PHP",
+    "Apache",
+    "WebDAV"
+  ],
+  "nikto_findings": [
+    "Target Host: 192.168.100.135",
+    "Target Port: 80",
+    "GET /: Retrieved x-powered-by header: PHP/5.2.4-2ubuntu5.10.",
+    "GET /: The anti-clickjacking X-Frame-Options header is not present. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options:",
+    "GET /: The X-Content-Type-Options header is not set. This could allow the user agent to render the content of the site in a different fashion to the MIME type. See: https://www.netsparker.com/web-vulnerability-scanner/vulnerabilities/missing-content-type-header/:",
+    "HEAD Apache/2.2.8 appears to be outdated (current is at least Apache/2.4.54). Apache 2.2.34 is the EOL for the 2.x branch.",
+    "GET /index: Uncommon header 'tcn' found, with contents: list.",
+    "GET /index: Apache mod_negotiation is enabled with MultiViews, which allows attackers to easily brute force file names. The following alternatives for 'index' were found: index.php. See: http://www.wisec.it/sectou.php?id=4698ebdc59d15,https://exchange.xforce.ibmcloud.com/vulnerabilities/8275:",
+    "LSKZCRNG /: Web Server returns a valid response with junk HTTP methods which may cause false positives.",
+    "TRACE /: HTTP TRACE method is active which suggests the host is vulnerable to XST. See: https://owasp.org/www-community/attacks/Cross_Site_Tracing:",
+    "GET /phpinfo.php: Output from the phpinfo() function was found.",
+    "GET /doc/: Directory indexing found.",
+    "GET /doc/: The /doc/ directory is browsable. This may be /usr/doc. See: CVE-1999-0678:",
+    "GET /?=PHPB8B5F2A0-3C92-11d3-A3A9-4C7B08C10000: PHP reveals potentially sensitive information via certain HTTP requests that contain specific QUERY strings. See: OSVDB-12184:",
+    "GET /?=PHPE9568F36-D428-11d2-A769-00AA001ACF42: PHP reveals potentially sensitive information via certain HTTP requests that contain specific QUERY strings. See: OSVDB-12184:",
+    "GET /?=PHPE9568F34-D428-11d2-A769-00AA001ACF42: PHP reveals potentially sensitive information via certain HTTP requests that contain specific QUERY strings. See: OSVDB-12184:",
+    "GET /?=PHPE9568F35-D428-11d2-A769-00AA001ACF42: PHP reveals potentially sensitive information via certain HTTP requests that contain specific QUERY strings. See: OSVDB-12184:",
+    "GET /phpMyAdmin/changelog.php: phpMyAdmin is for managing MySQL databases, and should be protected or limited to authorized hosts.",
+    "GET /phpMyAdmin/ChangeLog: Server may leak inodes via ETags, header found with file /phpMyAdmin/ChangeLog, inode: 92462, size: 40540, mtime: Tue Dec  9 22:54:00 2008. See: CVE-2003-1418:",
+    "GET /phpMyAdmin/ChangeLog: phpMyAdmin is for managing MySQL databases, and should be protected or limited to authorized hosts.",
+    "GET /test/: Directory indexing found.",
+    "GET /test/: This might be interesting.",
+    "GET /phpinfo.php: PHP is installed, and a test script which runs phpinfo() was found. This gives a lot of system information. See: CWE-552:",
+    "GET /icons/: Directory indexing found.",
+    "GET /icons/README: Apache default file found. See: https://www.vntweb.co.uk/apache-restricting-access-to-iconsreadme/:",
+    "GET /phpMyAdmin/: phpMyAdmin directory found.",
+    "GET /phpMyAdmin/Documentation.html: phpMyAdmin is for managing MySQL databases, and should be protected or limited to authorized hosts.",
+    "GET /phpMyAdmin/README: phpMyAdmin is for managing MySQL databases, and should be protected or limited to authorized hosts. See: https://typo3.org/:",
+    "GET /#wp-config.php#: #wp-config.php# file found. This file contains the credentials.",
+    "Target Host: 192.168.100.136",
+    "Target Port: 80",
+    "GET /: The anti-clickjacking X-Frame-Options header is not present. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options:",
+    "GET /: The X-Content-Type-Options header is not set. This could allow the user agent to render the content of the site in a different fashion to the MIME type. See: https://www.netsparker.com/web-vulnerability-scanner/vulnerabilities/missing-content-type-header/:",
+    "HEAD Apache/2.4.51 appears to be outdated (current is at least Apache/2.4.54). Apache 2.2.34 is the EOL for the 2.x branch.",
+    "GET /: Server may leak inodes via ETags, header found with file /, inode: 15c, size: 5cf63c252ab85, mtime: gzip. See: CVE-2003-1418:",
+    "OPTIONS OPTIONS: Allowed HTTP Methods: HEAD, GET, POST, OPTIONS .",
+    "Target Host: 192.168.100.136",
+    "Target Port: 80",
+    "GET /: The anti-clickjacking X-Frame-Options header is not present. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options:",
+    "GET /: The X-Content-Type-Options header is not set. This could allow the user agent to render the content of the site in a different fashion to the MIME type. See: https://www.netsparker.com/web-vulnerability-scanner/vulnerabilities/missing-content-type-header/:",
+    "HEAD Apache/2.4.51 appears to be outdated (current is at least Apache/2.4.54). Apache 2.2.34 is the EOL for the 2.x branch.",
+    "GET /: Server may leak inodes via ETags, header found with file /, inode: 15c, size: 5cf63c252ab85, mtime: gzip. See: CVE-2003-1418:",
+    "OPTIONS OPTIONS: Allowed HTTP Methods: HEAD, GET, POST, OPTIONS .",
+    "Target Host: 192.168.100.136",
+    "Target Port: 80",
+    "GET /: The anti-clickjacking X-Frame-Options header is not present. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options:",
+    "GET /: The X-Content-Type-Options header is not set. This could allow the user agent to render the content of the site in a different fashion to the MIME type. See: https://www.netsparker.com/web-vulnerability-scanner/vulnerabilities/missing-content-type-header/:",
+    "HEAD Apache/2.4.51 appears to be outdated (current is at least Apache/2.4.54). Apache 2.2.34 is the EOL for the 2.x branch.",
+    "GET /: Server may leak inodes via ETags, header found with file /, inode: 15c, size: 5cf63c252ab85, mtime: gzip. See: CVE-2003-1418:",
+    "OPTIONS OPTIONS: Allowed HTTP Methods: HEAD, GET, POST, OPTIONS .",
+    "Target Host: 192.168.100.136",
+    "Target Port: 80",
+    "GET /: The anti-clickjacking X-Frame-Options header is not present. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options:",
+    "GET /: The X-Content-Type-Options header is not set. This could allow the user agent to render the content of the site in a different fashion to the MIME type. See: https://www.netsparker.com/web-vulnerability-scanner/vulnerabilities/missing-content-type-header/:",
+    "HEAD Apache/2.4.51 appears to be outdated (current is at least Apache/2.4.54). Apache 2.2.34 is the EOL for the 2.x branch.",
+    "GET /: Server may leak inodes via ETags, header found with file /, inode: 15c, size: 5cf63c252ab85, mtime: gzip. See: CVE-2003-1418:",
+    "OPTIONS OPTIONS: Allowed HTTP Methods: HEAD, GET, POST, OPTIONS .",
+    "Target Host: 192.168.100.136",
+    "Target Port: 80",
+    "GET /: The anti-clickjacking X-Frame-Options header is not present. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options:",
+    "GET /: The X-Content-Type-Options header is not set. This could allow the user agent to render the content of the site in a different fashion to the MIME type. See: https://www.netsparker.com/web-vulnerability-scanner/vulnerabilities/missing-content-type-header/:",
+    "HEAD Apache/2.4.51 appears to be outdated (current is at least Apache/2.4.54). Apache 2.2.34 is the EOL for the 2.x branch.",
+    "GET /: Server may leak inodes via ETags, header found with file /, inode: 15c, size: 5cf63c252ab85, mtime: gzip. See: CVE-2003-1418:",
+    "OPTIONS OPTIONS: Allowed HTTP Methods: HEAD, GET, POST, OPTIONS .",
+    "Target Host: 192.168.100.136",
+    "Target Port: 80",
+    "GET /: The anti-clickjacking X-Frame-Options header is not present. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options:",
+    "GET /: The X-Content-Type-Options header is not set. This could allow the user agent to render the content of the site in a different fashion to the MIME type. See: https://www.netsparker.com/web-vulnerability-scanner/vulnerabilities/missing-content-type-header/:",
+    "HEAD Apache/2.4.51 appears to be outdated (current is at least Apache/2.4.54). Apache 2.2.34 is the EOL for the 2.x branch.",
+    "GET /: Server may leak inodes via ETags, header found with file /, inode: 15c, size: 5cf63c252ab85, mtime: gzip. See: CVE-2003-1418:",
+    "OPTIONS OPTIONS: Allowed HTTP Methods: HEAD, GET, POST, OPTIONS .",
+    "Target Host: 192.168.100.136",
+    "Target Port: 80",
+    "GET /: The anti-clickjacking X-Frame-Options header is not present. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options:",
+    "GET /: The X-Content-Type-Options header is not set. This could allow the user agent to render the content of the site in a different fashion to the MIME type. See: https://www.netsparker.com/web-vulnerability-scanner/vulnerabilities/missing-content-type-header/:",
+    "HEAD Apache/2.4.51 appears to be outdated (current is at least Apache/2.4.54). Apache 2.2.34 is the EOL for the 2.x branch.",
+    "GET /: Server may leak inodes via ETags, header found with file /, inode: 15c, size: 5cf63c252ab85, mtime: gzip. See: CVE-2003-1418:",
+    "OPTIONS OPTIONS: Allowed HTTP Methods: HEAD, GET, POST, OPTIONS .",
+    "Target Host: 192.168.100.136",
+    "Target Port: 80",
+    "GET /: The anti-clickjacking X-Frame-Options header is not present. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options:",
+    "GET /: The X-Content-Type-Options header is not set. This could allow the user agent to render the content of the site in a different fashion to the MIME type. See: https://www.netsparker.com/web-vulnerability-scanner/vulnerabilities/missing-content-type-header/:",
+    "HEAD Apache/2.4.51 appears to be outdated (current is at least Apache/2.4.54). Apache 2.2.34 is the EOL for the 2.x branch.",
+    "GET /: Server may leak inodes via ETags, header found with file /, inode: 15c, size: 5cf63c252ab85, mtime: gzip. See: CVE-2003-1418:",
+    "OPTIONS OPTIONS: Allowed HTTP Methods: HEAD, GET, POST, OPTIONS .",
+    "Target Host: 192.168.100.136",
+    "Target Port: 80",
+    "GET /: The anti-clickjacking X-Frame-Options header is not present. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options:",
+    "GET /: The X-Content-Type-Options header is not set. This could allow the user agent to render the content of the site in a different fashion to the MIME type. See: https://www.netsparker.com/web-vulnerability-scanner/vulnerabilities/missing-content-type-header/:",
+    "HEAD Apache/2.4.51 appears to be outdated (current is at least Apache/2.4.54). Apache 2.2.34 is the EOL for the 2.x branch.",
+    "GET /: Server may leak inodes via ETags, header found with file /, inode: 15c, size: 5cf63c252ab85, mtime: gzip. See: CVE-2003-1418:",
+    "OPTIONS OPTIONS: Allowed HTTP Methods: HEAD, GET, POST, OPTIONS .",
+    "Target Host: 192.168.100.136",
+    "Target Port: 80",
+    "GET /: The anti-clickjacking X-Frame-Options header is not present. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options:",
+    "GET /: The X-Content-Type-Options header is not set. This could allow the user agent to render the content of the site in a different fashion to the MIME type. See: https://www.netsparker.com/web-vulnerability-scanner/vulnerabilities/missing-content-type-header/:",
+    "HEAD Apache/2.4.51 appears to be outdated (current is at least Apache/2.4.54). Apache 2.2.34 is the EOL for the 2.x branch.",
+    "GET /: Server may leak inodes via ETags, header found with file /, inode: 15c, size: 5cf63c252ab85, mtime: gzip. See: CVE-2003-1418:",
+    "OPTIONS OPTIONS: Allowed HTTP Methods: HEAD, GET, POST, OPTIONS .",
+    "Target Host: 192.168.100.136",
+    "Target Port: 80",
+    "GET /: The anti-clickjacking X-Frame-Options header is not present. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options:",
+    "GET /: The X-Content-Type-Options header is not set. This could allow the user agent to render the content of the site in a different fashion to the MIME type. See: https://www.netsparker.com/web-vulnerability-scanner/vulnerabilities/missing-content-type-header/:",
+    "HEAD Apache/2.4.51 appears to be outdated (current is at least Apache/2.4.54). Apache 2.2.34 is the EOL for the 2.x branch.",
+    "GET /: Server may leak inodes via ETags, header found with file /, inode: 15c, size: 5cf63c252ab85, mtime: gzip. See: CVE-2003-1418:",
+    "OPTIONS OPTIONS: Allowed HTTP Methods: HEAD, GET, POST, OPTIONS ."
+  ],
+  "findings": [
+    {
+      "port": "22",
+      "service": "ssh",
+      "version": "OpenSSH",
+      "nuclei": [
+        "SSH Auth Methods - Detection",
+        "SSH SHA-1 HMAC Algorithms Enabled",
+        "SSH Server Software Enumeration",
+        "SSH Password-based Authentication",
+        "OpenSSH Service - Detect"
+      ],
+      "exploits": [],
+      "raw_nuclei": [
+        {
+          "template": "javascript/detection/ssh-auth-methods.yaml",
+          "type": "javascript",
+          "severity": "info",
+          "title": "SSH Auth Methods - Detection",
+          "description": "SSH (Secure Shell) authentication modes are methods used to verify the identity of users and ensure secure access to remote systems. Common SSH authentication modes include password-based authentication, which relies on a secret passphrase, and public key authentication, which uses cryptographic keys for a more secure and convenient login process. Additionally, multi-factor authentication (MFA) can be employed to enhance security by requiring users to provide multiple forms of authentication, such as a password and a one-time code.\n",
+          "url": "",
+          "raw": {
+            "template": "javascript/detection/ssh-auth-methods.yaml",
+            "template-url": "https://cloud.projectdiscovery.io/public/ssh-auth-methods",
+            "template-id": "ssh-auth-methods",
+            "template-path": "/home/kali/.local/nuclei-templates/javascript/detection/ssh-auth-methods.yaml",
+            "info": {
+              "name": "SSH Auth Methods - Detection",
+              "author": [
+                "ice3man543"
+              ],
+              "tags": [
+                "js",
+                "detect",
+                "ssh",
+                "enum",
+                "network",
+                "discovery"
+              ],
+              "description": "SSH (Secure Shell) authentication modes are methods used to verify the identity of users and ensure secure access to remote systems. Common SSH authentication modes include password-based authentication, which relies on a secret passphrase, and public key authentication, which uses cryptographic keys for a more secure and convenient login process. Additionally, multi-factor authentication (MFA) can be employed to enhance security by requiring users to provide multiple forms of authentication, such as a password and a one-time code.\n",
+              "reference": [
+                "https://nmap.org/nsedoc/scripts/ssh-auth-methods.html"
+              ],
+              "severity": "info",
+              "metadata": {
+                "max-request": 1,
+                "shodan-query": "product:\"OpenSSH\""
+              }
+            },
+            "type": "javascript",
+            "host": "192.168.100.136:22",
+            "port": "22",
+            "url": "192.168.100.136:22",
+            "matched-at": "192.168.100.136:22",
+            "extracted-results": [
+              "[\"publickey\",\"password\"]"
+            ],
+            "request": "var m = require(\"nuclei/ssh\");\nvar c = m.SSHClient();\nvar response = c.ConnectSSHInfoMode(Host, Port);\nExport(response);",
+            "response": "{\n  \"Banner\": \"\",\n  \"ServerID\": {\n    \"Raw\": \"SSH-2.0-OpenSSH_8.4p1 Debian-5\",\n    \"ProtoVersion\": \"2.0\",\n    \"SoftwareVersion\": \"OpenSSH_8.4p1\",\n    \"Comment\": \"Debian-5\"\n  },\n  \"ClientID\": null,\n  \"ServerKex\": {\"cookie\":\"vWow3SWhqsnyayMacDeUTQ==\",\"kex_algorithms\":[\"curve25519-sha256\",\"curve25519-sha256@libssh.org\",\"ecdh-sha2-nistp256\",\"ecdh-sha2-nistp384\",\"ecdh-sha2-nistp521\",\"diffie-hellman-group-exchange-sha256\",\"diffie-hellman-group16-sha512\",\"diffie-hellman-group18-sha512\",\"diffie-hellman-group14-sha256\"],\"host_key_algorithms\":[\"ecdsa-sha2-nistp256\"],\"client_to_server_ciphers\":[\"chacha20-poly1305@openssh.com\",\"aes128-ctr\",\"aes192-ctr\",\"aes256-ctr\",\"aes128-gcm@openssh.com\",\"aes256-gcm@openssh.com\"],\"server_to_client_ciphers\":[\"chacha20-poly1305@openssh.com\",\"aes128-ctr\",\"aes192-ctr\",\"aes256-ctr\",\"aes128-gcm@openssh.com\",\"aes256-gcm@openssh.com\"],\"client_to_server_macs\":[\"umac-64-etm@openssh.com\",\"umac-128-etm@openssh.com\",\"hmac-sha2-256-etm@openssh.com\",\"hmac-sha2-512-etm@openssh.com\",\"hmac-sha1-etm@openssh.com\",\"umac-64@openssh.com\",\"umac-128@openssh.com\",\"hmac-sha2-256\",\"hmac-sha2-512\",\"hmac-sha1\"],\"server_to_client_macs\":[\"umac-64-etm@openssh.com\",\"umac-128-etm@openssh.com\",\"hmac-sha2-256-etm@openssh.com\",\"hmac-sha2-512-etm@openssh.com\",\"hmac-sha1-etm@openssh.com\",\"umac-64@openssh.com\",\"umac-128@openssh.com\",\"hmac-sha2-256\",\"hmac-sha2-512\",\"hmac-sha1\"],\"client_to_server_compression\":[\"none\",\"zlib@openssh.com\"],\"server_to_client_compression\":[\"none\",\"zlib@openssh.com\"],\"first_kex_follows\":false,\"reserved\":0,\"serverHaSSH\":\"3ccd1778a76049721c71ad7d2bf62bbc\"},\n  \"ClientKex\": null,\n  \"AlgorithmSelection\": {\"dh_kex_algorithm\":\"curve25519-sha256@libssh.org\",\"host_key_algorithm\":\"ecdsa-sha2-nistp256\",\"client_to_server_alg_group\":{\"cipher\":\"aes128-ctr\",\"mac\":\"hmac-sha2-256\",\"compression\":\"none\"},\"server_to_client_alg_group\":{\"cipher\":\"aes128-ctr\",\"mac\":\"hmac-sha2-256\",\"compression\":\"none\"}},\n  \"DHKeyExchange\": {\"curve25519_sha256_params\":{\"server_public\":\"dpcbrwluguIPC7A3JzEuDE/5IcK73An/jO6//sQZH2o=\"},\"server_signature\":{\"parsed\":{\"algorithm\":\"ecdsa-sha2-nistp256\",\"value\":\"AAAAIQC6KUCqHtuVXyd8Qyx6yY/F8ldslBv/GpX8NsD6blFoGwAAACB2t7GkbDqtiHj0xpd5oweo0EhCbghHW6S7i0J7TbfBIQ==\"},\"raw\":\"AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAABJAAAAIQC6KUCqHtuVXyd8Qyx6yY/F8ldslBv/GpX8NsD6blFoGwAAACB2t7GkbDqtiHj0xpd5oweo0EhCbghHW6S7i0J7TbfBIQ==\",\"h\":\"5Jex1+77/MibDWIZYhwX/qmgeHHyqAmf4qVDKu68unQ=\"},\"server_host_key\":{\"ecdsa_public_key\":{\"b\":\"WsY12Ko6k+ez671VdpiGvGUdBrDMU7D2O848PifSYEs=\",\"curve\":\"P-256\",\"gx\":\"axfR8uEsQkf4vOblY6RA8ncDfYEt6zOg9KE5RdiYwpY=\",\"gy\":\"T+NC4v4af5uO5+tKfA+eFivOM1drMV7Oy7ZAaDe/UfU=\",\"length\":256,\"n\":\"/////wAAAAD//////////7zm+q2nF56E87nKwvxjJVE=\",\"p\":\"/////wAAAAEAAAAAAAAAAAAAAAD///////////////8=\",\"x\":\"5Y0MATbWGs9gWknj4++u4du2HWz4cepdgQqTXa2ewFA=\",\"y\":\"E90v34m4qITkv/TFumnzT24uw98ntLc2QnqC1lH3rVA=\"},\"raw\":\"AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBOWNDAE21hrPYFpJ4+PvruHbth1s+HHqXYEKk12tnsBQE90v34m4qITkv/TFumnzT24uw98ntLc2QnqC1lH3rVA=\",\"algorithm\":\"ecdsa-sha2-nistp256\",\"fingerprint_sha256\":\"e65378fd99b1068d5dd867c9f83e5fceb14d4afcdccd565df8e913bfcb888205\"}},\n  \"UserAuth\": [\n    \"publickey\",\n    \"password\"\n  ],\n  \"Crypto\": null\n}",
+            "ip": "192.168.100.136",
+            "timestamp": "2026-01-26T01:50:14.217110272+05:30",
+            "matcher-status": true
+          }
+        },
+        {
+          "template": "javascript/enumeration/ssh/ssh-sha1-hmac-algo.yaml",
+          "type": "javascript",
+          "severity": "info",
+          "title": "SSH SHA-1 HMAC Algorithms Enabled",
+          "description": "The SSH server at the remote end is set up to allow the use of SHA-1 HMAC algorithms.\n",
+          "url": "",
+          "raw": {
+            "template": "javascript/enumeration/ssh/ssh-sha1-hmac-algo.yaml",
+            "template-url": "https://cloud.projectdiscovery.io/public/ssh-sha1-hmac-algo",
+            "template-id": "ssh-sha1-hmac-algo",
+            "template-path": "/home/kali/.local/nuclei-templates/javascript/enumeration/ssh/ssh-sha1-hmac-algo.yaml",
+            "info": {
+              "name": "SSH SHA-1 HMAC Algorithms Enabled",
+              "author": [
+                "pussycat0x"
+              ],
+              "tags": [
+                "enum",
+                "js",
+                "ssh",
+                "misconfig",
+                "network",
+                "discovery"
+              ],
+              "description": "The SSH server at the remote end is set up to allow the use of SHA-1 HMAC algorithms.\n",
+              "reference": [
+                "https://forums.ivanti.com/s/article/How-to-disable-SSH-SHA-1-HMAC-algorithms?language=en_US"
+              ],
+              "severity": "info",
+              "metadata": {
+                "verified": true,
+                "max-request": 2,
+                "shodan-query": "product:\"OpenSSH\""
+              }
+            },
+            "type": "javascript",
+            "host": "192.168.100.136:22",
+            "port": "22",
+            "url": "192.168.100.136:22",
+            "matched-at": "192.168.100.136:22",
+            "request": "let m = require(\"nuclei/ssh\");\nlet c = m.SSHClient();\nlet response = c.ConnectSSHInfoMode(Host, Port);\nExport(response);",
+            "response": "{\n  \"Banner\": \"\",\n  \"ServerID\": {\n    \"Raw\": \"SSH-2.0-OpenSSH_8.4p1 Debian-5\",\n    \"ProtoVersion\": \"2.0\",\n    \"SoftwareVersion\": \"OpenSSH_8.4p1\",\n    \"Comment\": \"Debian-5\"\n  },\n  \"ClientID\": null,\n  \"ServerKex\": {\"cookie\":\"vWow3SWhqsnyayMacDeUTQ==\",\"kex_algorithms\":[\"curve25519-sha256\",\"curve25519-sha256@libssh.org\",\"ecdh-sha2-nistp256\",\"ecdh-sha2-nistp384\",\"ecdh-sha2-nistp521\",\"diffie-hellman-group-exchange-sha256\",\"diffie-hellman-group16-sha512\",\"diffie-hellman-group18-sha512\",\"diffie-hellman-group14-sha256\"],\"host_key_algorithms\":[\"ecdsa-sha2-nistp256\"],\"client_to_server_ciphers\":[\"chacha20-poly1305@openssh.com\",\"aes128-ctr\",\"aes192-ctr\",\"aes256-ctr\",\"aes128-gcm@openssh.com\",\"aes256-gcm@openssh.com\"],\"server_to_client_ciphers\":[\"chacha20-poly1305@openssh.com\",\"aes128-ctr\",\"aes192-ctr\",\"aes256-ctr\",\"aes128-gcm@openssh.com\",\"aes256-gcm@openssh.com\"],\"client_to_server_macs\":[\"umac-64-etm@openssh.com\",\"umac-128-etm@openssh.com\",\"hmac-sha2-256-etm@openssh.com\",\"hmac-sha2-512-etm@openssh.com\",\"hmac-sha1-etm@openssh.com\",\"umac-64@openssh.com\",\"umac-128@openssh.com\",\"hmac-sha2-256\",\"hmac-sha2-512\",\"hmac-sha1\"],\"server_to_client_macs\":[\"umac-64-etm@openssh.com\",\"umac-128-etm@openssh.com\",\"hmac-sha2-256-etm@openssh.com\",\"hmac-sha2-512-etm@openssh.com\",\"hmac-sha1-etm@openssh.com\",\"umac-64@openssh.com\",\"umac-128@openssh.com\",\"hmac-sha2-256\",\"hmac-sha2-512\",\"hmac-sha1\"],\"client_to_server_compression\":[\"none\",\"zlib@openssh.com\"],\"server_to_client_compression\":[\"none\",\"zlib@openssh.com\"],\"first_kex_follows\":false,\"reserved\":0,\"serverHaSSH\":\"3ccd1778a76049721c71ad7d2bf62bbc\"},\n  \"ClientKex\": null,\n  \"AlgorithmSelection\": {\"dh_kex_algorithm\":\"curve25519-sha256@libssh.org\",\"host_key_algorithm\":\"ecdsa-sha2-nistp256\",\"client_to_server_alg_group\":{\"cipher\":\"aes128-ctr\",\"mac\":\"hmac-sha2-256\",\"compression\":\"none\"},\"server_to_client_alg_group\":{\"cipher\":\"aes128-ctr\",\"mac\":\"hmac-sha2-256\",\"compression\":\"none\"}},\n  \"DHKeyExchange\": {\"curve25519_sha256_params\":{\"server_public\":\"dpcbrwluguIPC7A3JzEuDE/5IcK73An/jO6//sQZH2o=\"},\"server_signature\":{\"parsed\":{\"algorithm\":\"ecdsa-sha2-nistp256\",\"value\":\"AAAAIQC6KUCqHtuVXyd8Qyx6yY/F8ldslBv/GpX8NsD6blFoGwAAACB2t7GkbDqtiHj0xpd5oweo0EhCbghHW6S7i0J7TbfBIQ==\"},\"raw\":\"AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAABJAAAAIQC6KUCqHtuVXyd8Qyx6yY/F8ldslBv/GpX8NsD6blFoGwAAACB2t7GkbDqtiHj0xpd5oweo0EhCbghHW6S7i0J7TbfBIQ==\",\"h\":\"5Jex1+77/MibDWIZYhwX/qmgeHHyqAmf4qVDKu68unQ=\"},\"server_host_key\":{\"ecdsa_public_key\":{\"b\":\"WsY12Ko6k+ez671VdpiGvGUdBrDMU7D2O848PifSYEs=\",\"curve\":\"P-256\",\"gx\":\"axfR8uEsQkf4vOblY6RA8ncDfYEt6zOg9KE5RdiYwpY=\",\"gy\":\"T+NC4v4af5uO5+tKfA+eFivOM1drMV7Oy7ZAaDe/UfU=\",\"length\":256,\"n\":\"/////wAAAAD//////////7zm+q2nF56E87nKwvxjJVE=\",\"p\":\"/////wAAAAEAAAAAAAAAAAAAAAD///////////////8=\",\"x\":\"5Y0MATbWGs9gWknj4++u4du2HWz4cepdgQqTXa2ewFA=\",\"y\":\"E90v34m4qITkv/TFumnzT24uw98ntLc2QnqC1lH3rVA=\"},\"raw\":\"AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBOWNDAE21hrPYFpJ4+PvruHbth1s+HHqXYEKk12tnsBQE90v34m4qITkv/TFumnzT24uw98ntLc2QnqC1lH3rVA=\",\"algorithm\":\"ecdsa-sha2-nistp256\",\"fingerprint_sha256\":\"e65378fd99b1068d5dd867c9f83e5fceb14d4afcdccd565df8e913bfcb888205\"}},\n  \"UserAuth\": [\n    \"publickey\",\n    \"password\"\n  ],\n  \"Crypto\": null\n}",
+            "ip": "192.168.100.136",
+            "timestamp": "2026-01-26T01:50:14.2143628+05:30",
+            "matcher-status": true
+          }
+        },
+        {
+          "template": "javascript/enumeration/ssh/ssh-server-enumeration.yaml",
+          "type": "javascript",
+          "severity": "info",
+          "title": "SSH Server Software Enumeration",
+          "description": "",
+          "url": "",
+          "raw": {
+            "template": "javascript/enumeration/ssh/ssh-server-enumeration.yaml",
+            "template-url": "https://cloud.projectdiscovery.io/public/ssh-server-enumeration",
+            "template-id": "ssh-server-enumeration",
+            "template-path": "/home/kali/.local/nuclei-templates/javascript/enumeration/ssh/ssh-server-enumeration.yaml",
+            "info": {
+              "name": "SSH Server Software Enumeration",
+              "author": [
+                "ice3man543",
+                "tarunkoyalwar"
+              ],
+              "tags": [
+                "js",
+                "ssh",
+                "enum",
+                "network",
+                "discovery"
+              ],
+              "severity": "info",
+              "metadata": {
+                "verified": true,
+                "max-request": 2,
+                "shodan-query": "product:\"OpenSSH\""
+              }
+            },
+            "type": "javascript",
+            "host": "192.168.100.136:22",
+            "port": "22",
+            "url": "192.168.100.136:22",
+            "matched-at": "192.168.100.136:22",
+            "extracted-results": [
+              "SSH-2.0-OpenSSH_8.4p1 Debian-5"
+            ],
+            "request": "var m = require(\"nuclei/ssh\");\nvar c = m.SSHClient();\nvar response = c.ConnectSSHInfoMode(Host, Port);\nExport(response);",
+            "response": "{\n  \"Banner\": \"\",\n  \"ServerID\": {\n    \"Raw\": \"SSH-2.0-OpenSSH_8.4p1 Debian-5\",\n    \"ProtoVersion\": \"2.0\",\n    \"SoftwareVersion\": \"OpenSSH_8.4p1\",\n    \"Comment\": \"Debian-5\"\n  },\n  \"ClientID\": null,\n  \"ServerKex\": {\"cookie\":\"vWow3SWhqsnyayMacDeUTQ==\",\"kex_algorithms\":[\"curve25519-sha256\",\"curve25519-sha256@libssh.org\",\"ecdh-sha2-nistp256\",\"ecdh-sha2-nistp384\",\"ecdh-sha2-nistp521\",\"diffie-hellman-group-exchange-sha256\",\"diffie-hellman-group16-sha512\",\"diffie-hellman-group18-sha512\",\"diffie-hellman-group14-sha256\"],\"host_key_algorithms\":[\"ecdsa-sha2-nistp256\"],\"client_to_server_ciphers\":[\"chacha20-poly1305@openssh.com\",\"aes128-ctr\",\"aes192-ctr\",\"aes256-ctr\",\"aes128-gcm@openssh.com\",\"aes256-gcm@openssh.com\"],\"server_to_client_ciphers\":[\"chacha20-poly1305@openssh.com\",\"aes128-ctr\",\"aes192-ctr\",\"aes256-ctr\",\"aes128-gcm@openssh.com\",\"aes256-gcm@openssh.com\"],\"client_to_server_macs\":[\"umac-64-etm@openssh.com\",\"umac-128-etm@openssh.com\",\"hmac-sha2-256-etm@openssh.com\",\"hmac-sha2-512-etm@openssh.com\",\"hmac-sha1-etm@openssh.com\",\"umac-64@openssh.com\",\"umac-128@openssh.com\",\"hmac-sha2-256\",\"hmac-sha2-512\",\"hmac-sha1\"],\"server_to_client_macs\":[\"umac-64-etm@openssh.com\",\"umac-128-etm@openssh.com\",\"hmac-sha2-256-etm@openssh.com\",\"hmac-sha2-512-etm@openssh.com\",\"hmac-sha1-etm@openssh.com\",\"umac-64@openssh.com\",\"umac-128@openssh.com\",\"hmac-sha2-256\",\"hmac-sha2-512\",\"hmac-sha1\"],\"client_to_server_compression\":[\"none\",\"zlib@openssh.com\"],\"server_to_client_compression\":[\"none\",\"zlib@openssh.com\"],\"first_kex_follows\":false,\"reserved\":0,\"serverHaSSH\":\"3ccd1778a76049721c71ad7d2bf62bbc\"},\n  \"ClientKex\": null,\n  \"AlgorithmSelection\": {\"dh_kex_algorithm\":\"curve25519-sha256@libssh.org\",\"host_key_algorithm\":\"ecdsa-sha2-nistp256\",\"client_to_server_alg_group\":{\"cipher\":\"aes128-ctr\",\"mac\":\"hmac-sha2-256\",\"compression\":\"none\"},\"server_to_client_alg_group\":{\"cipher\":\"aes128-ctr\",\"mac\":\"hmac-sha2-256\",\"compression\":\"none\"}},\n  \"DHKeyExchange\": {\"curve25519_sha256_params\":{\"server_public\":\"dpcbrwluguIPC7A3JzEuDE/5IcK73An/jO6//sQZH2o=\"},\"server_signature\":{\"parsed\":{\"algorithm\":\"ecdsa-sha2-nistp256\",\"value\":\"AAAAIQC6KUCqHtuVXyd8Qyx6yY/F8ldslBv/GpX8NsD6blFoGwAAACB2t7GkbDqtiHj0xpd5oweo0EhCbghHW6S7i0J7TbfBIQ==\"},\"raw\":\"AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAABJAAAAIQC6KUCqHtuVXyd8Qyx6yY/F8ldslBv/GpX8NsD6blFoGwAAACB2t7GkbDqtiHj0xpd5oweo0EhCbghHW6S7i0J7TbfBIQ==\",\"h\":\"5Jex1+77/MibDWIZYhwX/qmgeHHyqAmf4qVDKu68unQ=\"},\"server_host_key\":{\"ecdsa_public_key\":{\"b\":\"WsY12Ko6k+ez671VdpiGvGUdBrDMU7D2O848PifSYEs=\",\"curve\":\"P-256\",\"gx\":\"axfR8uEsQkf4vOblY6RA8ncDfYEt6zOg9KE5RdiYwpY=\",\"gy\":\"T+NC4v4af5uO5+tKfA+eFivOM1drMV7Oy7ZAaDe/UfU=\",\"length\":256,\"n\":\"/////wAAAAD//////////7zm+q2nF56E87nKwvxjJVE=\",\"p\":\"/////wAAAAEAAAAAAAAAAAAAAAD///////////////8=\",\"x\":\"5Y0MATbWGs9gWknj4++u4du2HWz4cepdgQqTXa2ewFA=\",\"y\":\"E90v34m4qITkv/TFumnzT24uw98ntLc2QnqC1lH3rVA=\"},\"raw\":\"AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBOWNDAE21hrPYFpJ4+PvruHbth1s+HHqXYEKk12tnsBQE90v34m4qITkv/TFumnzT24uw98ntLc2QnqC1lH3rVA=\",\"algorithm\":\"ecdsa-sha2-nistp256\",\"fingerprint_sha256\":\"e65378fd99b1068d5dd867c9f83e5fceb14d4afcdccd565df8e913bfcb888205\"}},\n  \"UserAuth\": [\n    \"publickey\",\n    \"password\"\n  ],\n  \"Crypto\": null\n}",
+            "ip": "192.168.100.136",
+            "timestamp": "2026-01-26T01:50:14.221351033+05:30",
+            "matcher-status": true
+          }
+        },
+        {
+          "template": "javascript/enumeration/ssh/ssh-password-auth.yaml",
+          "type": "javascript",
+          "severity": "info",
+          "title": "SSH Password-based Authentication",
+          "description": "",
+          "url": "",
+          "raw": {
+            "template": "javascript/enumeration/ssh/ssh-password-auth.yaml",
+            "template-url": "https://cloud.projectdiscovery.io/public/ssh-password-auth",
+            "template-id": "ssh-password-auth",
+            "template-path": "/home/kali/.local/nuclei-templates/javascript/enumeration/ssh/ssh-password-auth.yaml",
+            "info": {
+              "name": "SSH Password-based Authentication",
+              "author": [
+                "princechaddha"
+              ],
+              "tags": [
+                "ssh",
+                "js",
+                "enum",
+                "network",
+                "discovery"
+              ],
+              "reference": [
+                "https://nmap.org/nsedoc/scripts/ssh-auth-methods.html"
+              ],
+              "severity": "info",
+              "metadata": {
+                "verified": true,
+                "max-request": 2,
+                "shodan-query": "product:\"OpenSSH\""
+              }
+            },
+            "type": "javascript",
+            "host": "192.168.100.136:22",
+            "port": "22",
+            "url": "192.168.100.136:22",
+            "matched-at": "192.168.100.136:22",
+            "request": "var m = require(\"nuclei/ssh\");\nvar c = m.SSHClient();\nvar response = c.ConnectSSHInfoMode(Host, Port);\nExport(response);",
+            "response": "{\n  \"Banner\": \"\",\n  \"ServerID\": {\n    \"Raw\": \"SSH-2.0-OpenSSH_8.4p1 Debian-5\",\n    \"ProtoVersion\": \"2.0\",\n    \"SoftwareVersion\": \"OpenSSH_8.4p1\",\n    \"Comment\": \"Debian-5\"\n  },\n  \"ClientID\": null,\n  \"ServerKex\": {\"cookie\":\"vWow3SWhqsnyayMacDeUTQ==\",\"kex_algorithms\":[\"curve25519-sha256\",\"curve25519-sha256@libssh.org\",\"ecdh-sha2-nistp256\",\"ecdh-sha2-nistp384\",\"ecdh-sha2-nistp521\",\"diffie-hellman-group-exchange-sha256\",\"diffie-hellman-group16-sha512\",\"diffie-hellman-group18-sha512\",\"diffie-hellman-group14-sha256\"],\"host_key_algorithms\":[\"ecdsa-sha2-nistp256\"],\"client_to_server_ciphers\":[\"chacha20-poly1305@openssh.com\",\"aes128-ctr\",\"aes192-ctr\",\"aes256-ctr\",\"aes128-gcm@openssh.com\",\"aes256-gcm@openssh.com\"],\"server_to_client_ciphers\":[\"chacha20-poly1305@openssh.com\",\"aes128-ctr\",\"aes192-ctr\",\"aes256-ctr\",\"aes128-gcm@openssh.com\",\"aes256-gcm@openssh.com\"],\"client_to_server_macs\":[\"umac-64-etm@openssh.com\",\"umac-128-etm@openssh.com\",\"hmac-sha2-256-etm@openssh.com\",\"hmac-sha2-512-etm@openssh.com\",\"hmac-sha1-etm@openssh.com\",\"umac-64@openssh.com\",\"umac-128@openssh.com\",\"hmac-sha2-256\",\"hmac-sha2-512\",\"hmac-sha1\"],\"server_to_client_macs\":[\"umac-64-etm@openssh.com\",\"umac-128-etm@openssh.com\",\"hmac-sha2-256-etm@openssh.com\",\"hmac-sha2-512-etm@openssh.com\",\"hmac-sha1-etm@openssh.com\",\"umac-64@openssh.com\",\"umac-128@openssh.com\",\"hmac-sha2-256\",\"hmac-sha2-512\",\"hmac-sha1\"],\"client_to_server_compression\":[\"none\",\"zlib@openssh.com\"],\"server_to_client_compression\":[\"none\",\"zlib@openssh.com\"],\"first_kex_follows\":false,\"reserved\":0,\"serverHaSSH\":\"3ccd1778a76049721c71ad7d2bf62bbc\"},\n  \"ClientKex\": null,\n  \"AlgorithmSelection\": {\"dh_kex_algorithm\":\"curve25519-sha256@libssh.org\",\"host_key_algorithm\":\"ecdsa-sha2-nistp256\",\"client_to_server_alg_group\":{\"cipher\":\"aes128-ctr\",\"mac\":\"hmac-sha2-256\",\"compression\":\"none\"},\"server_to_client_alg_group\":{\"cipher\":\"aes128-ctr\",\"mac\":\"hmac-sha2-256\",\"compression\":\"none\"}},\n  \"DHKeyExchange\": {\"curve25519_sha256_params\":{\"server_public\":\"dpcbrwluguIPC7A3JzEuDE/5IcK73An/jO6//sQZH2o=\"},\"server_signature\":{\"parsed\":{\"algorithm\":\"ecdsa-sha2-nistp256\",\"value\":\"AAAAIQC6KUCqHtuVXyd8Qyx6yY/F8ldslBv/GpX8NsD6blFoGwAAACB2t7GkbDqtiHj0xpd5oweo0EhCbghHW6S7i0J7TbfBIQ==\"},\"raw\":\"AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAABJAAAAIQC6KUCqHtuVXyd8Qyx6yY/F8ldslBv/GpX8NsD6blFoGwAAACB2t7GkbDqtiHj0xpd5oweo0EhCbghHW6S7i0J7TbfBIQ==\",\"h\":\"5Jex1+77/MibDWIZYhwX/qmgeHHyqAmf4qVDKu68unQ=\"},\"server_host_key\":{\"ecdsa_public_key\":{\"b\":\"WsY12Ko6k+ez671VdpiGvGUdBrDMU7D2O848PifSYEs=\",\"curve\":\"P-256\",\"gx\":\"axfR8uEsQkf4vOblY6RA8ncDfYEt6zOg9KE5RdiYwpY=\",\"gy\":\"T+NC4v4af5uO5+tKfA+eFivOM1drMV7Oy7ZAaDe/UfU=\",\"length\":256,\"n\":\"/////wAAAAD//////////7zm+q2nF56E87nKwvxjJVE=\",\"p\":\"/////wAAAAEAAAAAAAAAAAAAAAD///////////////8=\",\"x\":\"5Y0MATbWGs9gWknj4++u4du2HWz4cepdgQqTXa2ewFA=\",\"y\":\"E90v34m4qITkv/TFumnzT24uw98ntLc2QnqC1lH3rVA=\"},\"raw\":\"AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBOWNDAE21hrPYFpJ4+PvruHbth1s+HHqXYEKk12tnsBQE90v34m4qITkv/TFumnzT24uw98ntLc2QnqC1lH3rVA=\",\"algorithm\":\"ecdsa-sha2-nistp256\",\"fingerprint_sha256\":\"e65378fd99b1068d5dd867c9f83e5fceb14d4afcdccd565df8e913bfcb888205\"}},\n  \"UserAuth\": [\n    \"publickey\",\n    \"password\"\n  ],\n  \"Crypto\": null\n}",
+            "ip": "192.168.100.136",
+            "timestamp": "2026-01-26T01:50:14.218378953+05:30",
+            "matcher-status": true
+          }
+        },
+        {
+          "template": "network/detection/openssh-detect.yaml",
+          "type": "tcp",
+          "severity": "info",
+          "title": "OpenSSH Service - Detect",
+          "description": "OpenSSH service was detected.\n",
+          "url": "",
+          "raw": {
+            "template": "network/detection/openssh-detect.yaml",
+            "template-url": "https://cloud.projectdiscovery.io/public/openssh-detect",
+            "template-id": "openssh-detect",
+            "template-path": "/home/kali/.local/nuclei-templates/network/detection/openssh-detect.yaml",
+            "info": {
+              "name": "OpenSSH Service - Detect",
+              "author": [
+                "r3dg33k",
+                "daffainfo",
+                "iamthefrogy"
+              ],
+              "tags": [
+                "seclists",
+                "network",
+                "ssh",
+                "openssh",
+                "detect",
+                "detection",
+                "tcp",
+                "discovery"
+              ],
+              "description": "OpenSSH service was detected.\n",
+              "reference": [
+                "http://www.openwall.com/lists/oss-security/2016/08/01/2",
+                "http://www.openwall.com/lists/oss-security/2018/08/15/5",
+                "http://seclists.org/fulldisclosure/2016/Jul/51",
+                "https://nvd.nist.gov/vuln/detail/CVE-2016-6210",
+                "https://nvd.nist.gov/vuln/detail/CVE-2018-15473"
+              ],
+              "severity": "info",
+              "metadata": {
+                "max-request": 1
+              },
+              "classification": {
+                "cve-id": null,
+                "cwe-id": [
+                  "cwe-200"
+                ],
+                "cvss-metrics": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N"
+              }
+            },
+            "type": "tcp",
+            "host": "192.168.100.136:22",
+            "port": "22",
+            "url": "192.168.100.136:22",
+            "matched-at": "192.168.100.136:22",
+            "extracted-results": [
+              "SSH-2.0-OpenSSH_8.4p1 Debian-5"
+            ],
+            "response": "SSH-2.0-OpenSSH_8.4p1 Debian-5\r\n",
+            "ip": "192.168.100.136",
+            "timestamp": "2026-01-26T01:50:14.390298414+05:30",
+            "matcher-status": true
+          }
+        }
+      ],
+      "raw_exploits": []
+    },
+    {
+      "port": "80",
+      "service": "http",
+      "version": "Apache httpd",
+      "nuclei": [
+        "WAF Detection",
+        "Apache Detection",
+        "HTTP Missing Security Headers",
+        "HTTP Missing Security Headers",
+        "HTTP Missing Security Headers",
+        "HTTP Missing Security Headers",
+        "HTTP Missing Security Headers",
+        "HTTP Missing Security Headers",
+        "HTTP Missing Security Headers",
+        "HTTP Missing Security Headers",
+        "HTTP Missing Security Headers",
+        "HTTP Missing Security Headers",
+        "HTTP Missing Security Headers",
+        "Allowed Options Method"
+      ],
+      "exploits": [],
+      "raw_nuclei": [
+        {
+          "template": "http/technologies/waf-detect.yaml",
+          "type": "http",
+          "severity": "info",
+          "title": "WAF Detection",
+          "description": "A web application firewall was detected.",
+          "url": "",
+          "raw": {
+            "template": "http/technologies/waf-detect.yaml",
+            "template-url": "https://cloud.projectdiscovery.io/public/waf-detect",
+            "template-id": "waf-detect",
+            "template-path": "/home/kali/.local/nuclei-templates/http/technologies/waf-detect.yaml",
+            "info": {
+              "name": "WAF Detection",
+              "author": [
+                "dwisiswant0",
+                "lu4nx"
+              ],
+              "tags": [
+                "waf",
+                "tech",
+                "misc",
+                "discovery"
+              ],
+              "description": "A web application firewall was detected.",
+              "reference": [
+                "https://github.com/Ekultek/WhatWaf"
+              ],
+              "severity": "info",
+              "metadata": {
+                "max-request": 1
+              },
+              "classification": {
+                "cve-id": null,
+                "cwe-id": [
+                  "cwe-200"
+                ]
+              }
+            },
+            "matcher-name": "apachegeneric",
+            "type": "http",
+            "host": "192.168.100.136",
+            "port": "80",
+            "scheme": "http",
+            "url": "http://192.168.100.136",
+            "matched-at": "http://192.168.100.136",
+            "request": "POST / HTTP/1.1\r\nHost: 192.168.100.136\r\nUser-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0) Gecko/20100101 Firefox/47.0\r\nConnection: close\r\nContent-Length: 27\r\nContent-Type: application/x-www-form-urlencoded\r\nAccept-Encoding: gzip\r\n\r\n_=<script>alert(1)</script>",
+            "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Sun, 25 Jan 2026 20:19:56 GMT\r\nEtag: \"15c-5cf63c252ab85-gzip\"\r\nLast-Modified: Thu, 28 Oct 2021 06:24:12 GMT\r\nServer: Apache/2.4.51 (Debian)\r\nVary: Accept-Encoding\r\n\r\n<html>\n\t<head><title>Morpheus:1</title></head>\n\t<body>\n\t\tWelcome to the Boot2Root CTF, Morpheus:1.\n\t\t<p>\n\t\tYou play Trinity, trying to investigate a computer on the \n\t\tNebuchadnezzar that Cypher has locked everyone else out of, at least for ssh.\n\t\t<p>\n\t\tGood luck!\n\n\t\t- @jaybeale from @inguardians\n\t\t<p>\n\t\t<img src=\"trinity.jpeg\">\n\t</body>\n</html>\n",
+            "ip": "192.168.100.136",
+            "timestamp": "2026-01-26T01:49:57.03043836+05:30",
+            "curl-command": "curl -X 'POST' -d '_=<script>alert(1)</script>' -H 'Content-Type: application/x-www-form-urlencoded' -H 'Host: 192.168.100.136' -H 'User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0) Gecko/20100101 Firefox/47.0' 'http://192.168.100.136'",
+            "matcher-status": true
+          }
+        },
+        {
+          "template": "http/technologies/apache/apache-detect.yaml",
+          "type": "http",
+          "severity": "info",
+          "title": "Apache Detection",
+          "description": "Some Apache servers have the version on the response header. The OpenSSL version can be also obtained",
+          "url": "",
+          "raw": {
+            "template": "http/technologies/apache/apache-detect.yaml",
+            "template-url": "https://cloud.projectdiscovery.io/public/apache-detect",
+            "template-id": "apache-detect",
+            "template-path": "/home/kali/.local/nuclei-templates/http/technologies/apache/apache-detect.yaml",
+            "info": {
+              "name": "Apache Detection",
+              "author": [
+                "philippedelteil"
+              ],
+              "tags": [
+                "tech",
+                "apache",
+                "discovery"
+              ],
+              "description": "Some Apache servers have the version on the response header. The OpenSSL version can be also obtained",
+              "severity": "info",
+              "metadata": {
+                "max-request": 1
+              }
+            },
+            "type": "http",
+            "host": "192.168.100.136",
+            "port": "80",
+            "scheme": "http",
+            "url": "http://192.168.100.136",
+            "matched-at": "http://192.168.100.136",
+            "extracted-results": [
+              "Apache/2.4.51 (Debian)"
+            ],
+            "request": "GET / HTTP/1.1\r\nHost: 192.168.100.136\r\nUser-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 14) AppleWebKit/620.32 (KHTML, like Gecko) Version/17.1.10 Safari/620.32\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+            "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Sun, 25 Jan 2026 20:20:24 GMT\r\nEtag: \"15c-5cf63c252ab85-gzip\"\r\nLast-Modified: Thu, 28 Oct 2021 06:24:12 GMT\r\nServer: Apache/2.4.51 (Debian)\r\nVary: Accept-Encoding\r\n\r\n<html>\n\t<head><title>Morpheus:1</title></head>\n\t<body>\n\t\tWelcome to the Boot2Root CTF, Morpheus:1.\n\t\t<p>\n\t\tYou play Trinity, trying to investigate a computer on the \n\t\tNebuchadnezzar that Cypher has locked everyone else out of, at least for ssh.\n\t\t<p>\n\t\tGood luck!\n\n\t\t- @jaybeale from @inguardians\n\t\t<p>\n\t\t<img src=\"trinity.jpeg\">\n\t</body>\n</html>\n",
+            "ip": "192.168.100.136",
+            "timestamp": "2026-01-26T01:50:25.067801539+05:30",
+            "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 14) AppleWebKit/620.32 (KHTML, like Gecko) Version/17.1.10 Safari/620.32' 'http://192.168.100.136'",
+            "matcher-status": true
+          }
+        },
+        {
+          "template": "http/misconfiguration/http-missing-security-headers.yaml",
+          "type": "http",
+          "severity": "info",
+          "title": "HTTP Missing Security Headers",
+          "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+          "url": "",
+          "raw": {
+            "template": "http/misconfiguration/http-missing-security-headers.yaml",
+            "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+            "template-id": "http-missing-security-headers",
+            "template-path": "/home/kali/.local/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+            "info": {
+              "name": "HTTP Missing Security Headers",
+              "author": [
+                "socketz",
+                "geeknik",
+                "g4l1t0",
+                "convisoappsec",
+                "kurohost",
+                "dawid-czarnecki",
+                "forgedhallpass",
+                "jub0bs",
+                "userdehghani"
+              ],
+              "tags": [
+                "misconfig",
+                "headers",
+                "generic",
+                "vuln"
+              ],
+              "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+              "severity": "info",
+              "metadata": {
+                "max-request": 1
+              }
+            },
+            "matcher-name": "cross-origin-opener-policy",
+            "type": "http",
+            "host": "192.168.100.136",
+            "port": "80",
+            "scheme": "http",
+            "url": "http://192.168.100.136",
+            "matched-at": "http://192.168.100.136",
+            "request": "GET / HTTP/1.1\r\nHost: 192.168.100.136\r\nUser-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:1.9.7.20) Gecko/ Firefox/3.8\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+            "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Sun, 25 Jan 2026 20:20:44 GMT\r\nEtag: \"15c-5cf63c252ab85-gzip\"\r\nLast-Modified: Thu, 28 Oct 2021 06:24:12 GMT\r\nServer: Apache/2.4.51 (Debian)\r\nVary: Accept-Encoding\r\n\r\n<html>\n\t<head><title>Morpheus:1</title></head>\n\t<body>\n\t\tWelcome to the Boot2Root CTF, Morpheus:1.\n\t\t<p>\n\t\tYou play Trinity, trying to investigate a computer on the \n\t\tNebuchadnezzar that Cypher has locked everyone else out of, at least for ssh.\n\t\t<p>\n\t\tGood luck!\n\n\t\t- @jaybeale from @inguardians\n\t\t<p>\n\t\t<img src=\"trinity.jpeg\">\n\t</body>\n</html>\n",
+            "ip": "192.168.100.136",
+            "timestamp": "2026-01-26T01:50:45.064792+05:30",
+            "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:1.9.7.20) Gecko/ Firefox/3.8' 'http://192.168.100.136'",
+            "matcher-status": true
+          }
+        },
+        {
+          "template": "http/misconfiguration/http-missing-security-headers.yaml",
+          "type": "http",
+          "severity": "info",
+          "title": "HTTP Missing Security Headers",
+          "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+          "url": "",
+          "raw": {
+            "template": "http/misconfiguration/http-missing-security-headers.yaml",
+            "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+            "template-id": "http-missing-security-headers",
+            "template-path": "/home/kali/.local/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+            "info": {
+              "name": "HTTP Missing Security Headers",
+              "author": [
+                "socketz",
+                "geeknik",
+                "g4l1t0",
+                "convisoappsec",
+                "kurohost",
+                "dawid-czarnecki",
+                "forgedhallpass",
+                "jub0bs",
+                "userdehghani"
+              ],
+              "tags": [
+                "misconfig",
+                "headers",
+                "generic",
+                "vuln"
+              ],
+              "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+              "severity": "info",
+              "metadata": {
+                "max-request": 1
+              }
+            },
+            "matcher-name": "strict-transport-security",
+            "type": "http",
+            "host": "192.168.100.136",
+            "port": "80",
+            "scheme": "http",
+            "url": "http://192.168.100.136",
+            "matched-at": "http://192.168.100.136",
+            "request": "GET / HTTP/1.1\r\nHost: 192.168.100.136\r\nUser-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:1.9.7.20) Gecko/ Firefox/3.8\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+            "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Sun, 25 Jan 2026 20:20:44 GMT\r\nEtag: \"15c-5cf63c252ab85-gzip\"\r\nLast-Modified: Thu, 28 Oct 2021 06:24:12 GMT\r\nServer: Apache/2.4.51 (Debian)\r\nVary: Accept-Encoding\r\n\r\n<html>\n\t<head><title>Morpheus:1</title></head>\n\t<body>\n\t\tWelcome to the Boot2Root CTF, Morpheus:1.\n\t\t<p>\n\t\tYou play Trinity, trying to investigate a computer on the \n\t\tNebuchadnezzar that Cypher has locked everyone else out of, at least for ssh.\n\t\t<p>\n\t\tGood luck!\n\n\t\t- @jaybeale from @inguardians\n\t\t<p>\n\t\t<img src=\"trinity.jpeg\">\n\t</body>\n</html>\n",
+            "ip": "192.168.100.136",
+            "timestamp": "2026-01-26T01:50:45.069384615+05:30",
+            "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:1.9.7.20) Gecko/ Firefox/3.8' 'http://192.168.100.136'",
+            "matcher-status": true
+          }
+        },
+        {
+          "template": "http/misconfiguration/http-missing-security-headers.yaml",
+          "type": "http",
+          "severity": "info",
+          "title": "HTTP Missing Security Headers",
+          "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+          "url": "",
+          "raw": {
+            "template": "http/misconfiguration/http-missing-security-headers.yaml",
+            "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+            "template-id": "http-missing-security-headers",
+            "template-path": "/home/kali/.local/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+            "info": {
+              "name": "HTTP Missing Security Headers",
+              "author": [
+                "socketz",
+                "geeknik",
+                "g4l1t0",
+                "convisoappsec",
+                "kurohost",
+                "dawid-czarnecki",
+                "forgedhallpass",
+                "jub0bs",
+                "userdehghani"
+              ],
+              "tags": [
+                "misconfig",
+                "headers",
+                "generic",
+                "vuln"
+              ],
+              "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+              "severity": "info",
+              "metadata": {
+                "max-request": 1
+              }
+            },
+            "matcher-name": "x-frame-options",
+            "type": "http",
+            "host": "192.168.100.136",
+            "port": "80",
+            "scheme": "http",
+            "url": "http://192.168.100.136",
+            "matched-at": "http://192.168.100.136",
+            "request": "GET / HTTP/1.1\r\nHost: 192.168.100.136\r\nUser-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:1.9.7.20) Gecko/ Firefox/3.8\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+            "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Sun, 25 Jan 2026 20:20:44 GMT\r\nEtag: \"15c-5cf63c252ab85-gzip\"\r\nLast-Modified: Thu, 28 Oct 2021 06:24:12 GMT\r\nServer: Apache/2.4.51 (Debian)\r\nVary: Accept-Encoding\r\n\r\n<html>\n\t<head><title>Morpheus:1</title></head>\n\t<body>\n\t\tWelcome to the Boot2Root CTF, Morpheus:1.\n\t\t<p>\n\t\tYou play Trinity, trying to investigate a computer on the \n\t\tNebuchadnezzar that Cypher has locked everyone else out of, at least for ssh.\n\t\t<p>\n\t\tGood luck!\n\n\t\t- @jaybeale from @inguardians\n\t\t<p>\n\t\t<img src=\"trinity.jpeg\">\n\t</body>\n</html>\n",
+            "ip": "192.168.100.136",
+            "timestamp": "2026-01-26T01:50:45.069433897+05:30",
+            "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:1.9.7.20) Gecko/ Firefox/3.8' 'http://192.168.100.136'",
+            "matcher-status": true
+          }
+        },
+        {
+          "template": "http/misconfiguration/http-missing-security-headers.yaml",
+          "type": "http",
+          "severity": "info",
+          "title": "HTTP Missing Security Headers",
+          "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+          "url": "",
+          "raw": {
+            "template": "http/misconfiguration/http-missing-security-headers.yaml",
+            "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+            "template-id": "http-missing-security-headers",
+            "template-path": "/home/kali/.local/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+            "info": {
+              "name": "HTTP Missing Security Headers",
+              "author": [
+                "socketz",
+                "geeknik",
+                "g4l1t0",
+                "convisoappsec",
+                "kurohost",
+                "dawid-czarnecki",
+                "forgedhallpass",
+                "jub0bs",
+                "userdehghani"
+              ],
+              "tags": [
+                "misconfig",
+                "headers",
+                "generic",
+                "vuln"
+              ],
+              "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+              "severity": "info",
+              "metadata": {
+                "max-request": 1
+              }
+            },
+            "matcher-name": "referrer-policy",
+            "type": "http",
+            "host": "192.168.100.136",
+            "port": "80",
+            "scheme": "http",
+            "url": "http://192.168.100.136",
+            "matched-at": "http://192.168.100.136",
+            "request": "GET / HTTP/1.1\r\nHost: 192.168.100.136\r\nUser-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:1.9.7.20) Gecko/ Firefox/3.8\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+            "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Sun, 25 Jan 2026 20:20:44 GMT\r\nEtag: \"15c-5cf63c252ab85-gzip\"\r\nLast-Modified: Thu, 28 Oct 2021 06:24:12 GMT\r\nServer: Apache/2.4.51 (Debian)\r\nVary: Accept-Encoding\r\n\r\n<html>\n\t<head><title>Morpheus:1</title></head>\n\t<body>\n\t\tWelcome to the Boot2Root CTF, Morpheus:1.\n\t\t<p>\n\t\tYou play Trinity, trying to investigate a computer on the \n\t\tNebuchadnezzar that Cypher has locked everyone else out of, at least for ssh.\n\t\t<p>\n\t\tGood luck!\n\n\t\t- @jaybeale from @inguardians\n\t\t<p>\n\t\t<img src=\"trinity.jpeg\">\n\t</body>\n</html>\n",
+            "ip": "192.168.100.136",
+            "timestamp": "2026-01-26T01:50:45.069448184+05:30",
+            "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:1.9.7.20) Gecko/ Firefox/3.8' 'http://192.168.100.136'",
+            "matcher-status": true
+          }
+        },
+        {
+          "template": "http/misconfiguration/http-missing-security-headers.yaml",
+          "type": "http",
+          "severity": "info",
+          "title": "HTTP Missing Security Headers",
+          "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+          "url": "",
+          "raw": {
+            "template": "http/misconfiguration/http-missing-security-headers.yaml",
+            "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+            "template-id": "http-missing-security-headers",
+            "template-path": "/home/kali/.local/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+            "info": {
+              "name": "HTTP Missing Security Headers",
+              "author": [
+                "socketz",
+                "geeknik",
+                "g4l1t0",
+                "convisoappsec",
+                "kurohost",
+                "dawid-czarnecki",
+                "forgedhallpass",
+                "jub0bs",
+                "userdehghani"
+              ],
+              "tags": [
+                "misconfig",
+                "headers",
+                "generic",
+                "vuln"
+              ],
+              "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+              "severity": "info",
+              "metadata": {
+                "max-request": 1
+              }
+            },
+            "matcher-name": "clear-site-data",
+            "type": "http",
+            "host": "192.168.100.136",
+            "port": "80",
+            "scheme": "http",
+            "url": "http://192.168.100.136",
+            "matched-at": "http://192.168.100.136",
+            "request": "GET / HTTP/1.1\r\nHost: 192.168.100.136\r\nUser-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:1.9.7.20) Gecko/ Firefox/3.8\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+            "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Sun, 25 Jan 2026 20:20:44 GMT\r\nEtag: \"15c-5cf63c252ab85-gzip\"\r\nLast-Modified: Thu, 28 Oct 2021 06:24:12 GMT\r\nServer: Apache/2.4.51 (Debian)\r\nVary: Accept-Encoding\r\n\r\n<html>\n\t<head><title>Morpheus:1</title></head>\n\t<body>\n\t\tWelcome to the Boot2Root CTF, Morpheus:1.\n\t\t<p>\n\t\tYou play Trinity, trying to investigate a computer on the \n\t\tNebuchadnezzar that Cypher has locked everyone else out of, at least for ssh.\n\t\t<p>\n\t\tGood luck!\n\n\t\t- @jaybeale from @inguardians\n\t\t<p>\n\t\t<img src=\"trinity.jpeg\">\n\t</body>\n</html>\n",
+            "ip": "192.168.100.136",
+            "timestamp": "2026-01-26T01:50:45.06946235+05:30",
+            "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:1.9.7.20) Gecko/ Firefox/3.8' 'http://192.168.100.136'",
+            "matcher-status": true
+          }
+        },
+        {
+          "template": "http/misconfiguration/http-missing-security-headers.yaml",
+          "type": "http",
+          "severity": "info",
+          "title": "HTTP Missing Security Headers",
+          "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+          "url": "",
+          "raw": {
+            "template": "http/misconfiguration/http-missing-security-headers.yaml",
+            "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+            "template-id": "http-missing-security-headers",
+            "template-path": "/home/kali/.local/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+            "info": {
+              "name": "HTTP Missing Security Headers",
+              "author": [
+                "socketz",
+                "geeknik",
+                "g4l1t0",
+                "convisoappsec",
+                "kurohost",
+                "dawid-czarnecki",
+                "forgedhallpass",
+                "jub0bs",
+                "userdehghani"
+              ],
+              "tags": [
+                "misconfig",
+                "headers",
+                "generic",
+                "vuln"
+              ],
+              "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+              "severity": "info",
+              "metadata": {
+                "max-request": 1
+              }
+            },
+            "matcher-name": "cross-origin-embedder-policy",
+            "type": "http",
+            "host": "192.168.100.136",
+            "port": "80",
+            "scheme": "http",
+            "url": "http://192.168.100.136",
+            "matched-at": "http://192.168.100.136",
+            "request": "GET / HTTP/1.1\r\nHost: 192.168.100.136\r\nUser-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:1.9.7.20) Gecko/ Firefox/3.8\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+            "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Sun, 25 Jan 2026 20:20:44 GMT\r\nEtag: \"15c-5cf63c252ab85-gzip\"\r\nLast-Modified: Thu, 28 Oct 2021 06:24:12 GMT\r\nServer: Apache/2.4.51 (Debian)\r\nVary: Accept-Encoding\r\n\r\n<html>\n\t<head><title>Morpheus:1</title></head>\n\t<body>\n\t\tWelcome to the Boot2Root CTF, Morpheus:1.\n\t\t<p>\n\t\tYou play Trinity, trying to investigate a computer on the \n\t\tNebuchadnezzar that Cypher has locked everyone else out of, at least for ssh.\n\t\t<p>\n\t\tGood luck!\n\n\t\t- @jaybeale from @inguardians\n\t\t<p>\n\t\t<img src=\"trinity.jpeg\">\n\t</body>\n</html>\n",
+            "ip": "192.168.100.136",
+            "timestamp": "2026-01-26T01:50:45.069474263+05:30",
+            "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:1.9.7.20) Gecko/ Firefox/3.8' 'http://192.168.100.136'",
+            "matcher-status": true
+          }
+        },
+        {
+          "template": "http/misconfiguration/http-missing-security-headers.yaml",
+          "type": "http",
+          "severity": "info",
+          "title": "HTTP Missing Security Headers",
+          "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+          "url": "",
+          "raw": {
+            "template": "http/misconfiguration/http-missing-security-headers.yaml",
+            "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+            "template-id": "http-missing-security-headers",
+            "template-path": "/home/kali/.local/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+            "info": {
+              "name": "HTTP Missing Security Headers",
+              "author": [
+                "socketz",
+                "geeknik",
+                "g4l1t0",
+                "convisoappsec",
+                "kurohost",
+                "dawid-czarnecki",
+                "forgedhallpass",
+                "jub0bs",
+                "userdehghani"
+              ],
+              "tags": [
+                "misconfig",
+                "headers",
+                "generic",
+                "vuln"
+              ],
+              "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+              "severity": "info",
+              "metadata": {
+                "max-request": 1
+              }
+            },
+            "matcher-name": "cross-origin-resource-policy",
+            "type": "http",
+            "host": "192.168.100.136",
+            "port": "80",
+            "scheme": "http",
+            "url": "http://192.168.100.136",
+            "matched-at": "http://192.168.100.136",
+            "request": "GET / HTTP/1.1\r\nHost: 192.168.100.136\r\nUser-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:1.9.7.20) Gecko/ Firefox/3.8\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+            "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Sun, 25 Jan 2026 20:20:44 GMT\r\nEtag: \"15c-5cf63c252ab85-gzip\"\r\nLast-Modified: Thu, 28 Oct 2021 06:24:12 GMT\r\nServer: Apache/2.4.51 (Debian)\r\nVary: Accept-Encoding\r\n\r\n<html>\n\t<head><title>Morpheus:1</title></head>\n\t<body>\n\t\tWelcome to the Boot2Root CTF, Morpheus:1.\n\t\t<p>\n\t\tYou play Trinity, trying to investigate a computer on the \n\t\tNebuchadnezzar that Cypher has locked everyone else out of, at least for ssh.\n\t\t<p>\n\t\tGood luck!\n\n\t\t- @jaybeale from @inguardians\n\t\t<p>\n\t\t<img src=\"trinity.jpeg\">\n\t</body>\n</html>\n",
+            "ip": "192.168.100.136",
+            "timestamp": "2026-01-26T01:50:45.069489521+05:30",
+            "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:1.9.7.20) Gecko/ Firefox/3.8' 'http://192.168.100.136'",
+            "matcher-status": true
+          }
+        },
+        {
+          "template": "http/misconfiguration/http-missing-security-headers.yaml",
+          "type": "http",
+          "severity": "info",
+          "title": "HTTP Missing Security Headers",
+          "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+          "url": "",
+          "raw": {
+            "template": "http/misconfiguration/http-missing-security-headers.yaml",
+            "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+            "template-id": "http-missing-security-headers",
+            "template-path": "/home/kali/.local/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+            "info": {
+              "name": "HTTP Missing Security Headers",
+              "author": [
+                "socketz",
+                "geeknik",
+                "g4l1t0",
+                "convisoappsec",
+                "kurohost",
+                "dawid-czarnecki",
+                "forgedhallpass",
+                "jub0bs",
+                "userdehghani"
+              ],
+              "tags": [
+                "misconfig",
+                "headers",
+                "generic",
+                "vuln"
+              ],
+              "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+              "severity": "info",
+              "metadata": {
+                "max-request": 1
+              }
+            },
+            "matcher-name": "content-security-policy",
+            "type": "http",
+            "host": "192.168.100.136",
+            "port": "80",
+            "scheme": "http",
+            "url": "http://192.168.100.136",
+            "matched-at": "http://192.168.100.136",
+            "request": "GET / HTTP/1.1\r\nHost: 192.168.100.136\r\nUser-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:1.9.7.20) Gecko/ Firefox/3.8\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+            "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Sun, 25 Jan 2026 20:20:44 GMT\r\nEtag: \"15c-5cf63c252ab85-gzip\"\r\nLast-Modified: Thu, 28 Oct 2021 06:24:12 GMT\r\nServer: Apache/2.4.51 (Debian)\r\nVary: Accept-Encoding\r\n\r\n<html>\n\t<head><title>Morpheus:1</title></head>\n\t<body>\n\t\tWelcome to the Boot2Root CTF, Morpheus:1.\n\t\t<p>\n\t\tYou play Trinity, trying to investigate a computer on the \n\t\tNebuchadnezzar that Cypher has locked everyone else out of, at least for ssh.\n\t\t<p>\n\t\tGood luck!\n\n\t\t- @jaybeale from @inguardians\n\t\t<p>\n\t\t<img src=\"trinity.jpeg\">\n\t</body>\n</html>\n",
+            "ip": "192.168.100.136",
+            "timestamp": "2026-01-26T01:50:45.069500001+05:30",
+            "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:1.9.7.20) Gecko/ Firefox/3.8' 'http://192.168.100.136'",
+            "matcher-status": true
+          }
+        },
+        {
+          "template": "http/misconfiguration/http-missing-security-headers.yaml",
+          "type": "http",
+          "severity": "info",
+          "title": "HTTP Missing Security Headers",
+          "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+          "url": "",
+          "raw": {
+            "template": "http/misconfiguration/http-missing-security-headers.yaml",
+            "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+            "template-id": "http-missing-security-headers",
+            "template-path": "/home/kali/.local/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+            "info": {
+              "name": "HTTP Missing Security Headers",
+              "author": [
+                "socketz",
+                "geeknik",
+                "g4l1t0",
+                "convisoappsec",
+                "kurohost",
+                "dawid-czarnecki",
+                "forgedhallpass",
+                "jub0bs",
+                "userdehghani"
+              ],
+              "tags": [
+                "misconfig",
+                "headers",
+                "generic",
+                "vuln"
+              ],
+              "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+              "severity": "info",
+              "metadata": {
+                "max-request": 1
+              }
+            },
+            "matcher-name": "permissions-policy",
+            "type": "http",
+            "host": "192.168.100.136",
+            "port": "80",
+            "scheme": "http",
+            "url": "http://192.168.100.136",
+            "matched-at": "http://192.168.100.136",
+            "request": "GET / HTTP/1.1\r\nHost: 192.168.100.136\r\nUser-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:1.9.7.20) Gecko/ Firefox/3.8\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+            "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Sun, 25 Jan 2026 20:20:44 GMT\r\nEtag: \"15c-5cf63c252ab85-gzip\"\r\nLast-Modified: Thu, 28 Oct 2021 06:24:12 GMT\r\nServer: Apache/2.4.51 (Debian)\r\nVary: Accept-Encoding\r\n\r\n<html>\n\t<head><title>Morpheus:1</title></head>\n\t<body>\n\t\tWelcome to the Boot2Root CTF, Morpheus:1.\n\t\t<p>\n\t\tYou play Trinity, trying to investigate a computer on the \n\t\tNebuchadnezzar that Cypher has locked everyone else out of, at least for ssh.\n\t\t<p>\n\t\tGood luck!\n\n\t\t- @jaybeale from @inguardians\n\t\t<p>\n\t\t<img src=\"trinity.jpeg\">\n\t</body>\n</html>\n",
+            "ip": "192.168.100.136",
+            "timestamp": "2026-01-26T01:50:45.069513426+05:30",
+            "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:1.9.7.20) Gecko/ Firefox/3.8' 'http://192.168.100.136'",
+            "matcher-status": true
+          }
+        },
+        {
+          "template": "http/misconfiguration/http-missing-security-headers.yaml",
+          "type": "http",
+          "severity": "info",
+          "title": "HTTP Missing Security Headers",
+          "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+          "url": "",
+          "raw": {
+            "template": "http/misconfiguration/http-missing-security-headers.yaml",
+            "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+            "template-id": "http-missing-security-headers",
+            "template-path": "/home/kali/.local/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+            "info": {
+              "name": "HTTP Missing Security Headers",
+              "author": [
+                "socketz",
+                "geeknik",
+                "g4l1t0",
+                "convisoappsec",
+                "kurohost",
+                "dawid-czarnecki",
+                "forgedhallpass",
+                "jub0bs",
+                "userdehghani"
+              ],
+              "tags": [
+                "misconfig",
+                "headers",
+                "generic",
+                "vuln"
+              ],
+              "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+              "severity": "info",
+              "metadata": {
+                "max-request": 1
+              }
+            },
+            "matcher-name": "x-content-type-options",
+            "type": "http",
+            "host": "192.168.100.136",
+            "port": "80",
+            "scheme": "http",
+            "url": "http://192.168.100.136",
+            "matched-at": "http://192.168.100.136",
+            "request": "GET / HTTP/1.1\r\nHost: 192.168.100.136\r\nUser-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:1.9.7.20) Gecko/ Firefox/3.8\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+            "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Sun, 25 Jan 2026 20:20:44 GMT\r\nEtag: \"15c-5cf63c252ab85-gzip\"\r\nLast-Modified: Thu, 28 Oct 2021 06:24:12 GMT\r\nServer: Apache/2.4.51 (Debian)\r\nVary: Accept-Encoding\r\n\r\n<html>\n\t<head><title>Morpheus:1</title></head>\n\t<body>\n\t\tWelcome to the Boot2Root CTF, Morpheus:1.\n\t\t<p>\n\t\tYou play Trinity, trying to investigate a computer on the \n\t\tNebuchadnezzar that Cypher has locked everyone else out of, at least for ssh.\n\t\t<p>\n\t\tGood luck!\n\n\t\t- @jaybeale from @inguardians\n\t\t<p>\n\t\t<img src=\"trinity.jpeg\">\n\t</body>\n</html>\n",
+            "ip": "192.168.100.136",
+            "timestamp": "2026-01-26T01:50:45.069527793+05:30",
+            "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:1.9.7.20) Gecko/ Firefox/3.8' 'http://192.168.100.136'",
+            "matcher-status": true
+          }
+        },
+        {
+          "template": "http/misconfiguration/http-missing-security-headers.yaml",
+          "type": "http",
+          "severity": "info",
+          "title": "HTTP Missing Security Headers",
+          "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+          "url": "",
+          "raw": {
+            "template": "http/misconfiguration/http-missing-security-headers.yaml",
+            "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+            "template-id": "http-missing-security-headers",
+            "template-path": "/home/kali/.local/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+            "info": {
+              "name": "HTTP Missing Security Headers",
+              "author": [
+                "socketz",
+                "geeknik",
+                "g4l1t0",
+                "convisoappsec",
+                "kurohost",
+                "dawid-czarnecki",
+                "forgedhallpass",
+                "jub0bs",
+                "userdehghani"
+              ],
+              "tags": [
+                "misconfig",
+                "headers",
+                "generic",
+                "vuln"
+              ],
+              "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+              "severity": "info",
+              "metadata": {
+                "max-request": 1
+              }
+            },
+            "matcher-name": "x-permitted-cross-domain-policies",
+            "type": "http",
+            "host": "192.168.100.136",
+            "port": "80",
+            "scheme": "http",
+            "url": "http://192.168.100.136",
+            "matched-at": "http://192.168.100.136",
+            "request": "GET / HTTP/1.1\r\nHost: 192.168.100.136\r\nUser-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:1.9.7.20) Gecko/ Firefox/3.8\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+            "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Sun, 25 Jan 2026 20:20:44 GMT\r\nEtag: \"15c-5cf63c252ab85-gzip\"\r\nLast-Modified: Thu, 28 Oct 2021 06:24:12 GMT\r\nServer: Apache/2.4.51 (Debian)\r\nVary: Accept-Encoding\r\n\r\n<html>\n\t<head><title>Morpheus:1</title></head>\n\t<body>\n\t\tWelcome to the Boot2Root CTF, Morpheus:1.\n\t\t<p>\n\t\tYou play Trinity, trying to investigate a computer on the \n\t\tNebuchadnezzar that Cypher has locked everyone else out of, at least for ssh.\n\t\t<p>\n\t\tGood luck!\n\n\t\t- @jaybeale from @inguardians\n\t\t<p>\n\t\t<img src=\"trinity.jpeg\">\n\t</body>\n</html>\n",
+            "ip": "192.168.100.136",
+            "timestamp": "2026-01-26T01:50:45.069539064+05:30",
+            "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:1.9.7.20) Gecko/ Firefox/3.8' 'http://192.168.100.136'",
+            "matcher-status": true
+          }
+        },
+        {
+          "template": "http/miscellaneous/options-method.yaml",
+          "type": "http",
+          "severity": "info",
+          "title": "Allowed Options Method",
+          "description": "",
+          "url": "",
+          "raw": {
+            "template": "http/miscellaneous/options-method.yaml",
+            "template-url": "https://cloud.projectdiscovery.io/public/options-method",
+            "template-id": "options-method",
+            "template-path": "/home/kali/.local/nuclei-templates/http/miscellaneous/options-method.yaml",
+            "info": {
+              "name": "Allowed Options Method",
+              "author": [
+                "pdteam"
+              ],
+              "tags": [
+                "miscellaneous",
+                "misc",
+                "generic",
+                "vuln"
+              ],
+              "severity": "info",
+              "metadata": {
+                "max-request": 1
+              }
+            },
+            "type": "http",
+            "host": "192.168.100.136",
+            "port": "80",
+            "scheme": "http",
+            "url": "http://192.168.100.136",
+            "matched-at": "http://192.168.100.136",
+            "extracted-results": [
+              "HEAD,GET,POST,OPTIONS"
+            ],
+            "request": "OPTIONS / HTTP/1.1\r\nHost: 192.168.100.136\r\nUser-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 Edge/16.16299\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+            "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nAllow: HEAD,GET,POST,OPTIONS\r\nContent-Type: text/html\r\nDate: Sun, 25 Jan 2026 20:20:45 GMT\r\nServer: Apache/2.4.51 (Debian)\r\nContent-Length: 0\r\n\r\n",
+            "ip": "192.168.100.136",
+            "timestamp": "2026-01-26T01:50:46.033563504+05:30",
+            "curl-command": "curl -X 'OPTIONS' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 Edge/16.16299' 'http://192.168.100.136'",
+            "matcher-status": true
+          }
+        }
+      ],
+      "raw_exploits": []
+    },
+    {
+      "port": "81",
+      "service": "http",
+      "version": "nginx",
+      "nuclei": [
+        "WAF Detection",
+        "Apache Detection",
+        "HTTP Missing Security Headers",
+        "HTTP Missing Security Headers",
+        "HTTP Missing Security Headers",
+        "HTTP Missing Security Headers",
+        "HTTP Missing Security Headers",
+        "HTTP Missing Security Headers",
+        "HTTP Missing Security Headers",
+        "HTTP Missing Security Headers",
+        "HTTP Missing Security Headers",
+        "HTTP Missing Security Headers",
+        "HTTP Missing Security Headers",
+        "Allowed Options Method"
+      ],
+      "exploits": [],
+      "raw_nuclei": [
+        {
+          "template": "http/technologies/waf-detect.yaml",
+          "type": "http",
+          "severity": "info",
+          "title": "WAF Detection",
+          "description": "A web application firewall was detected.",
+          "url": "",
+          "raw": {
+            "template": "http/technologies/waf-detect.yaml",
+            "template-url": "https://cloud.projectdiscovery.io/public/waf-detect",
+            "template-id": "waf-detect",
+            "template-path": "/home/kali/.local/nuclei-templates/http/technologies/waf-detect.yaml",
+            "info": {
+              "name": "WAF Detection",
+              "author": [
+                "dwisiswant0",
+                "lu4nx"
+              ],
+              "tags": [
+                "waf",
+                "tech",
+                "misc",
+                "discovery"
+              ],
+              "description": "A web application firewall was detected.",
+              "reference": [
+                "https://github.com/Ekultek/WhatWaf"
+              ],
+              "severity": "info",
+              "metadata": {
+                "max-request": 1
+              },
+              "classification": {
+                "cve-id": null,
+                "cwe-id": [
+                  "cwe-200"
+                ]
+              }
+            },
+            "matcher-name": "apachegeneric",
+            "type": "http",
+            "host": "192.168.100.136",
+            "port": "80",
+            "scheme": "http",
+            "url": "http://192.168.100.136",
+            "matched-at": "http://192.168.100.136",
+            "request": "POST / HTTP/1.1\r\nHost: 192.168.100.136\r\nUser-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0) Gecko/20100101 Firefox/47.0\r\nConnection: close\r\nContent-Length: 27\r\nContent-Type: application/x-www-form-urlencoded\r\nAccept-Encoding: gzip\r\n\r\n_=<script>alert(1)</script>",
+            "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Sun, 25 Jan 2026 20:19:56 GMT\r\nEtag: \"15c-5cf63c252ab85-gzip\"\r\nLast-Modified: Thu, 28 Oct 2021 06:24:12 GMT\r\nServer: Apache/2.4.51 (Debian)\r\nVary: Accept-Encoding\r\n\r\n<html>\n\t<head><title>Morpheus:1</title></head>\n\t<body>\n\t\tWelcome to the Boot2Root CTF, Morpheus:1.\n\t\t<p>\n\t\tYou play Trinity, trying to investigate a computer on the \n\t\tNebuchadnezzar that Cypher has locked everyone else out of, at least for ssh.\n\t\t<p>\n\t\tGood luck!\n\n\t\t- @jaybeale from @inguardians\n\t\t<p>\n\t\t<img src=\"trinity.jpeg\">\n\t</body>\n</html>\n",
+            "ip": "192.168.100.136",
+            "timestamp": "2026-01-26T01:49:57.03043836+05:30",
+            "curl-command": "curl -X 'POST' -d '_=<script>alert(1)</script>' -H 'Content-Type: application/x-www-form-urlencoded' -H 'Host: 192.168.100.136' -H 'User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0) Gecko/20100101 Firefox/47.0' 'http://192.168.100.136'",
+            "matcher-status": true
+          }
+        },
+        {
+          "template": "http/technologies/apache/apache-detect.yaml",
+          "type": "http",
+          "severity": "info",
+          "title": "Apache Detection",
+          "description": "Some Apache servers have the version on the response header. The OpenSSL version can be also obtained",
+          "url": "",
+          "raw": {
+            "template": "http/technologies/apache/apache-detect.yaml",
+            "template-url": "https://cloud.projectdiscovery.io/public/apache-detect",
+            "template-id": "apache-detect",
+            "template-path": "/home/kali/.local/nuclei-templates/http/technologies/apache/apache-detect.yaml",
+            "info": {
+              "name": "Apache Detection",
+              "author": [
+                "philippedelteil"
+              ],
+              "tags": [
+                "tech",
+                "apache",
+                "discovery"
+              ],
+              "description": "Some Apache servers have the version on the response header. The OpenSSL version can be also obtained",
+              "severity": "info",
+              "metadata": {
+                "max-request": 1
+              }
+            },
+            "type": "http",
+            "host": "192.168.100.136",
+            "port": "80",
+            "scheme": "http",
+            "url": "http://192.168.100.136",
+            "matched-at": "http://192.168.100.136",
+            "extracted-results": [
+              "Apache/2.4.51 (Debian)"
+            ],
+            "request": "GET / HTTP/1.1\r\nHost: 192.168.100.136\r\nUser-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 14) AppleWebKit/620.32 (KHTML, like Gecko) Version/17.1.10 Safari/620.32\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+            "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Sun, 25 Jan 2026 20:20:24 GMT\r\nEtag: \"15c-5cf63c252ab85-gzip\"\r\nLast-Modified: Thu, 28 Oct 2021 06:24:12 GMT\r\nServer: Apache/2.4.51 (Debian)\r\nVary: Accept-Encoding\r\n\r\n<html>\n\t<head><title>Morpheus:1</title></head>\n\t<body>\n\t\tWelcome to the Boot2Root CTF, Morpheus:1.\n\t\t<p>\n\t\tYou play Trinity, trying to investigate a computer on the \n\t\tNebuchadnezzar that Cypher has locked everyone else out of, at least for ssh.\n\t\t<p>\n\t\tGood luck!\n\n\t\t- @jaybeale from @inguardians\n\t\t<p>\n\t\t<img src=\"trinity.jpeg\">\n\t</body>\n</html>\n",
+            "ip": "192.168.100.136",
+            "timestamp": "2026-01-26T01:50:25.067801539+05:30",
+            "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 14) AppleWebKit/620.32 (KHTML, like Gecko) Version/17.1.10 Safari/620.32' 'http://192.168.100.136'",
+            "matcher-status": true
+          }
+        },
+        {
+          "template": "http/misconfiguration/http-missing-security-headers.yaml",
+          "type": "http",
+          "severity": "info",
+          "title": "HTTP Missing Security Headers",
+          "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+          "url": "",
+          "raw": {
+            "template": "http/misconfiguration/http-missing-security-headers.yaml",
+            "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+            "template-id": "http-missing-security-headers",
+            "template-path": "/home/kali/.local/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+            "info": {
+              "name": "HTTP Missing Security Headers",
+              "author": [
+                "socketz",
+                "geeknik",
+                "g4l1t0",
+                "convisoappsec",
+                "kurohost",
+                "dawid-czarnecki",
+                "forgedhallpass",
+                "jub0bs",
+                "userdehghani"
+              ],
+              "tags": [
+                "misconfig",
+                "headers",
+                "generic",
+                "vuln"
+              ],
+              "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+              "severity": "info",
+              "metadata": {
+                "max-request": 1
+              }
+            },
+            "matcher-name": "cross-origin-opener-policy",
+            "type": "http",
+            "host": "192.168.100.136",
+            "port": "80",
+            "scheme": "http",
+            "url": "http://192.168.100.136",
+            "matched-at": "http://192.168.100.136",
+            "request": "GET / HTTP/1.1\r\nHost: 192.168.100.136\r\nUser-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:1.9.7.20) Gecko/ Firefox/3.8\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+            "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Sun, 25 Jan 2026 20:20:44 GMT\r\nEtag: \"15c-5cf63c252ab85-gzip\"\r\nLast-Modified: Thu, 28 Oct 2021 06:24:12 GMT\r\nServer: Apache/2.4.51 (Debian)\r\nVary: Accept-Encoding\r\n\r\n<html>\n\t<head><title>Morpheus:1</title></head>\n\t<body>\n\t\tWelcome to the Boot2Root CTF, Morpheus:1.\n\t\t<p>\n\t\tYou play Trinity, trying to investigate a computer on the \n\t\tNebuchadnezzar that Cypher has locked everyone else out of, at least for ssh.\n\t\t<p>\n\t\tGood luck!\n\n\t\t- @jaybeale from @inguardians\n\t\t<p>\n\t\t<img src=\"trinity.jpeg\">\n\t</body>\n</html>\n",
+            "ip": "192.168.100.136",
+            "timestamp": "2026-01-26T01:50:45.064792+05:30",
+            "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:1.9.7.20) Gecko/ Firefox/3.8' 'http://192.168.100.136'",
+            "matcher-status": true
+          }
+        },
+        {
+          "template": "http/misconfiguration/http-missing-security-headers.yaml",
+          "type": "http",
+          "severity": "info",
+          "title": "HTTP Missing Security Headers",
+          "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+          "url": "",
+          "raw": {
+            "template": "http/misconfiguration/http-missing-security-headers.yaml",
+            "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+            "template-id": "http-missing-security-headers",
+            "template-path": "/home/kali/.local/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+            "info": {
+              "name": "HTTP Missing Security Headers",
+              "author": [
+                "socketz",
+                "geeknik",
+                "g4l1t0",
+                "convisoappsec",
+                "kurohost",
+                "dawid-czarnecki",
+                "forgedhallpass",
+                "jub0bs",
+                "userdehghani"
+              ],
+              "tags": [
+                "misconfig",
+                "headers",
+                "generic",
+                "vuln"
+              ],
+              "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+              "severity": "info",
+              "metadata": {
+                "max-request": 1
+              }
+            },
+            "matcher-name": "strict-transport-security",
+            "type": "http",
+            "host": "192.168.100.136",
+            "port": "80",
+            "scheme": "http",
+            "url": "http://192.168.100.136",
+            "matched-at": "http://192.168.100.136",
+            "request": "GET / HTTP/1.1\r\nHost: 192.168.100.136\r\nUser-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:1.9.7.20) Gecko/ Firefox/3.8\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+            "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Sun, 25 Jan 2026 20:20:44 GMT\r\nEtag: \"15c-5cf63c252ab85-gzip\"\r\nLast-Modified: Thu, 28 Oct 2021 06:24:12 GMT\r\nServer: Apache/2.4.51 (Debian)\r\nVary: Accept-Encoding\r\n\r\n<html>\n\t<head><title>Morpheus:1</title></head>\n\t<body>\n\t\tWelcome to the Boot2Root CTF, Morpheus:1.\n\t\t<p>\n\t\tYou play Trinity, trying to investigate a computer on the \n\t\tNebuchadnezzar that Cypher has locked everyone else out of, at least for ssh.\n\t\t<p>\n\t\tGood luck!\n\n\t\t- @jaybeale from @inguardians\n\t\t<p>\n\t\t<img src=\"trinity.jpeg\">\n\t</body>\n</html>\n",
+            "ip": "192.168.100.136",
+            "timestamp": "2026-01-26T01:50:45.069384615+05:30",
+            "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:1.9.7.20) Gecko/ Firefox/3.8' 'http://192.168.100.136'",
+            "matcher-status": true
+          }
+        },
+        {
+          "template": "http/misconfiguration/http-missing-security-headers.yaml",
+          "type": "http",
+          "severity": "info",
+          "title": "HTTP Missing Security Headers",
+          "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+          "url": "",
+          "raw": {
+            "template": "http/misconfiguration/http-missing-security-headers.yaml",
+            "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+            "template-id": "http-missing-security-headers",
+            "template-path": "/home/kali/.local/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+            "info": {
+              "name": "HTTP Missing Security Headers",
+              "author": [
+                "socketz",
+                "geeknik",
+                "g4l1t0",
+                "convisoappsec",
+                "kurohost",
+                "dawid-czarnecki",
+                "forgedhallpass",
+                "jub0bs",
+                "userdehghani"
+              ],
+              "tags": [
+                "misconfig",
+                "headers",
+                "generic",
+                "vuln"
+              ],
+              "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+              "severity": "info",
+              "metadata": {
+                "max-request": 1
+              }
+            },
+            "matcher-name": "x-frame-options",
+            "type": "http",
+            "host": "192.168.100.136",
+            "port": "80",
+            "scheme": "http",
+            "url": "http://192.168.100.136",
+            "matched-at": "http://192.168.100.136",
+            "request": "GET / HTTP/1.1\r\nHost: 192.168.100.136\r\nUser-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:1.9.7.20) Gecko/ Firefox/3.8\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+            "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Sun, 25 Jan 2026 20:20:44 GMT\r\nEtag: \"15c-5cf63c252ab85-gzip\"\r\nLast-Modified: Thu, 28 Oct 2021 06:24:12 GMT\r\nServer: Apache/2.4.51 (Debian)\r\nVary: Accept-Encoding\r\n\r\n<html>\n\t<head><title>Morpheus:1</title></head>\n\t<body>\n\t\tWelcome to the Boot2Root CTF, Morpheus:1.\n\t\t<p>\n\t\tYou play Trinity, trying to investigate a computer on the \n\t\tNebuchadnezzar that Cypher has locked everyone else out of, at least for ssh.\n\t\t<p>\n\t\tGood luck!\n\n\t\t- @jaybeale from @inguardians\n\t\t<p>\n\t\t<img src=\"trinity.jpeg\">\n\t</body>\n</html>\n",
+            "ip": "192.168.100.136",
+            "timestamp": "2026-01-26T01:50:45.069433897+05:30",
+            "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:1.9.7.20) Gecko/ Firefox/3.8' 'http://192.168.100.136'",
+            "matcher-status": true
+          }
+        },
+        {
+          "template": "http/misconfiguration/http-missing-security-headers.yaml",
+          "type": "http",
+          "severity": "info",
+          "title": "HTTP Missing Security Headers",
+          "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+          "url": "",
+          "raw": {
+            "template": "http/misconfiguration/http-missing-security-headers.yaml",
+            "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+            "template-id": "http-missing-security-headers",
+            "template-path": "/home/kali/.local/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+            "info": {
+              "name": "HTTP Missing Security Headers",
+              "author": [
+                "socketz",
+                "geeknik",
+                "g4l1t0",
+                "convisoappsec",
+                "kurohost",
+                "dawid-czarnecki",
+                "forgedhallpass",
+                "jub0bs",
+                "userdehghani"
+              ],
+              "tags": [
+                "misconfig",
+                "headers",
+                "generic",
+                "vuln"
+              ],
+              "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+              "severity": "info",
+              "metadata": {
+                "max-request": 1
+              }
+            },
+            "matcher-name": "referrer-policy",
+            "type": "http",
+            "host": "192.168.100.136",
+            "port": "80",
+            "scheme": "http",
+            "url": "http://192.168.100.136",
+            "matched-at": "http://192.168.100.136",
+            "request": "GET / HTTP/1.1\r\nHost: 192.168.100.136\r\nUser-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:1.9.7.20) Gecko/ Firefox/3.8\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+            "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Sun, 25 Jan 2026 20:20:44 GMT\r\nEtag: \"15c-5cf63c252ab85-gzip\"\r\nLast-Modified: Thu, 28 Oct 2021 06:24:12 GMT\r\nServer: Apache/2.4.51 (Debian)\r\nVary: Accept-Encoding\r\n\r\n<html>\n\t<head><title>Morpheus:1</title></head>\n\t<body>\n\t\tWelcome to the Boot2Root CTF, Morpheus:1.\n\t\t<p>\n\t\tYou play Trinity, trying to investigate a computer on the \n\t\tNebuchadnezzar that Cypher has locked everyone else out of, at least for ssh.\n\t\t<p>\n\t\tGood luck!\n\n\t\t- @jaybeale from @inguardians\n\t\t<p>\n\t\t<img src=\"trinity.jpeg\">\n\t</body>\n</html>\n",
+            "ip": "192.168.100.136",
+            "timestamp": "2026-01-26T01:50:45.069448184+05:30",
+            "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:1.9.7.20) Gecko/ Firefox/3.8' 'http://192.168.100.136'",
+            "matcher-status": true
+          }
+        },
+        {
+          "template": "http/misconfiguration/http-missing-security-headers.yaml",
+          "type": "http",
+          "severity": "info",
+          "title": "HTTP Missing Security Headers",
+          "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+          "url": "",
+          "raw": {
+            "template": "http/misconfiguration/http-missing-security-headers.yaml",
+            "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+            "template-id": "http-missing-security-headers",
+            "template-path": "/home/kali/.local/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+            "info": {
+              "name": "HTTP Missing Security Headers",
+              "author": [
+                "socketz",
+                "geeknik",
+                "g4l1t0",
+                "convisoappsec",
+                "kurohost",
+                "dawid-czarnecki",
+                "forgedhallpass",
+                "jub0bs",
+                "userdehghani"
+              ],
+              "tags": [
+                "misconfig",
+                "headers",
+                "generic",
+                "vuln"
+              ],
+              "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+              "severity": "info",
+              "metadata": {
+                "max-request": 1
+              }
+            },
+            "matcher-name": "clear-site-data",
+            "type": "http",
+            "host": "192.168.100.136",
+            "port": "80",
+            "scheme": "http",
+            "url": "http://192.168.100.136",
+            "matched-at": "http://192.168.100.136",
+            "request": "GET / HTTP/1.1\r\nHost: 192.168.100.136\r\nUser-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:1.9.7.20) Gecko/ Firefox/3.8\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+            "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Sun, 25 Jan 2026 20:20:44 GMT\r\nEtag: \"15c-5cf63c252ab85-gzip\"\r\nLast-Modified: Thu, 28 Oct 2021 06:24:12 GMT\r\nServer: Apache/2.4.51 (Debian)\r\nVary: Accept-Encoding\r\n\r\n<html>\n\t<head><title>Morpheus:1</title></head>\n\t<body>\n\t\tWelcome to the Boot2Root CTF, Morpheus:1.\n\t\t<p>\n\t\tYou play Trinity, trying to investigate a computer on the \n\t\tNebuchadnezzar that Cypher has locked everyone else out of, at least for ssh.\n\t\t<p>\n\t\tGood luck!\n\n\t\t- @jaybeale from @inguardians\n\t\t<p>\n\t\t<img src=\"trinity.jpeg\">\n\t</body>\n</html>\n",
+            "ip": "192.168.100.136",
+            "timestamp": "2026-01-26T01:50:45.06946235+05:30",
+            "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:1.9.7.20) Gecko/ Firefox/3.8' 'http://192.168.100.136'",
+            "matcher-status": true
+          }
+        },
+        {
+          "template": "http/misconfiguration/http-missing-security-headers.yaml",
+          "type": "http",
+          "severity": "info",
+          "title": "HTTP Missing Security Headers",
+          "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+          "url": "",
+          "raw": {
+            "template": "http/misconfiguration/http-missing-security-headers.yaml",
+            "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+            "template-id": "http-missing-security-headers",
+            "template-path": "/home/kali/.local/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+            "info": {
+              "name": "HTTP Missing Security Headers",
+              "author": [
+                "socketz",
+                "geeknik",
+                "g4l1t0",
+                "convisoappsec",
+                "kurohost",
+                "dawid-czarnecki",
+                "forgedhallpass",
+                "jub0bs",
+                "userdehghani"
+              ],
+              "tags": [
+                "misconfig",
+                "headers",
+                "generic",
+                "vuln"
+              ],
+              "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+              "severity": "info",
+              "metadata": {
+                "max-request": 1
+              }
+            },
+            "matcher-name": "cross-origin-embedder-policy",
+            "type": "http",
+            "host": "192.168.100.136",
+            "port": "80",
+            "scheme": "http",
+            "url": "http://192.168.100.136",
+            "matched-at": "http://192.168.100.136",
+            "request": "GET / HTTP/1.1\r\nHost: 192.168.100.136\r\nUser-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:1.9.7.20) Gecko/ Firefox/3.8\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+            "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Sun, 25 Jan 2026 20:20:44 GMT\r\nEtag: \"15c-5cf63c252ab85-gzip\"\r\nLast-Modified: Thu, 28 Oct 2021 06:24:12 GMT\r\nServer: Apache/2.4.51 (Debian)\r\nVary: Accept-Encoding\r\n\r\n<html>\n\t<head><title>Morpheus:1</title></head>\n\t<body>\n\t\tWelcome to the Boot2Root CTF, Morpheus:1.\n\t\t<p>\n\t\tYou play Trinity, trying to investigate a computer on the \n\t\tNebuchadnezzar that Cypher has locked everyone else out of, at least for ssh.\n\t\t<p>\n\t\tGood luck!\n\n\t\t- @jaybeale from @inguardians\n\t\t<p>\n\t\t<img src=\"trinity.jpeg\">\n\t</body>\n</html>\n",
+            "ip": "192.168.100.136",
+            "timestamp": "2026-01-26T01:50:45.069474263+05:30",
+            "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:1.9.7.20) Gecko/ Firefox/3.8' 'http://192.168.100.136'",
+            "matcher-status": true
+          }
+        },
+        {
+          "template": "http/misconfiguration/http-missing-security-headers.yaml",
+          "type": "http",
+          "severity": "info",
+          "title": "HTTP Missing Security Headers",
+          "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+          "url": "",
+          "raw": {
+            "template": "http/misconfiguration/http-missing-security-headers.yaml",
+            "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+            "template-id": "http-missing-security-headers",
+            "template-path": "/home/kali/.local/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+            "info": {
+              "name": "HTTP Missing Security Headers",
+              "author": [
+                "socketz",
+                "geeknik",
+                "g4l1t0",
+                "convisoappsec",
+                "kurohost",
+                "dawid-czarnecki",
+                "forgedhallpass",
+                "jub0bs",
+                "userdehghani"
+              ],
+              "tags": [
+                "misconfig",
+                "headers",
+                "generic",
+                "vuln"
+              ],
+              "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+              "severity": "info",
+              "metadata": {
+                "max-request": 1
+              }
+            },
+            "matcher-name": "cross-origin-resource-policy",
+            "type": "http",
+            "host": "192.168.100.136",
+            "port": "80",
+            "scheme": "http",
+            "url": "http://192.168.100.136",
+            "matched-at": "http://192.168.100.136",
+            "request": "GET / HTTP/1.1\r\nHost: 192.168.100.136\r\nUser-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:1.9.7.20) Gecko/ Firefox/3.8\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+            "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Sun, 25 Jan 2026 20:20:44 GMT\r\nEtag: \"15c-5cf63c252ab85-gzip\"\r\nLast-Modified: Thu, 28 Oct 2021 06:24:12 GMT\r\nServer: Apache/2.4.51 (Debian)\r\nVary: Accept-Encoding\r\n\r\n<html>\n\t<head><title>Morpheus:1</title></head>\n\t<body>\n\t\tWelcome to the Boot2Root CTF, Morpheus:1.\n\t\t<p>\n\t\tYou play Trinity, trying to investigate a computer on the \n\t\tNebuchadnezzar that Cypher has locked everyone else out of, at least for ssh.\n\t\t<p>\n\t\tGood luck!\n\n\t\t- @jaybeale from @inguardians\n\t\t<p>\n\t\t<img src=\"trinity.jpeg\">\n\t</body>\n</html>\n",
+            "ip": "192.168.100.136",
+            "timestamp": "2026-01-26T01:50:45.069489521+05:30",
+            "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:1.9.7.20) Gecko/ Firefox/3.8' 'http://192.168.100.136'",
+            "matcher-status": true
+          }
+        },
+        {
+          "template": "http/misconfiguration/http-missing-security-headers.yaml",
+          "type": "http",
+          "severity": "info",
+          "title": "HTTP Missing Security Headers",
+          "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+          "url": "",
+          "raw": {
+            "template": "http/misconfiguration/http-missing-security-headers.yaml",
+            "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+            "template-id": "http-missing-security-headers",
+            "template-path": "/home/kali/.local/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+            "info": {
+              "name": "HTTP Missing Security Headers",
+              "author": [
+                "socketz",
+                "geeknik",
+                "g4l1t0",
+                "convisoappsec",
+                "kurohost",
+                "dawid-czarnecki",
+                "forgedhallpass",
+                "jub0bs",
+                "userdehghani"
+              ],
+              "tags": [
+                "misconfig",
+                "headers",
+                "generic",
+                "vuln"
+              ],
+              "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+              "severity": "info",
+              "metadata": {
+                "max-request": 1
+              }
+            },
+            "matcher-name": "content-security-policy",
+            "type": "http",
+            "host": "192.168.100.136",
+            "port": "80",
+            "scheme": "http",
+            "url": "http://192.168.100.136",
+            "matched-at": "http://192.168.100.136",
+            "request": "GET / HTTP/1.1\r\nHost: 192.168.100.136\r\nUser-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:1.9.7.20) Gecko/ Firefox/3.8\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+            "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Sun, 25 Jan 2026 20:20:44 GMT\r\nEtag: \"15c-5cf63c252ab85-gzip\"\r\nLast-Modified: Thu, 28 Oct 2021 06:24:12 GMT\r\nServer: Apache/2.4.51 (Debian)\r\nVary: Accept-Encoding\r\n\r\n<html>\n\t<head><title>Morpheus:1</title></head>\n\t<body>\n\t\tWelcome to the Boot2Root CTF, Morpheus:1.\n\t\t<p>\n\t\tYou play Trinity, trying to investigate a computer on the \n\t\tNebuchadnezzar that Cypher has locked everyone else out of, at least for ssh.\n\t\t<p>\n\t\tGood luck!\n\n\t\t- @jaybeale from @inguardians\n\t\t<p>\n\t\t<img src=\"trinity.jpeg\">\n\t</body>\n</html>\n",
+            "ip": "192.168.100.136",
+            "timestamp": "2026-01-26T01:50:45.069500001+05:30",
+            "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:1.9.7.20) Gecko/ Firefox/3.8' 'http://192.168.100.136'",
+            "matcher-status": true
+          }
+        },
+        {
+          "template": "http/misconfiguration/http-missing-security-headers.yaml",
+          "type": "http",
+          "severity": "info",
+          "title": "HTTP Missing Security Headers",
+          "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+          "url": "",
+          "raw": {
+            "template": "http/misconfiguration/http-missing-security-headers.yaml",
+            "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+            "template-id": "http-missing-security-headers",
+            "template-path": "/home/kali/.local/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+            "info": {
+              "name": "HTTP Missing Security Headers",
+              "author": [
+                "socketz",
+                "geeknik",
+                "g4l1t0",
+                "convisoappsec",
+                "kurohost",
+                "dawid-czarnecki",
+                "forgedhallpass",
+                "jub0bs",
+                "userdehghani"
+              ],
+              "tags": [
+                "misconfig",
+                "headers",
+                "generic",
+                "vuln"
+              ],
+              "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+              "severity": "info",
+              "metadata": {
+                "max-request": 1
+              }
+            },
+            "matcher-name": "permissions-policy",
+            "type": "http",
+            "host": "192.168.100.136",
+            "port": "80",
+            "scheme": "http",
+            "url": "http://192.168.100.136",
+            "matched-at": "http://192.168.100.136",
+            "request": "GET / HTTP/1.1\r\nHost: 192.168.100.136\r\nUser-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:1.9.7.20) Gecko/ Firefox/3.8\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+            "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Sun, 25 Jan 2026 20:20:44 GMT\r\nEtag: \"15c-5cf63c252ab85-gzip\"\r\nLast-Modified: Thu, 28 Oct 2021 06:24:12 GMT\r\nServer: Apache/2.4.51 (Debian)\r\nVary: Accept-Encoding\r\n\r\n<html>\n\t<head><title>Morpheus:1</title></head>\n\t<body>\n\t\tWelcome to the Boot2Root CTF, Morpheus:1.\n\t\t<p>\n\t\tYou play Trinity, trying to investigate a computer on the \n\t\tNebuchadnezzar that Cypher has locked everyone else out of, at least for ssh.\n\t\t<p>\n\t\tGood luck!\n\n\t\t- @jaybeale from @inguardians\n\t\t<p>\n\t\t<img src=\"trinity.jpeg\">\n\t</body>\n</html>\n",
+            "ip": "192.168.100.136",
+            "timestamp": "2026-01-26T01:50:45.069513426+05:30",
+            "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:1.9.7.20) Gecko/ Firefox/3.8' 'http://192.168.100.136'",
+            "matcher-status": true
+          }
+        },
+        {
+          "template": "http/misconfiguration/http-missing-security-headers.yaml",
+          "type": "http",
+          "severity": "info",
+          "title": "HTTP Missing Security Headers",
+          "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+          "url": "",
+          "raw": {
+            "template": "http/misconfiguration/http-missing-security-headers.yaml",
+            "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+            "template-id": "http-missing-security-headers",
+            "template-path": "/home/kali/.local/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+            "info": {
+              "name": "HTTP Missing Security Headers",
+              "author": [
+                "socketz",
+                "geeknik",
+                "g4l1t0",
+                "convisoappsec",
+                "kurohost",
+                "dawid-czarnecki",
+                "forgedhallpass",
+                "jub0bs",
+                "userdehghani"
+              ],
+              "tags": [
+                "misconfig",
+                "headers",
+                "generic",
+                "vuln"
+              ],
+              "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+              "severity": "info",
+              "metadata": {
+                "max-request": 1
+              }
+            },
+            "matcher-name": "x-content-type-options",
+            "type": "http",
+            "host": "192.168.100.136",
+            "port": "80",
+            "scheme": "http",
+            "url": "http://192.168.100.136",
+            "matched-at": "http://192.168.100.136",
+            "request": "GET / HTTP/1.1\r\nHost: 192.168.100.136\r\nUser-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:1.9.7.20) Gecko/ Firefox/3.8\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+            "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Sun, 25 Jan 2026 20:20:44 GMT\r\nEtag: \"15c-5cf63c252ab85-gzip\"\r\nLast-Modified: Thu, 28 Oct 2021 06:24:12 GMT\r\nServer: Apache/2.4.51 (Debian)\r\nVary: Accept-Encoding\r\n\r\n<html>\n\t<head><title>Morpheus:1</title></head>\n\t<body>\n\t\tWelcome to the Boot2Root CTF, Morpheus:1.\n\t\t<p>\n\t\tYou play Trinity, trying to investigate a computer on the \n\t\tNebuchadnezzar that Cypher has locked everyone else out of, at least for ssh.\n\t\t<p>\n\t\tGood luck!\n\n\t\t- @jaybeale from @inguardians\n\t\t<p>\n\t\t<img src=\"trinity.jpeg\">\n\t</body>\n</html>\n",
+            "ip": "192.168.100.136",
+            "timestamp": "2026-01-26T01:50:45.069527793+05:30",
+            "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:1.9.7.20) Gecko/ Firefox/3.8' 'http://192.168.100.136'",
+            "matcher-status": true
+          }
+        },
+        {
+          "template": "http/misconfiguration/http-missing-security-headers.yaml",
+          "type": "http",
+          "severity": "info",
+          "title": "HTTP Missing Security Headers",
+          "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+          "url": "",
+          "raw": {
+            "template": "http/misconfiguration/http-missing-security-headers.yaml",
+            "template-url": "https://cloud.projectdiscovery.io/public/http-missing-security-headers",
+            "template-id": "http-missing-security-headers",
+            "template-path": "/home/kali/.local/nuclei-templates/http/misconfiguration/http-missing-security-headers.yaml",
+            "info": {
+              "name": "HTTP Missing Security Headers",
+              "author": [
+                "socketz",
+                "geeknik",
+                "g4l1t0",
+                "convisoappsec",
+                "kurohost",
+                "dawid-czarnecki",
+                "forgedhallpass",
+                "jub0bs",
+                "userdehghani"
+              ],
+              "tags": [
+                "misconfig",
+                "headers",
+                "generic",
+                "vuln"
+              ],
+              "description": "This template searches for missing HTTP security headers. The impact of these missing headers can vary.\n",
+              "severity": "info",
+              "metadata": {
+                "max-request": 1
+              }
+            },
+            "matcher-name": "x-permitted-cross-domain-policies",
+            "type": "http",
+            "host": "192.168.100.136",
+            "port": "80",
+            "scheme": "http",
+            "url": "http://192.168.100.136",
+            "matched-at": "http://192.168.100.136",
+            "request": "GET / HTTP/1.1\r\nHost: 192.168.100.136\r\nUser-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:1.9.7.20) Gecko/ Firefox/3.8\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+            "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nAccept-Ranges: bytes\r\nContent-Type: text/html\r\nDate: Sun, 25 Jan 2026 20:20:44 GMT\r\nEtag: \"15c-5cf63c252ab85-gzip\"\r\nLast-Modified: Thu, 28 Oct 2021 06:24:12 GMT\r\nServer: Apache/2.4.51 (Debian)\r\nVary: Accept-Encoding\r\n\r\n<html>\n\t<head><title>Morpheus:1</title></head>\n\t<body>\n\t\tWelcome to the Boot2Root CTF, Morpheus:1.\n\t\t<p>\n\t\tYou play Trinity, trying to investigate a computer on the \n\t\tNebuchadnezzar that Cypher has locked everyone else out of, at least for ssh.\n\t\t<p>\n\t\tGood luck!\n\n\t\t- @jaybeale from @inguardians\n\t\t<p>\n\t\t<img src=\"trinity.jpeg\">\n\t</body>\n</html>\n",
+            "ip": "192.168.100.136",
+            "timestamp": "2026-01-26T01:50:45.069539064+05:30",
+            "curl-command": "curl -X 'GET' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:1.9.7.20) Gecko/ Firefox/3.8' 'http://192.168.100.136'",
+            "matcher-status": true
+          }
+        },
+        {
+          "template": "http/miscellaneous/options-method.yaml",
+          "type": "http",
+          "severity": "info",
+          "title": "Allowed Options Method",
+          "description": "",
+          "url": "",
+          "raw": {
+            "template": "http/miscellaneous/options-method.yaml",
+            "template-url": "https://cloud.projectdiscovery.io/public/options-method",
+            "template-id": "options-method",
+            "template-path": "/home/kali/.local/nuclei-templates/http/miscellaneous/options-method.yaml",
+            "info": {
+              "name": "Allowed Options Method",
+              "author": [
+                "pdteam"
+              ],
+              "tags": [
+                "miscellaneous",
+                "misc",
+                "generic",
+                "vuln"
+              ],
+              "severity": "info",
+              "metadata": {
+                "max-request": 1
+              }
+            },
+            "type": "http",
+            "host": "192.168.100.136",
+            "port": "80",
+            "scheme": "http",
+            "url": "http://192.168.100.136",
+            "matched-at": "http://192.168.100.136",
+            "extracted-results": [
+              "HEAD,GET,POST,OPTIONS"
+            ],
+            "request": "OPTIONS / HTTP/1.1\r\nHost: 192.168.100.136\r\nUser-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 Edge/16.16299\r\nConnection: close\r\nAccept: */*\r\nAccept-Language: en\r\nAccept-Encoding: gzip\r\n\r\n",
+            "response": "HTTP/1.1 200 OK\r\nConnection: close\r\nAllow: HEAD,GET,POST,OPTIONS\r\nContent-Type: text/html\r\nDate: Sun, 25 Jan 2026 20:20:45 GMT\r\nServer: Apache/2.4.51 (Debian)\r\nContent-Length: 0\r\n\r\n",
+            "ip": "192.168.100.136",
+            "timestamp": "2026-01-26T01:50:46.033563504+05:30",
+            "curl-command": "curl -X 'OPTIONS' -d '' -H 'Accept: */*' -H 'Accept-Language: en' -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 Edge/16.16299' 'http://192.168.100.136'",
+            "matcher-status": true
+          }
+        }
+      ],
+      "raw_exploits": []
+    }
+  ],
+  "summary": {
+    "total_services": 3,
+    "total_vulnerabilities": 20,
+    "total_exploits": 0
+  }
+}

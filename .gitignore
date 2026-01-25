@@ -1,0 +1,55 @@
+# Virtual environments
+venv/
+env/
+ENV/
+hit/
+.venv
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+
+# Database files (except schema examples)
+*.db
+*.sqlite
+*.sqlite3
+
+# Logs
+output/logs/
+logs/
+*.log
+
+# IDE & Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Output artifacts (regenerated on each run)
+output/scans/
+output/final.json
+output/db_report.md
+src/transformer/semantic_output.json
+
+# Environment variables
+.env
+.env.local
+*.pem
+*.key
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Temporary files
+.tmp/
+tmp/
+*.tmp

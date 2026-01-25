@@ -1,6 +1,7 @@
 import json
 import os
 
+from config import CONFIG
 from asset_resolver import create_asset
 from scan_manager import start_scan, end_scan
 from ingest_findings import ingest_finding

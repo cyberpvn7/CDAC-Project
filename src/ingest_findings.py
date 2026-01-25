@@ -1,8 +1,9 @@
 import sqlite3
 import uuid
 import json
+from config import CONFIG
 
-DB = "security_analysis.db"
+DB = CONFIG["database"]["path"]
 
 
 def ingest_finding(asset_id: str, scan_id: str, finding: dict):

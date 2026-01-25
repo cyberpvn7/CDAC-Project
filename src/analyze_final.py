@@ -3,14 +3,15 @@ import sqlite3
 import json
 import time
 from datetime import datetime
+from config import CONFIG
 
 # =========================
 # CONFIG
 # =========================
 
-DB_PATH = "security_analysis.db"
-API_KEY = "AIzaSyB57DS0-trzZOctNGMmsYwOmDh0-oRDtvg"   # <-- add your key
-MODEL_NAME = "gemini-2.5-flash-lite"
+DB_PATH = CONFIG["database"]["path"]
+API_KEY = CONFIG["gemini"]["api_key"]
+MODEL_NAME = CONFIG["gemini"]["model"]
 OUTPUT_FILE = "db_report.md"
 
 # =========================

@@ -1,8 +1,9 @@
 import sqlite3
 import uuid
 from datetime import datetime
+from config import CONFIG
 
-DB = "security_analysis.db"
+DB = CONFIG["database"]["path"]
 
 
 def start_scan(asset_id: str, tool: str) -> str:
