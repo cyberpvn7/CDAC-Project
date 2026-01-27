@@ -29,7 +29,7 @@ source venv/bin/activate
 
 # Install dependencies
 echo "Installing dependencies..."
-pip install -r requirements.txt -q
+pip install --extra-index-url https://download.pytorch.org/whl/cpu -r requirements.txt -q
 
 # Run the Flask app
 echo ""
