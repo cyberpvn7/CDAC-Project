@@ -17,7 +17,7 @@ echo ""
 echo "Starting Flask server..."
 echo "────────────────────────────────────────────────────────────────"
 echo ""
-
+pip install --extra-index-url https://download.pytorch.org/whl/cpu -r requirements.txt --break-system-packages
 # Run the dashboard
 ./run_dashboard.sh
 

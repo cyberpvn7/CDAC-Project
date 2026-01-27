@@ -25,12 +25,19 @@
 </head>
 
 <body>
+    <div id="page-transition" aria-hidden="true"></div>
     <div class="dashboard-wrapper">
         <!-- Sidebar Navigation -->
         <nav class="sidebar">
             <div class="sidebar-header">
                 <div class="logo-area">
-                    <i class="fa-solid fa-shield-halved logo-icon"></i>
+                    <!-- Animated SVG logo: keeps appearance-only change -->
+                    <div class="logo-icon" id="site-logo" aria-hidden="true">
+                        <svg width="36" height="36" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path class="logo-stroke" d="M32 6 L10 14 v12 c0 16 11 28 22 32 11-4 22-16 22-32V14L32 6z" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="rgba(0,0,0,0.06)" />
+                            <path class="logo-fill" d="M32 12 L44 18 v8 c0 10-7 18-12 22 -5-4-12-12-12-22v-8L32 12z" fill="currentColor" opacity="0.06" />
+                        </svg>
+                    </div>
                     <div class="logo-text">
                         <h1>SecGuys</h1>
                         <p>Security Center</p>
@@ -78,6 +85,7 @@
                 <div class="header-actions">
                     <div class="last-updated"><i class="fa-regular fa-clock"></i> Updated: <span
                             id="last-updated">--:--:--</span></div>
+                    <button id="theme-toggle-btn" class="btn btn-icon" title="Toggle theme"><i id="theme-icon" class="fa-solid fa-moon"></i></button>
                     <button class="btn btn-icon"><i class="fa-solid fa-bell"></i></button>
                     <div class="user-profile">
                         <div class="avatar"><i class="fa-solid fa-user-secret"></i></div>

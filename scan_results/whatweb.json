@@ -13,3 +13,20 @@
 [
 {"target":"http://192.168.100.137","http_status":200,"request_config":{"headers":{"User-Agent":"WhatWeb/0.5.5"}},"plugins":{"Apache":{"version":["2.4.18"]},"Country":{"string":["RESERVED"],"module":["ZZ"]},"HTTPServer":{"os":["Ubuntu Linux"],"string":["Apache/2.4.18 (Ubuntu)"]},"IP":{"string":["192.168.100.137"]}}}
 ]
+[
+{"target":"http://192.168.32.136","http_status":200,"request_config":{"headers":{"User-Agent":"WhatWeb/0.6.2"}},"plugins":{"Apache":{"version":["2.2.8"]},"Country":{"string":["RESERVED"],"module":["ZZ"]},"HTTPServer":{"os":["Ubuntu Linux"],"string":["Apache/2.2.8 (Ubuntu) DAV/2"]},"IP":{"string":["192.168.32.136"]},"PHP":{"version":["5.2.4-2ubuntu5.10"]},"Title":{"string":["Metasploitable2 - Linux"]},"WebDAV":{"version":["2"]},"X-Powered-By":{"string":["PHP/5.2.4-2ubuntu5.10"]}}}
+]
+[
+{"target":"http://origin7.in","http_status":301,"request_config":{"headers":{"User-Agent":"WhatWeb/0.6.2"}},"plugins":{"Country":{"string":["RESERVED"],"module":["ZZ"]},"HTTPServer":{"string":["cloudflare"]},"IP":{"string":["172.67.132.138"]},"RedirectLocation":{"string":["https://origin7.in/"]},"UncommonHeaders":{"string":["x-nf-request-id,cf-cache-status,nel,report-to,cf-ray,alt-svc"]}}}
+,
+{"target":"https://origin7.in/","http_status":200,"request_config":{"headers":{"User-Agent":"WhatWeb/0.6.2"}},"plugins":{"Country":{"string":["RESERVED"],"module":["ZZ"]},"Frame":{},"HTML5":{},"HTTPServer":{"string":["cloudflare"]},"IP":{"string":["172.67.132.138"]},"Open-Graph-Protocol":{},"Script":{},"Strict-Transport-Security":{"string":["max-age=31536000"]},"Title":{"string":["Origin7 Technologies - Digital Solutions & Consulting"]},"UncommonHeaders":{"string":["nel,cache-status,report-to,x-nf-request-id,cf-cache-status,cf-ray,alt-svc"]}}}
+]
+[
+{"target":"https://origin7.in","http_status":200,"request_config":{"headers":{"User-Agent":"WhatWeb/0.6.2"}},"plugins":{"Country":{"string":["UNITED STATES"],"module":["US"]},"Frame":{},"HTML5":{},"HTTPServer":{"string":["cloudflare"]},"IP":{"string":["104.21.4.221"]},"Open-Graph-Protocol":{},"Script":{},"Strict-Transport-Security":{"string":["max-age=31536000"]},"Title":{"string":["Origin7 Technologies - Digital Solutions & Consulting"]},"UncommonHeaders":{"string":["nel,cache-status,report-to,x-nf-request-id,cf-cache-status,cf-ray,alt-svc"]}}}
+]
+[
+{"target":"http://boss.com","http_status":200,"request_config":{"headers":{"User-Agent":"WhatWeb/0.6.2"}},"plugins":{"Apache":{"version":["2.2.8"]},"Country":{"string":["RESERVED"],"module":["ZZ"]},"HTTPServer":{"os":["Ubuntu Linux"],"string":["Apache/2.2.8 (Ubuntu) DAV/2"]},"IP":{"string":["192.168.32.136"]},"PHP":{"version":["5.2.4-2ubuntu5.10"]},"Title":{"string":["Metasploitable2 - Linux"]},"WebDAV":{"version":["2"]},"X-Powered-By":{"string":["PHP/5.2.4-2ubuntu5.10"]}}}
+]
+[
+{"target":"http://boss.com","http_status":200,"request_config":{"headers":{"User-Agent":"WhatWeb/0.6.2"}},"plugins":{"Apache":{"version":["2.2.8"]},"Country":{"string":["RESERVED"],"module":["ZZ"]},"HTTPServer":{"os":["Ubuntu Linux"],"string":["Apache/2.2.8 (Ubuntu) DAV/2"]},"IP":{"string":["192.168.32.136"]},"PHP":{"version":["5.2.4-2ubuntu5.10"]},"Title":{"string":["Metasploitable2 - Linux"]},"WebDAV":{"version":["2"]},"X-Powered-By":{"string":["PHP/5.2.4-2ubuntu5.10"]}}}
+]

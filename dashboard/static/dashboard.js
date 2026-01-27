@@ -20,9 +20,50 @@ const theme = {
     grid: 'rgba(255, 255, 255, 0.05)'
 };
 
+// Sync runtime theme colors from CSS variables so charts and inline styles match
+function syncThemeFromCSS() {
+    const s = getComputedStyle(document.documentElement);
+    theme.primary = s.getPropertyValue('--primary')?.trim() || '#3b82f6';
+    theme.critical = s.getPropertyValue('--critical')?.trim() || theme.critical;
+    theme.high = s.getPropertyValue('--high')?.trim() || theme.high;
+    theme.medium = s.getPropertyValue('--medium')?.trim() || theme.medium;
+    theme.low = s.getPropertyValue('--low')?.trim() || theme.low;
+    theme.info = s.getPropertyValue('--info')?.trim() || theme.info;
+    theme.text = s.getPropertyValue('--text-main')?.trim() || theme.text;
+    theme.textMuted = s.getPropertyValue('--text-muted')?.trim() || theme.textMuted;
+    theme.border = s.getPropertyValue('--border')?.trim() || theme.border;
+}
+
+function setTheme(name) {
+    if (name === 'light') {
+        document.documentElement.setAttribute('data-theme', 'light');
+        const icon = document.getElementById('theme-icon'); if (icon) icon.className = 'fa-solid fa-sun';
+    } else {
+        document.documentElement.removeAttribute('data-theme');
+        const icon = document.getElementById('theme-icon'); if (icon) icon.className = 'fa-solid fa-moon';
+    }
+    syncThemeFromCSS();
+}
+
+function toggleTheme() {
+    const current = document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+    const next = current === 'light' ? 'dark' : 'light';
+    setTheme(next);
+    try { localStorage.setItem('secguys-theme', next); } catch (e) { }
+}
+
+function initTheme() {
+    const saved = (localStorage.getItem('secguys-theme') || 'dark');
+    setTheme(saved);
+    // Attach toggle handler if button exists
+    const btn = document.getElementById('theme-toggle-btn');
+    if (btn) btn.addEventListener('click', toggleTheme);
+}
+
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
     initNavigation();
+    initTheme();
     loadAssetSelector();
     loadDashboardData();
     setupFilters();
@@ -31,6 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
     updateLastUpdated();
     setInterval(updateLastUpdated, 60000); // Every minute
 });
+
 
 function updateLastUpdated() {
     const now = new Date();
@@ -73,6 +115,29 @@ function switchSection(sectionId) {
     document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
     const target = document.getElementById(sectionId);
     if (target) target.classList.add('active');
+        // Page transition: brief overlay fade for a polished animated feel
+        const overlay = document.getElementById('page-transition');
+        if (overlay) overlay.classList.add('visible');
+        setTimeout(() => {
+            document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
+            const target = document.getElementById(sectionId);
+            if (target) target.classList.add('active');
+
+            // animate any charts inside the newly active section
+            if (target) {
+                const canvases = Array.from(target.querySelectorAll('canvas'));
+                canvases.forEach((c, i) => {
+                    setTimeout(() => {
+                        try { c.classList.add('chart-animate'); } catch (e) { }
+                        setTimeout(() => { try { c.classList.remove('chart-animate'); } catch (e) { } }, 1500);
+                    }, i * 90);
+                });
+                const techs = Array.from(target.querySelectorAll('.tech-item'));
+                techs.forEach((t, idx) => setTimeout(() => t.classList.add('enter'), idx * 70));
+            }
+
+            if (overlay) setTimeout(() => overlay.classList.remove('visible'), 120);
+        }, 120);
 }
 
 // Asset Context
@@ -129,7 +194,17 @@ function animateValue(id, value) {
     const obj = document.getElementById(id);
     if (!obj) return;
     obj.textContent = value;
-    // We could add a counting animation here if we wanted extra flair
+    // Add attention for critical stat
+    if (id === 'stat-critical') {
+        const card = obj.closest('.stat-card');
+        if (card) {
+            if (Number(value) > 0) {
+                card.classList.add('pulse-critical');
+            } else {
+                card.classList.remove('pulse-critical');
+            }
+        }
+    }
 }
 
 // Charts & Visuals
@@ -260,7 +335,16 @@ function renderTechGrid(techList) {
         container.appendChild(item);
     });
 
-    if (techList.length === 0) container.innerHTML = '<div style="font-size:12px; color:var(--text-muted)">No specific technologies detected</div>';
+    if (techList.length === 0) {
+        container.innerHTML = '<div style="font-size:12px; color:var(--text-muted)">No specific technologies detected</div>';
+        return;
+    }
+
+    // Staggered entrance for tech items
+    const items = Array.from(container.querySelectorAll('.tech-item'));
+    items.forEach((it, idx) => {
+        setTimeout(() => it.classList.add('enter'), idx * 80);
+    });
 }
 
 // MITRE Matrix Rendering
@@ -330,6 +414,16 @@ function renderMitreMatrix(findings) {
 }
 
 function renderChart(id, type, data, extraOptions = {}) {
+    // Ensure theme colors are up-to-date before rendering
+    syncThemeFromCSS();
+    // Configure Chart.js animation defaults for smoother, modern entrance
+    try {
+        if (window.Chart && Chart.defaults) {
+            Chart.defaults.animation = Chart.defaults.animation || {};
+            Chart.defaults.animation.duration = 900;
+            Chart.defaults.animation.easing = 'easeOutQuart';
+        }
+    } catch (e) { }
     const ctx = document.getElementById(id);
     if (!ctx) return;
 
@@ -360,6 +454,12 @@ function renderChart(id, type, data, extraOptions = {}) {
             } : {}
         }
     });
+    // animate canvas into view
+    try {
+        ctx.classList.add('chart-animate');
+        // remove class after a while in case of re-renders
+        setTimeout(() => ctx.classList.remove('chart-animate'), 1800);
+    } catch (e) { }
 }
 
 // Findings Table
@@ -650,22 +750,68 @@ function viewReport(id) {
             return;
         }
 
-        // Set Metadata
-        if (title) title.textContent = `Report: ${data.target_name}`;
+        // Set Metadata title in modal header
+        if (title) title.textContent = `Report: ${data.target_name || 'Report'}`;
 
-        // Attach Download action
+        // Attach Download action (header button)
         if (downloadBtn) {
             downloadBtn.onclick = () => window.location.href = `/api/reports/${id}/download`;
         }
 
-        const md = window.markdownit({
-            html: true,
-            linkify: true,
-            typographer: true
+        const md = window.markdownit({ html: true, linkify: true, typographer: true });
+        const mdHtml = md.render(data.content || '');
+
+        // Build an attractive report header with logo/emoji, metadata and action
+        const genAt = data.generated_at ? new Date(data.generated_at).toLocaleString() : new Date().toLocaleString();
+        const severity = data.overall_severity || data.severity || 'Mixed';
+        const type = data.scan_type || data.type || 'Full Scan';
+
+        const headerHtml = `
+            <div class="report-viewer-header">
+                <div class="report-logo levitate" aria-hidden="true">🛡️</div>
+                <div class="report-meta">
+                    <h3 class="report-title">${escapeHtml(data.target_name || 'Report')}</h3>
+                    <div class="report-sub">Generated: ${escapeHtml(genAt)}</div>
+                    <div class="report-tags"><span class="report-type-pill">${escapeHtml(type)}</span><span class="report-severity-pill">Severity: ${escapeHtml(severity)}</span></div>
+                </div>
+                <div class="report-actions-inline">
+                    <button class="btn btn-primary" id="download-report-btn-inline"><i class="fa-solid fa-download"></i> Download</button>
+                    <button class="btn btn-secondary" id="share-report-btn"><i class="fa-solid fa-share-nodes"></i> Share</button>
+                </div>
+            </div>
+        `;
+
+        // Render combined header + markdown content inside the viewer content area
+        content.innerHTML = headerHtml + `<div class="report-content-md">${mdHtml}</div>`;
+
+        // Wire inline download button
+        const inlineDl = document.getElementById('download-report-btn-inline');
+        if (inlineDl) inlineDl.addEventListener('click', () => window.location.href = `/api/reports/${id}/download`);
+
+        // Wire a simple share action (copy link)
+        const shareBtn = document.getElementById('share-report-btn');
+        if (shareBtn) shareBtn.addEventListener('click', () => {
+            try {
+                navigator.clipboard.writeText(window.location.href + `#/reports/${id}`);
+                shareBtn.textContent = 'Link Copied';
+                setTimeout(() => shareBtn.innerHTML = '<i class="fa-solid fa-share-nodes"></i> Share', 1400);
+            } catch (e) { alert('Copy not supported'); }
         });
 
-        // Simple render
-        content.innerHTML = md.render(data.content);
+        // Add small emoji decorations at the start of headings for better scanning
+        try {
+            const mdContainer = content.querySelector('.report-content-md');
+            if (mdContainer) {
+                mdContainer.querySelectorAll('h1,h2,h3').forEach((h, i) => {
+                    const emoji = document.createElement('span');
+                    emoji.className = 'report-emoji';
+                    // rotate emojis for variety
+                    const emojis = ['🔎','⚠️','💡','🧩','📌','🔒'];
+                    emoji.textContent = emojis[i % emojis.length];
+                    h.prepend(emoji);
+                });
+            }
+        } catch (e) {}
     });
 }
 

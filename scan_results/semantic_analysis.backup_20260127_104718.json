@@ -1,0 +1,2135 @@
+{
+  "export_timestamp": "2026-01-27T14:45:16.225976",
+  "scan_id": "a2cd9f8f-b5a8-48bb-a5ee-818ef63029e4",
+  "total_findings": 152,
+  "findings": [
+    {
+      "finding_id": "4ad64149-6e25-4fc2-b4f2-402c3a140004",
+      "source": "nuclei",
+      "severity": "medium",
+      "title": "vsftpd <= 3.0.2 - Access Restriction Bypass",
+      "description": "ftp service on port 21",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "b1203035-cc9c-447d-b7a9-dd07f4049427",
+      "source": "nuclei",
+      "severity": "medium",
+      "title": "vsftpd < 3.0.3 - DoS",
+      "description": "ftp service on port 21",
+      "semantic": {
+        "classification": "Denial of Service",
+        "cvss_score": 7.8,
+        "attack_capability": "Disrupt service availability",
+        "mitre_tactic": "Impact",
+        "mitre_technique": "T1499"
+      }
+    },
+    {
+      "finding_id": "0ae78763-42ef-4414-9a83-0e62f95285b1",
+      "source": "nuclei",
+      "severity": "medium",
+      "title": "FTP Service - Detect",
+      "description": "ftp service on port 21",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "d54c901b-18e4-4f78-ad84-dbafb2039a1a",
+      "source": "nuclei",
+      "severity": "medium",
+      "title": "FTP Anonymous Login",
+      "description": "ftp service on port 21",
+      "semantic": {
+        "classification": "Authentication Weakness",
+        "cvss_score": 7.5,
+        "attack_capability": "Bypass authentication mechanisms",
+        "mitre_tactic": "Credential Access",
+        "mitre_technique": "T1110"
+      }
+    },
+    {
+      "finding_id": "d70db435-0d12-4622-9d23-c223702fccdd",
+      "source": "searchsploit",
+      "severity": "high",
+      "title": "vsftpd 2.0.5 - 'CWD' (Authenticated) Remote Memory Consumption",
+      "description": "Exploit related to ftp on port 21",
+      "semantic": {
+        "classification": "Authentication Weakness",
+        "cvss_score": 7.5,
+        "attack_capability": "Bypass authentication mechanisms",
+        "mitre_tactic": "Credential Access",
+        "mitre_technique": "T1110"
+      }
+    },
+    {
+      "finding_id": "86d4f7e6-4c0e-45e0-adcd-c88c2ee5309e",
+      "source": "searchsploit",
+      "severity": "high",
+      "title": "vsftpd 2.0.5 - 'deny_file' Option Remote Denial of Service (1)",
+      "description": "Exploit related to ftp on port 21",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "9e4aae32-56be-4a9a-ab4b-b8cbfa14b574",
+      "source": "searchsploit",
+      "severity": "high",
+      "title": "vsftpd 2.0.5 - 'deny_file' Option Remote Denial of Service (2)",
+      "description": "Exploit related to ftp on port 21",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "d9708c7b-7990-4452-b98c-fd0305461b10",
+      "source": "searchsploit",
+      "severity": "high",
+      "title": "vsftpd 2.3.2 - Denial of Service",
+      "description": "Exploit related to ftp on port 21",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "2896a71f-74c4-46cd-9eed-7f2cadb76a23",
+      "source": "searchsploit",
+      "severity": "high",
+      "title": "vsftpd 2.3.4 - Backdoor Command Execution (Metasploit)",
+      "description": "Exploit related to ftp on port 21",
+      "semantic": {
+        "classification": "Remote Code Execution",
+        "cvss_score": 10.0,
+        "attack_capability": "Execute arbitrary commands remotely",
+        "mitre_tactic": "Execution",
+        "mitre_technique": "T1059"
+      }
+    },
+    {
+      "finding_id": "76e1561b-039a-4cfc-a10e-c297e39f3061",
+      "source": "searchsploit",
+      "severity": "high",
+      "title": "vsftpd 2.3.4 - Backdoor Command Execution",
+      "description": "Exploit related to ftp on port 21",
+      "semantic": {
+        "classification": "Remote Code Execution",
+        "cvss_score": 10.0,
+        "attack_capability": "Execute arbitrary commands remotely",
+        "mitre_tactic": "Execution",
+        "mitre_technique": "T1059"
+      }
+    },
+    {
+      "finding_id": "488d4285-1e98-4bbb-a47c-0efb91658865",
+      "source": "searchsploit",
+      "severity": "high",
+      "title": "vsftpd 3.0.3 - Remote Denial of Service",
+      "description": "Exploit related to ftp on port 21",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "8144f7ec-a0e7-47c1-8ca8-2efa7890fea7",
+      "source": "nuclei",
+      "severity": "medium",
+      "title": "SSH Auth Methods - Detection",
+      "description": "ssh service on port 22",
+      "semantic": {
+        "classification": "Authentication Weakness",
+        "cvss_score": 7.5,
+        "attack_capability": "Bypass authentication mechanisms",
+        "mitre_tactic": "Credential Access",
+        "mitre_technique": "T1110"
+      }
+    },
+    {
+      "finding_id": "a8d23cee-5282-4917-aeb7-60ab8b0ea152",
+      "source": "nuclei",
+      "severity": "medium",
+      "title": "SSH Password-based Authentication",
+      "description": "ssh service on port 22",
+      "semantic": {
+        "classification": "Authentication Weakness",
+        "cvss_score": 7.5,
+        "attack_capability": "Bypass authentication mechanisms",
+        "mitre_tactic": "Credential Access",
+        "mitre_technique": "T1110"
+      }
+    },
+    {
+      "finding_id": "60320a73-a6ae-4d1f-8ea9-4efd7e90127f",
+      "source": "nuclei",
+      "severity": "medium",
+      "title": "SSH Diffie-Hellman Modulus <= 1024 Bits",
+      "description": "ssh service on port 22",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "a8349359-a66b-49b1-8387-aee9f66bbd88",
+      "source": "nuclei",
+      "severity": "medium",
+      "title": "SSH Server Software Enumeration",
+      "description": "ssh service on port 22",
+      "semantic": {
+        "classification": "Information Disclosure",
+        "cvss_score": 5.6,
+        "attack_capability": "Access sensitive system information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "dcb32b43-6d32-496d-973e-b2df4572a630",
+      "source": "nuclei",
+      "severity": "medium",
+      "title": "SSH SHA-1 HMAC Algorithms Enabled",
+      "description": "ssh service on port 22",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "ef07ab5c-f09c-41e2-84ef-92822443c9d1",
+      "source": "nuclei",
+      "severity": "medium",
+      "title": "SSH Weak Algorithms Supported",
+      "description": "ssh service on port 22",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "9ad599ff-26ff-498e-826c-2549a49d1497",
+      "source": "nuclei",
+      "severity": "medium",
+      "title": "SSH Server CBC Mode Ciphers Enabled",
+      "description": "ssh service on port 22",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "df1ed6b0-e0a3-4e21-bdf5-53aaa7155d1f",
+      "source": "nuclei",
+      "severity": "medium",
+      "title": "SSH Weak Key Exchange Algorithms Enabled",
+      "description": "ssh service on port 22",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "02b1863f-fea2-493d-b9f5-ddb0aad168ce",
+      "source": "nuclei",
+      "severity": "medium",
+      "title": "SSH Weak MAC Algorithms Enabled",
+      "description": "ssh service on port 22",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "1f059f06-c961-4894-ab33-1d8bf88cb7c6",
+      "source": "nuclei",
+      "severity": "medium",
+      "title": "OpenSSH Service - Detect",
+      "description": "ssh service on port 22",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "7d216870-e0a9-4be3-a741-ebd16fdf0089",
+      "source": "nuclei",
+      "severity": "medium",
+      "title": "ESMTP - Detect",
+      "description": "smtp service on port 25",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "7062b14a-26b3-4b78-bd9e-7c7840c83b40",
+      "source": "nuclei",
+      "severity": "medium",
+      "title": "SMTP Detection",
+      "description": "smtp service on port 25",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "450e68fb-b159-490d-af6f-724a2f99415f",
+      "source": "nuclei",
+      "severity": "medium",
+      "title": "SMTP Commands Enumeration",
+      "description": "smtp service on port 25",
+      "semantic": {
+        "classification": "Information Disclosure",
+        "cvss_score": 5.6,
+        "attack_capability": "Access sensitive system information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "8d7cc7a0-9206-484e-8327-b134801df2d8",
+      "source": "nuclei",
+      "severity": "medium",
+      "title": "PHP CGI v5.3.12/5.4.2 Remote Code Execution",
+      "description": "http service on port 80",
+      "semantic": {
+        "classification": "Remote Code Execution",
+        "cvss_score": 10.0,
+        "attack_capability": "Execute arbitrary commands remotely",
+        "mitre_tactic": "Execution",
+        "mitre_technique": "T1059"
+      }
+    },
+    {
+      "finding_id": "2f67c426-2003-4a5f-9693-2788d378d288",
+      "source": "nuclei",
+      "severity": "medium",
+      "title": "phpMyAdmin Panel - Detect",
+      "description": "http service on port 80",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "78babc68-63cf-4a2e-9b4e-4a85e6671356",
+      "source": "nuclei",
+      "severity": "medium",
+      "title": "PHPinfo Page - Detect",
+      "description": "http service on port 80",
+      "semantic": {
+        "classification": "Information Disclosure",
+        "cvss_score": 5.6,
+        "attack_capability": "Access sensitive system information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "92e93fba-c9a4-44c3-a9a6-131852321a3e",
+      "source": "nuclei",
+      "severity": "medium",
+      "title": "HTTP TRACE method enabled",
+      "description": "http service on port 80",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "ac12d9a0-7c27-4976-b8e0-9b3e58445fad",
+      "source": "nuclei",
+      "severity": "medium",
+      "title": "Apache mod_negotiation - Pseudo Directory Listing",
+      "description": "http service on port 80",
+      "semantic": {
+        "classification": "Directory Traversal",
+        "cvss_score": 6.8,
+        "attack_capability": "Read arbitrary files from the system",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1083"
+      }
+    },
+    {
+      "finding_id": "272d0ca4-80fc-4013-adec-24f6ad2efc74",
+      "source": "nuclei",
+      "severity": "medium",
+      "title": "WAF Detection",
+      "description": "http service on port 80",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "61374ac9-e8b9-42a2-8171-f40024e089d2",
+      "source": "nuclei",
+      "severity": "medium",
+      "title": "Ghostcat - Apache Tomcat - AJP File Read/Inclusion Vulnerability",
+      "description": "http service on port 80",
+      "semantic": {
+        "classification": "Directory Traversal",
+        "cvss_score": 6.8,
+        "attack_capability": "Read arbitrary files from the system",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1083"
+      }
+    },
+    {
+      "finding_id": "87f92c70-d3bb-4a62-bff6-175e4f933065",
+      "source": "nuclei",
+      "severity": "medium",
+      "title": "Wappalyzer Technology Detection",
+      "description": "http service on port 80",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "470aa95b-c972-45b6-8280-39f947ca5318",
+      "source": "nuclei",
+      "severity": "medium",
+      "title": "HTTP Missing Security Headers",
+      "description": "http service on port 80",
+      "semantic": {
+        "classification": "Information Disclosure",
+        "cvss_score": 5.6,
+        "attack_capability": "Access sensitive system information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "1e4e636b-02ca-456b-8dc3-b908f58c945b",
+      "source": "nuclei",
+      "severity": "medium",
+      "title": "HTTP Missing Security Headers",
+      "description": "http service on port 80",
+      "semantic": {
+        "classification": "Information Disclosure",
+        "cvss_score": 5.6,
+        "attack_capability": "Access sensitive system information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "60e7269b-d71a-4562-8fbe-eb309ea72793",
+      "source": "nuclei",
+      "severity": "medium",
+      "title": "HTTP Missing Security Headers",
+      "description": "http service on port 80",
+      "semantic": {
+        "classification": "Information Disclosure",
+        "cvss_score": 5.6,
+        "attack_capability": "Access sensitive system information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "893387b0-9b65-461f-87e7-f414473ecbd9",
+      "source": "nuclei",
+      "severity": "medium",
+      "title": "HTTP Missing Security Headers",
+      "description": "http service on port 80",
+      "semantic": {
+        "classification": "Information Disclosure",
+        "cvss_score": 5.6,
+        "attack_capability": "Access sensitive system information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "83f9eb7e-8b9e-44b1-b1e5-529d6023f4b6",
+      "source": "nuclei",
+      "severity": "medium",
+      "title": "HTTP Missing Security Headers",
+      "description": "http service on port 80",
+      "semantic": {
+        "classification": "Information Disclosure",
+        "cvss_score": 5.6,
+        "attack_capability": "Access sensitive system information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "b3b01470-0a7b-4d66-b434-a257b7b2e2c9",
+      "source": "nuclei",
+      "severity": "medium",
+      "title": "HTTP Missing Security Headers",
+      "description": "http service on port 80",
+      "semantic": {
+        "classification": "Information Disclosure",
+        "cvss_score": 5.6,
+        "attack_capability": "Access sensitive system information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "48ec5759-db01-4cab-9a83-cfacce572cfc",
+      "source": "nuclei",
+      "severity": "medium",
+      "title": "HTTP Missing Security Headers",
+      "description": "http service on port 80",
+      "semantic": {
+        "classification": "Information Disclosure",
+        "cvss_score": 5.6,
+        "attack_capability": "Access sensitive system information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "f819ddcb-76db-49a9-aad3-3894a782de25",
+      "source": "nuclei",
+      "severity": "medium",
+      "title": "HTTP Missing Security Headers",
+      "description": "http service on port 80",
+      "semantic": {
+        "classification": "Information Disclosure",
+        "cvss_score": 5.6,
+        "attack_capability": "Access sensitive system information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "7a33196f-a34d-46fc-bf87-a43a2561e6f7",
+      "source": "nuclei",
+      "severity": "medium",
+      "title": "HTTP Missing Security Headers",
+      "description": "http service on port 80",
+      "semantic": {
+        "classification": "Information Disclosure",
+        "cvss_score": 5.6,
+        "attack_capability": "Access sensitive system information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "27722be6-6a55-4a2e-8b8e-b6c5d71dc63a",
+      "source": "nuclei",
+      "severity": "medium",
+      "title": "HTTP Missing Security Headers",
+      "description": "http service on port 80",
+      "semantic": {
+        "classification": "Information Disclosure",
+        "cvss_score": 5.6,
+        "attack_capability": "Access sensitive system information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "9d543d60-6ab6-46f0-b9be-b9920ecc0b24",
+      "source": "nuclei",
+      "severity": "medium",
+      "title": "HTTP Missing Security Headers",
+      "description": "http service on port 80",
+      "semantic": {
+        "classification": "Information Disclosure",
+        "cvss_score": 5.6,
+        "attack_capability": "Access sensitive system information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "3bbcf023-4214-43a8-b4ae-e64aeaeeba9c",
+      "source": "nuclei",
+      "severity": "medium",
+      "title": "Apache Detection",
+      "description": "http service on port 80",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "6e62ac2a-df57-4075-94df-39813723bf93",
+      "source": "nuclei",
+      "severity": "medium",
+      "title": "Apache HTTP Server End-of-Life - Detect",
+      "description": "http service on port 80",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "d9a36762-c678-4bf6-873f-64f341628109",
+      "source": "nuclei",
+      "severity": "medium",
+      "title": "PHP End-of-Life - Detect",
+      "description": "http service on port 80",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "e95af507-07e0-4b45-8d34-5f34597be25f",
+      "source": "nuclei",
+      "severity": "medium",
+      "title": "PHP Detect",
+      "description": "http service on port 80",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "3e0bdc14-52e6-43fd-be73-ceba0b74e529",
+      "source": "nuclei",
+      "severity": "medium",
+      "title": "Samba - Detection",
+      "description": "netbios-ssn service on port 445",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "57f6cfc5-c6d4-4d1f-ad4c-5fe09d5e7a5b",
+      "source": "nuclei",
+      "severity": "medium",
+      "title": "NTLM Information - Detection",
+      "description": "netbios-ssn service on port 445",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "e4ec5bef-f853-4df8-aa76-5a3a367fdc53",
+      "source": "nuclei",
+      "severity": "medium",
+      "title": "SMB v1 Supported - Detection",
+      "description": "netbios-ssn service on port 445",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "8175233f-5ea2-4fef-8fe0-5245d069c4f4",
+      "source": "nuclei",
+      "severity": "medium",
+      "title": "SMB Version - Detection",
+      "description": "netbios-ssn service on port 445",
+      "semantic": {
+        "classification": "Information Disclosure",
+        "cvss_score": 5.6,
+        "attack_capability": "Access sensitive system information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "3aad7d7f-8546-41e8-a2dc-afb14ab0c3ca",
+      "source": "searchsploit",
+      "severity": "high",
+      "title": "vsftpd 2.3.4 - Backdoor Command Execution (Metasploit)",
+      "description": "Exploit related to exec on port 512",
+      "semantic": {
+        "classification": "Remote Code Execution",
+        "cvss_score": 10.0,
+        "attack_capability": "Execute arbitrary commands remotely",
+        "mitre_tactic": "Execution",
+        "mitre_technique": "T1059"
+      }
+    },
+    {
+      "finding_id": "1fd0b26e-0fb1-460f-bd9a-98e8ce961846",
+      "source": "searchsploit",
+      "severity": "high",
+      "title": "vsftpd 2.3.4 - Backdoor Command Execution",
+      "description": "Exploit related to exec on port 512",
+      "semantic": {
+        "classification": "Remote Code Execution",
+        "cvss_score": 10.0,
+        "attack_capability": "Execute arbitrary commands remotely",
+        "mitre_tactic": "Execution",
+        "mitre_technique": "T1059"
+      }
+    },
+    {
+      "finding_id": "c50ea810-4fb5-4176-80f1-28b7f5b8a993",
+      "source": "nuclei",
+      "severity": "medium",
+      "title": "Rlogin Detect",
+      "description": "login service on port 513",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "23fe60f1-e676-49aa-aa94-e7120b9f79ea",
+      "source": "nuclei",
+      "severity": "medium",
+      "title": "NFSv3 Exposed",
+      "description": "nfs service on port 2049",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "a3ec6c0c-dcfc-429a-8fd9-c31e0b159afc",
+      "source": "searchsploit",
+      "severity": "high",
+      "title": "vsftpd 2.0.5 - 'CWD' (Authenticated) Remote Memory Consumption",
+      "description": "Exploit related to ftp on port 2121",
+      "semantic": {
+        "classification": "Authentication Weakness",
+        "cvss_score": 7.5,
+        "attack_capability": "Bypass authentication mechanisms",
+        "mitre_tactic": "Credential Access",
+        "mitre_technique": "T1110"
+      }
+    },
+    {
+      "finding_id": "8f96edeb-ebbd-4371-a1ab-2d46917aef15",
+      "source": "searchsploit",
+      "severity": "high",
+      "title": "vsftpd 2.0.5 - 'deny_file' Option Remote Denial of Service (1)",
+      "description": "Exploit related to ftp on port 2121",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "e7cd939a-a00d-4c20-977d-383f02cd0d7b",
+      "source": "searchsploit",
+      "severity": "high",
+      "title": "vsftpd 2.0.5 - 'deny_file' Option Remote Denial of Service (2)",
+      "description": "Exploit related to ftp on port 2121",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "e5cfb642-5f3c-4998-8534-e06636c395f3",
+      "source": "searchsploit",
+      "severity": "high",
+      "title": "vsftpd 2.3.2 - Denial of Service",
+      "description": "Exploit related to ftp on port 2121",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "129df089-054d-46cc-b069-b5d959157836",
+      "source": "searchsploit",
+      "severity": "high",
+      "title": "vsftpd 2.3.4 - Backdoor Command Execution (Metasploit)",
+      "description": "Exploit related to ftp on port 2121",
+      "semantic": {
+        "classification": "Remote Code Execution",
+        "cvss_score": 10.0,
+        "attack_capability": "Execute arbitrary commands remotely",
+        "mitre_tactic": "Execution",
+        "mitre_technique": "T1059"
+      }
+    },
+    {
+      "finding_id": "61d2d160-1176-496f-8751-8d43f52a026c",
+      "source": "searchsploit",
+      "severity": "high",
+      "title": "vsftpd 2.3.4 - Backdoor Command Execution",
+      "description": "Exploit related to ftp on port 2121",
+      "semantic": {
+        "classification": "Remote Code Execution",
+        "cvss_score": 10.0,
+        "attack_capability": "Execute arbitrary commands remotely",
+        "mitre_tactic": "Execution",
+        "mitre_technique": "T1059"
+      }
+    },
+    {
+      "finding_id": "cf95e2d5-066a-4d8f-b282-ef49f57d4a58",
+      "source": "searchsploit",
+      "severity": "high",
+      "title": "vsftpd 3.0.3 - Remote Denial of Service",
+      "description": "Exploit related to ftp on port 2121",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "2446505b-4d06-4141-81fe-5f134aeff1c3",
+      "source": "nuclei",
+      "severity": "medium",
+      "title": "MySQL Info - Enumeration",
+      "description": "mysql service on port 3306",
+      "semantic": {
+        "classification": "SQL Injection",
+        "cvss_score": 9.1,
+        "attack_capability": "Read or modify backend database",
+        "mitre_tactic": "Initial Access",
+        "mitre_technique": "T1190"
+      }
+    },
+    {
+      "finding_id": "cdf7e636-fd9b-4dd9-b03e-1c6568c78cda",
+      "source": "nuclei",
+      "severity": "medium",
+      "title": "Distccd v1 - Remote Code Execution",
+      "description": "distccd service on port 3632",
+      "semantic": {
+        "classification": "Remote Code Execution",
+        "cvss_score": 10.0,
+        "attack_capability": "Execute arbitrary commands remotely",
+        "mitre_tactic": "Execution",
+        "mitre_technique": "T1059"
+      }
+    },
+    {
+      "finding_id": "257ce59c-60d8-49fd-a7b8-4eccc7d8f4f2",
+      "source": "nuclei",
+      "severity": "medium",
+      "title": "PostgreSQL List Database",
+      "description": "postgresql service on port 5432",
+      "semantic": {
+        "classification": "SQL Injection",
+        "cvss_score": 9.1,
+        "attack_capability": "Read or modify backend database",
+        "mitre_tactic": "Initial Access",
+        "mitre_technique": "T1190"
+      }
+    },
+    {
+      "finding_id": "23509a61-c078-454c-ad36-4bc0b986f143",
+      "source": "nuclei",
+      "severity": "medium",
+      "title": "Postgresql Default Database - Enumeration",
+      "description": "postgresql service on port 5432",
+      "semantic": {
+        "classification": "SQL Injection",
+        "cvss_score": 9.1,
+        "attack_capability": "Read or modify backend database",
+        "mitre_tactic": "Initial Access",
+        "mitre_technique": "T1190"
+      }
+    },
+    {
+      "finding_id": "cbcd37cf-2e9d-46f6-a054-5299aa574f04",
+      "source": "nuclei",
+      "severity": "medium",
+      "title": "PostgreSQL File Read",
+      "description": "postgresql service on port 5432",
+      "semantic": {
+        "classification": "SQL Injection",
+        "cvss_score": 9.1,
+        "attack_capability": "Read or modify backend database",
+        "mitre_tactic": "Initial Access",
+        "mitre_technique": "T1190"
+      }
+    },
+    {
+      "finding_id": "95378fd9-7366-48c0-aa9c-02f9087187a3",
+      "source": "nuclei",
+      "severity": "medium",
+      "title": "Postgresql Default Database - Enumeration",
+      "description": "postgresql service on port 5432",
+      "semantic": {
+        "classification": "SQL Injection",
+        "cvss_score": 9.1,
+        "attack_capability": "Read or modify backend database",
+        "mitre_tactic": "Initial Access",
+        "mitre_technique": "T1190"
+      }
+    },
+    {
+      "finding_id": "3eb93f92-eeb3-4fa1-b0b0-f62e932cb8a8",
+      "source": "nuclei",
+      "severity": "medium",
+      "title": "Postgres - Default Logins",
+      "description": "postgresql service on port 5432",
+      "semantic": {
+        "classification": "Authentication Weakness",
+        "cvss_score": 7.5,
+        "attack_capability": "Bypass authentication mechanisms",
+        "mitre_tactic": "Credential Access",
+        "mitre_technique": "T1110"
+      }
+    },
+    {
+      "finding_id": "86e47264-e27d-4e72-81de-fe9d10359389",
+      "source": "nuclei",
+      "severity": "medium",
+      "title": "Postgresql Default Database - Enumeration",
+      "description": "postgresql service on port 5432",
+      "semantic": {
+        "classification": "SQL Injection",
+        "cvss_score": 9.1,
+        "attack_capability": "Read or modify backend database",
+        "mitre_tactic": "Initial Access",
+        "mitre_technique": "T1190"
+      }
+    },
+    {
+      "finding_id": "c93eb4b6-d22e-46a4-ab52-2b38032f8be4",
+      "source": "nuclei",
+      "severity": "medium",
+      "title": "PostgreSQL List Password Hashes",
+      "description": "postgresql service on port 5432",
+      "semantic": {
+        "classification": "SQL Injection",
+        "cvss_score": 9.1,
+        "attack_capability": "Read or modify backend database",
+        "mitre_tactic": "Initial Access",
+        "mitre_technique": "T1190"
+      }
+    },
+    {
+      "finding_id": "c2e15a59-3965-4f8f-90c7-bae74358db8d",
+      "source": "nuclei",
+      "severity": "medium",
+      "title": "PostgreSQL List Users",
+      "description": "postgresql service on port 5432",
+      "semantic": {
+        "classification": "SQL Injection",
+        "cvss_score": 9.1,
+        "attack_capability": "Read or modify backend database",
+        "mitre_tactic": "Initial Access",
+        "mitre_technique": "T1190"
+      }
+    },
+    {
+      "finding_id": "29dc4cea-81b2-400d-ab54-0f041c89ebd9",
+      "source": "nuclei",
+      "severity": "medium",
+      "title": "Postgresql Default Database - Enumeration",
+      "description": "postgresql service on port 5432",
+      "semantic": {
+        "classification": "SQL Injection",
+        "cvss_score": 9.1,
+        "attack_capability": "Read or modify backend database",
+        "mitre_tactic": "Initial Access",
+        "mitre_technique": "T1190"
+      }
+    },
+    {
+      "finding_id": "c7cd1a98-2af6-426e-ba2b-a85f74676ea4",
+      "source": "nuclei",
+      "severity": "medium",
+      "title": "Postgresql Version - Detect",
+      "description": "postgresql service on port 5432",
+      "semantic": {
+        "classification": "SQL Injection",
+        "cvss_score": 9.1,
+        "attack_capability": "Read or modify backend database",
+        "mitre_tactic": "Initial Access",
+        "mitre_technique": "T1190"
+      }
+    },
+    {
+      "finding_id": "b2fc9f40-f541-41c3-99c1-0d314f75d169",
+      "source": "nuclei",
+      "severity": "medium",
+      "title": "Postgresql Empty Password - Detect",
+      "description": "postgresql service on port 5432",
+      "semantic": {
+        "classification": "SQL Injection",
+        "cvss_score": 9.1,
+        "attack_capability": "Read or modify backend database",
+        "mitre_tactic": "Initial Access",
+        "mitre_technique": "T1190"
+      }
+    },
+    {
+      "finding_id": "e15d5634-d9aa-4e8c-8665-bc6ee66d3ddc",
+      "source": "nuclei",
+      "severity": "medium",
+      "title": "PostgreSQL Authentication - Detect",
+      "description": "postgresql service on port 5432",
+      "semantic": {
+        "classification": "SQL Injection",
+        "cvss_score": 9.1,
+        "attack_capability": "Read or modify backend database",
+        "mitre_tactic": "Initial Access",
+        "mitre_technique": "T1190"
+      }
+    },
+    {
+      "finding_id": "254b4f82-9cd6-4a65-839a-360adee84b5c",
+      "source": "nuclei",
+      "severity": "medium",
+      "title": "VNC Default Login",
+      "description": "vnc service on port 5900",
+      "semantic": {
+        "classification": "Authentication Weakness",
+        "cvss_score": 7.5,
+        "attack_capability": "Bypass authentication mechanisms",
+        "mitre_tactic": "Credential Access",
+        "mitre_technique": "T1110"
+      }
+    },
+    {
+      "finding_id": "931a55f5-79f8-4115-bb6b-48e58c499492",
+      "source": "nuclei",
+      "severity": "medium",
+      "title": "VNC Default Login",
+      "description": "vnc service on port 5900",
+      "semantic": {
+        "classification": "Authentication Weakness",
+        "cvss_score": 7.5,
+        "attack_capability": "Bypass authentication mechanisms",
+        "mitre_tactic": "Credential Access",
+        "mitre_technique": "T1110"
+      }
+    },
+    {
+      "finding_id": "f83dfe18-48df-4017-b6af-500a798d90ac",
+      "source": "nuclei",
+      "severity": "medium",
+      "title": "VNC Service Detection",
+      "description": "vnc service on port 5900",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "6e62d05d-a478-414f-bd74-903dc76a2c09",
+      "source": "nuclei",
+      "severity": "medium",
+      "title": "AJP Protocol Detection",
+      "description": "ajp13 service on port 8009",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "a603d46d-253b-441e-a6e6-594e3a5d0df6",
+      "source": "nikto",
+      "severity": "low",
+      "title": "+ Target Host: 192.168.100.136",
+      "description": "+ Target Host: 192.168.100.136",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "0a77abfa-878e-4417-853b-8c8cb2f252d3",
+      "source": "nikto",
+      "severity": "low",
+      "title": "+ Target Port: 80",
+      "description": "+ Target Port: 80",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "f7ca854c-8862-4b53-89d2-b543e1c4c2a7",
+      "source": "nikto",
+      "severity": "low",
+      "title": "+ GET /: The anti-clickjacking X-Frame-Options header is not present. See: https://developer.mozilla.org/en-US/docs/Web/",
+      "description": "+ GET /: The anti-clickjacking X-Frame-Options header is not present. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options:",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "370116a0-24df-4eb7-9bbc-c3238747a1cb",
+      "source": "nikto",
+      "severity": "low",
+      "title": "+ GET /: The X-Content-Type-Options header is not set. This could allow the user agent to render the content of the site",
+      "description": "+ GET /: The X-Content-Type-Options header is not set. This could allow the user agent to render the content of the site in a different fashion to the MIME type. See: https://www.netsparker.com/web-vulnerability-scanner/vulnerabilities/missing-content-type-header/:",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "c3599d7c-07bb-44a9-b5b7-e03e5dace15e",
+      "source": "nikto",
+      "severity": "low",
+      "title": "+ HEAD Apache/2.4.51 appears to be outdated (current is at least Apache/2.4.54). Apache 2.2.34 is the EOL for the 2.x br",
+      "description": "+ HEAD Apache/2.4.51 appears to be outdated (current is at least Apache/2.4.54). Apache 2.2.34 is the EOL for the 2.x branch.",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "50ba8828-0ce9-4a55-b8d1-31646aaffff7",
+      "source": "nikto",
+      "severity": "low",
+      "title": "+ GET /: Server may leak inodes via ETags, header found with file /, inode: 15c, size: 5cf63c252ab85, mtime: gzip. See: ",
+      "description": "+ GET /: Server may leak inodes via ETags, header found with file /, inode: 15c, size: 5cf63c252ab85, mtime: gzip. See: CVE-2003-1418:",
+      "semantic": {
+        "classification": "Information Disclosure",
+        "cvss_score": 5.6,
+        "attack_capability": "Access sensitive system information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "7acd3b06-2845-45f2-bdcb-1d391164a6da",
+      "source": "nikto",
+      "severity": "low",
+      "title": "+ OPTIONS OPTIONS: Allowed HTTP Methods: GET, POST, OPTIONS, HEAD .",
+      "description": "+ OPTIONS OPTIONS: Allowed HTTP Methods: GET, POST, OPTIONS, HEAD .",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "b1821417-6bf2-4d6e-8bc1-6589a9e91bf9",
+      "source": "nikto",
+      "severity": "low",
+      "title": "+ Target Host: 192.168.100.137",
+      "description": "+ Target Host: 192.168.100.137",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "d6792215-21d4-4bd9-afd6-493c484b3682",
+      "source": "nikto",
+      "severity": "low",
+      "title": "+ Target Port: 80",
+      "description": "+ Target Port: 80",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "59f6d7ce-2b60-4220-887e-b23b95e63736",
+      "source": "nikto",
+      "severity": "low",
+      "title": "+ GET /: The anti-clickjacking X-Frame-Options header is not present. See: https://developer.mozilla.org/en-US/docs/Web/",
+      "description": "+ GET /: The anti-clickjacking X-Frame-Options header is not present. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options:",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "e562c983-7f9d-44af-a725-51b414500633",
+      "source": "nikto",
+      "severity": "low",
+      "title": "+ GET /: The X-Content-Type-Options header is not set. This could allow the user agent to render the content of the site",
+      "description": "+ GET /: The X-Content-Type-Options header is not set. This could allow the user agent to render the content of the site in a different fashion to the MIME type. See: https://www.netsparker.com/web-vulnerability-scanner/vulnerabilities/missing-content-type-header/:",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "5e0d587b-19fa-4a3a-8cf7-712fd1e9ba72",
+      "source": "nikto",
+      "severity": "low",
+      "title": "+ HEAD Apache/2.4.18 appears to be outdated (current is at least Apache/2.4.54). Apache 2.2.34 is the EOL for the 2.x br",
+      "description": "+ HEAD Apache/2.4.18 appears to be outdated (current is at least Apache/2.4.54). Apache 2.2.34 is the EOL for the 2.x branch.",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "cedf71a5-0d9c-4927-b558-069208a31f30",
+      "source": "nikto",
+      "severity": "low",
+      "title": "+ GET /: Server may leak inodes via ETags, header found with file /, inode: b1, size: 55e1c7758dcdb, mtime: gzip. See: C",
+      "description": "+ GET /: Server may leak inodes via ETags, header found with file /, inode: b1, size: 55e1c7758dcdb, mtime: gzip. See: CVE-2003-1418:",
+      "semantic": {
+        "classification": "Information Disclosure",
+        "cvss_score": 5.6,
+        "attack_capability": "Access sensitive system information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "bd577a3b-4622-4d9f-bb5a-07e2f7badb65",
+      "source": "nikto",
+      "severity": "low",
+      "title": "+ OPTIONS OPTIONS: Allowed HTTP Methods: OPTIONS, GET, HEAD, POST .",
+      "description": "+ OPTIONS OPTIONS: Allowed HTTP Methods: OPTIONS, GET, HEAD, POST .",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "ffc29a00-9cf8-4ef5-964a-c073d6c172be",
+      "source": "nikto",
+      "severity": "low",
+      "title": "+ GET /secret/: Drupal Link header found with value: <http://vtcsec/secret/index.php/wp-json/>; rel=\"https://api.w.org/\"",
+      "description": "+ GET /secret/: Drupal Link header found with value: <http://vtcsec/secret/index.php/wp-json/>; rel=\"https://api.w.org/\". See: https://www.drupal.org/:",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "9ee13c18-688a-4af9-a985-ff6a2461733b",
+      "source": "nikto",
+      "severity": "low",
+      "title": "+ GET /secret/: This might be interesting.",
+      "description": "+ GET /secret/: This might be interesting.",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "f9e3258e-de47-47df-ab4b-9f7e84b61905",
+      "source": "nikto",
+      "severity": "low",
+      "title": "+ GET /icons/README: Apache default file found. See: https://www.vntweb.co.uk/apache-restricting-access-to-iconsreadme/:",
+      "description": "+ GET /icons/README: Apache default file found. See: https://www.vntweb.co.uk/apache-restricting-access-to-iconsreadme/:",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "0b6cba00-c4fa-4183-ae76-8dbbf9ebbf19",
+      "source": "nikto",
+      "severity": "low",
+      "title": "+ Target Host: 192.168.100.137",
+      "description": "+ Target Host: 192.168.100.137",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "ac3daa52-ccee-4d3a-8f56-43f3f1af3bfa",
+      "source": "nikto",
+      "severity": "low",
+      "title": "+ Target Port: 80",
+      "description": "+ Target Port: 80",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "010688ca-7c33-4613-8124-01ca179265ee",
+      "source": "nikto",
+      "severity": "low",
+      "title": "+ GET /: The anti-clickjacking X-Frame-Options header is not present. See: https://developer.mozilla.org/en-US/docs/Web/",
+      "description": "+ GET /: The anti-clickjacking X-Frame-Options header is not present. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options:",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "8ed1d7bb-e9d9-4c64-b5d3-d373f9009ca7",
+      "source": "nikto",
+      "severity": "low",
+      "title": "+ GET /: The X-Content-Type-Options header is not set. This could allow the user agent to render the content of the site",
+      "description": "+ GET /: The X-Content-Type-Options header is not set. This could allow the user agent to render the content of the site in a different fashion to the MIME type. See: https://www.netsparker.com/web-vulnerability-scanner/vulnerabilities/missing-content-type-header/:",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "f267bac2-2fea-4ddc-947e-d17c23c629cb",
+      "source": "nikto",
+      "severity": "low",
+      "title": "+ HEAD Apache/2.4.18 appears to be outdated (current is at least Apache/2.4.54). Apache 2.2.34 is the EOL for the 2.x br",
+      "description": "+ HEAD Apache/2.4.18 appears to be outdated (current is at least Apache/2.4.54). Apache 2.2.34 is the EOL for the 2.x branch.",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "f6678f6f-c809-4395-86e1-be00fd8eb5da",
+      "source": "nikto",
+      "severity": "low",
+      "title": "+ GET /: Server may leak inodes via ETags, header found with file /, inode: b1, size: 55e1c7758dcdb, mtime: gzip. See: C",
+      "description": "+ GET /: Server may leak inodes via ETags, header found with file /, inode: b1, size: 55e1c7758dcdb, mtime: gzip. See: CVE-2003-1418:",
+      "semantic": {
+        "classification": "Information Disclosure",
+        "cvss_score": 5.6,
+        "attack_capability": "Access sensitive system information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "9f347a09-b291-4b44-a125-abc02f485a2d",
+      "source": "nikto",
+      "severity": "low",
+      "title": "+ OPTIONS OPTIONS: Allowed HTTP Methods: OPTIONS, GET, HEAD, POST .",
+      "description": "+ OPTIONS OPTIONS: Allowed HTTP Methods: OPTIONS, GET, HEAD, POST .",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "d40dd87c-6dd1-41fc-8b45-8d1032f7b5fe",
+      "source": "nikto",
+      "severity": "low",
+      "title": "+ GET /secret/: Drupal Link header found with value: <http://vtcsec/secret/index.php/wp-json/>; rel=\"https://api.w.org/\"",
+      "description": "+ GET /secret/: Drupal Link header found with value: <http://vtcsec/secret/index.php/wp-json/>; rel=\"https://api.w.org/\". See: https://www.drupal.org/:",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "eea6376e-4d2a-4352-83d2-f587963be6d6",
+      "source": "nikto",
+      "severity": "low",
+      "title": "+ GET /secret/: This might be interesting.",
+      "description": "+ GET /secret/: This might be interesting.",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "f912cc26-0897-48eb-94bf-6a600d28b034",
+      "source": "nikto",
+      "severity": "low",
+      "title": "+ GET /icons/README: Apache default file found. See: https://www.vntweb.co.uk/apache-restricting-access-to-iconsreadme/:",
+      "description": "+ GET /icons/README: Apache default file found. See: https://www.vntweb.co.uk/apache-restricting-access-to-iconsreadme/:",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "a026ab4c-57d7-4fda-b88e-a1196f86db03",
+      "source": "nikto",
+      "severity": "low",
+      "title": "+ Target Host: 192.168.100.136",
+      "description": "+ Target Host: 192.168.100.136",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "ce52f931-5aa1-404d-85bb-2a36b4b66bf2",
+      "source": "nikto",
+      "severity": "low",
+      "title": "+ Target Port: 80",
+      "description": "+ Target Port: 80",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "48e9f293-7e81-471a-a420-5085cf3a6150",
+      "source": "nikto",
+      "severity": "low",
+      "title": "+ GET /: The anti-clickjacking X-Frame-Options header is not present. See: https://developer.mozilla.org/en-US/docs/Web/",
+      "description": "+ GET /: The anti-clickjacking X-Frame-Options header is not present. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options:",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "cf606272-5930-4e28-b650-f43f1560e8bc",
+      "source": "nikto",
+      "severity": "low",
+      "title": "+ GET /: The X-Content-Type-Options header is not set. This could allow the user agent to render the content of the site",
+      "description": "+ GET /: The X-Content-Type-Options header is not set. This could allow the user agent to render the content of the site in a different fashion to the MIME type. See: https://www.netsparker.com/web-vulnerability-scanner/vulnerabilities/missing-content-type-header/:",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "0f81461b-450f-438a-9d3a-1ff3a1cd3daf",
+      "source": "nikto",
+      "severity": "low",
+      "title": "+ GET /: Server may leak inodes via ETags, header found with file /, inode: 15c, size: 5cf63c252ab85, mtime: gzip. See: ",
+      "description": "+ GET /: Server may leak inodes via ETags, header found with file /, inode: 15c, size: 5cf63c252ab85, mtime: gzip. See: CVE-2003-1418:",
+      "semantic": {
+        "classification": "Information Disclosure",
+        "cvss_score": 5.6,
+        "attack_capability": "Access sensitive system information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "9b65d8b0-9beb-45c8-b328-d6fe9e4e64e3",
+      "source": "nikto",
+      "severity": "low",
+      "title": "+ OPTIONS OPTIONS: Allowed HTTP Methods: OPTIONS, HEAD, GET, POST .",
+      "description": "+ OPTIONS OPTIONS: Allowed HTTP Methods: OPTIONS, HEAD, GET, POST .",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "9dac8385-b139-4d13-94bf-e0734205a58d",
+      "source": "nikto",
+      "severity": "low",
+      "title": "+ Target Host: 192.168.100.137",
+      "description": "+ Target Host: 192.168.100.137",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "6abb97ae-7834-49f9-8fe6-86a60e7931af",
+      "source": "nikto",
+      "severity": "low",
+      "title": "+ Target Port: 80",
+      "description": "+ Target Port: 80",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "d95a9d12-d55f-49e3-bb4e-b40873208d4f",
+      "source": "nikto",
+      "severity": "low",
+      "title": "+ GET /: The anti-clickjacking X-Frame-Options header is not present. See: https://developer.mozilla.org/en-US/docs/Web/",
+      "description": "+ GET /: The anti-clickjacking X-Frame-Options header is not present. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options:",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "5400c51e-ff73-4913-ad36-8f47f0d42e74",
+      "source": "nikto",
+      "severity": "low",
+      "title": "+ GET /: The X-Content-Type-Options header is not set. This could allow the user agent to render the content of the site",
+      "description": "+ GET /: The X-Content-Type-Options header is not set. This could allow the user agent to render the content of the site in a different fashion to the MIME type. See: https://www.netsparker.com/web-vulnerability-scanner/vulnerabilities/missing-content-type-header/:",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "27d60b9f-95f8-482a-a4af-902cc7d73ead",
+      "source": "nikto",
+      "severity": "low",
+      "title": "+ HEAD Apache/2.4.18 appears to be outdated (current is at least Apache/2.4.54). Apache 2.2.34 is the EOL for the 2.x br",
+      "description": "+ HEAD Apache/2.4.18 appears to be outdated (current is at least Apache/2.4.54). Apache 2.2.34 is the EOL for the 2.x branch.",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "b014a444-0a72-4ea4-a43a-7670f449e75d",
+      "source": "nikto",
+      "severity": "low",
+      "title": "+ GET /: Server may leak inodes via ETags, header found with file /, inode: b1, size: 55e1c7758dcdb, mtime: gzip. See: C",
+      "description": "+ GET /: Server may leak inodes via ETags, header found with file /, inode: b1, size: 55e1c7758dcdb, mtime: gzip. See: CVE-2003-1418:",
+      "semantic": {
+        "classification": "Information Disclosure",
+        "cvss_score": 5.6,
+        "attack_capability": "Access sensitive system information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "6910e07d-6374-46fc-9ef9-5edefa49837a",
+      "source": "nikto",
+      "severity": "low",
+      "title": "+ OPTIONS OPTIONS: Allowed HTTP Methods: OPTIONS, GET, HEAD, POST .",
+      "description": "+ OPTIONS OPTIONS: Allowed HTTP Methods: OPTIONS, GET, HEAD, POST .",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "3594f8f1-a56c-41f7-9782-b2fd9363f1db",
+      "source": "nikto",
+      "severity": "low",
+      "title": "+ GET /secret/: Drupal Link header found with value: <http://vtcsec/secret/index.php/wp-json/>; rel=\"https://api.w.org/\"",
+      "description": "+ GET /secret/: Drupal Link header found with value: <http://vtcsec/secret/index.php/wp-json/>; rel=\"https://api.w.org/\". See: https://www.drupal.org/:",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "e3e33172-1aaf-4e35-a815-b63af51b5355",
+      "source": "nikto",
+      "severity": "low",
+      "title": "+ GET /secret/: This might be interesting.",
+      "description": "+ GET /secret/: This might be interesting.",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "a182b600-de0d-4eb5-a0af-0e235f1bbd08",
+      "source": "nikto",
+      "severity": "low",
+      "title": "+ GET /icons/README: Apache default file found. See: https://www.vntweb.co.uk/apache-restricting-access-to-iconsreadme/:",
+      "description": "+ GET /icons/README: Apache default file found. See: https://www.vntweb.co.uk/apache-restricting-access-to-iconsreadme/:",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "6fabc03d-ef8f-4b6a-89c0-b188e703e020",
+      "source": "nikto",
+      "severity": "low",
+      "title": "+ Target Host: 192.168.32.136",
+      "description": "+ Target Host: 192.168.32.136",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "a7b6e258-460c-4551-bab6-18967103fd9f",
+      "source": "nikto",
+      "severity": "low",
+      "title": "+ Target Port: 80",
+      "description": "+ Target Port: 80",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "f990dcfe-c8ac-4866-92aa-2633ed1500a7",
+      "source": "nikto",
+      "severity": "low",
+      "title": "+ GET /: Retrieved x-powered-by header: PHP/5.2.4-2ubuntu5.10.",
+      "description": "+ GET /: Retrieved x-powered-by header: PHP/5.2.4-2ubuntu5.10.",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "e345e909-275a-4cc4-9078-ef768a6a49e5",
+      "source": "nikto",
+      "severity": "low",
+      "title": "+ GET /: The anti-clickjacking X-Frame-Options header is not present. See: https://developer.mozilla.org/en-US/docs/Web/",
+      "description": "+ GET /: The anti-clickjacking X-Frame-Options header is not present. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options:",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "8b461d28-5976-4230-89a9-3341a10427aa",
+      "source": "nikto",
+      "severity": "low",
+      "title": "+ GET /: The X-Content-Type-Options header is not set. This could allow the user agent to render the content of the site",
+      "description": "+ GET /: The X-Content-Type-Options header is not set. This could allow the user agent to render the content of the site in a different fashion to the MIME type. See: https://www.netsparker.com/web-vulnerability-scanner/vulnerabilities/missing-content-type-header/:",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "e515eaf2-69c2-4339-bd59-b6ae1dc98795",
+      "source": "nikto",
+      "severity": "low",
+      "title": "+ HEAD Apache/2.2.8 appears to be outdated (current is at least Apache/2.4.54). Apache 2.2.34 is the EOL for the 2.x bra",
+      "description": "+ HEAD Apache/2.2.8 appears to be outdated (current is at least Apache/2.4.54). Apache 2.2.34 is the EOL for the 2.x branch.",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "307f92eb-f46d-446d-b853-76dfe705a303",
+      "source": "nikto",
+      "severity": "low",
+      "title": "+ GET /index: Uncommon header 'tcn' found, with contents: list.",
+      "description": "+ GET /index: Uncommon header 'tcn' found, with contents: list.",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "5acfe0c9-645e-430b-be72-96411d31bd0a",
+      "source": "nikto",
+      "severity": "low",
+      "title": "+ GET /index: Apache mod_negotiation is enabled with MultiViews, which allows attackers to easily brute force file names",
+      "description": "+ GET /index: Apache mod_negotiation is enabled with MultiViews, which allows attackers to easily brute force file names. The following alternatives for 'index' were found: index.php. See: http://www.wisec.it/sectou.php?id=4698ebdc59d15,https://exchange.xforce.ibmcloud.com/vulnerabilities/8275:",
+      "semantic": {
+        "classification": "Remote Code Execution",
+        "cvss_score": 10.0,
+        "attack_capability": "Execute arbitrary commands remotely",
+        "mitre_tactic": "Execution",
+        "mitre_technique": "T1059"
+      }
+    },
+    {
+      "finding_id": "b66e2716-0633-4cf3-9e60-23562e67ea7d",
+      "source": "nikto",
+      "severity": "low",
+      "title": "+ CKWUZVMF /: Web Server returns a valid response with junk HTTP methods which may cause false positives.",
+      "description": "+ CKWUZVMF /: Web Server returns a valid response with junk HTTP methods which may cause false positives.",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "7b59db96-91f6-4ac8-a7c2-a054f00bb524",
+      "source": "nikto",
+      "severity": "low",
+      "title": "+ TRACE /: HTTP TRACE method is active which suggests the host is vulnerable to XST. See: https://owasp.org/www-communit",
+      "description": "+ TRACE /: HTTP TRACE method is active which suggests the host is vulnerable to XST. See: https://owasp.org/www-community/attacks/Cross_Site_Tracing:",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "8e304769-e2fa-4d7f-88c9-3b14a073b051",
+      "source": "nikto",
+      "severity": "low",
+      "title": "+ GET /phpinfo.php: Output from the phpinfo() function was found.",
+      "description": "+ GET /phpinfo.php: Output from the phpinfo() function was found.",
+      "semantic": {
+        "classification": "Information Disclosure",
+        "cvss_score": 5.6,
+        "attack_capability": "Access sensitive system information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "40b15a62-f2d6-423a-b707-fbaf24edaf30",
+      "source": "nikto",
+      "severity": "low",
+      "title": "+ GET /doc/: Directory indexing found.",
+      "description": "+ GET /doc/: Directory indexing found.",
+      "semantic": {
+        "classification": "Directory Traversal",
+        "cvss_score": 6.8,
+        "attack_capability": "Read arbitrary files from the system",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1083"
+      }
+    },
+    {
+      "finding_id": "0a04ff51-23b4-4ecb-959b-220633113130",
+      "source": "nikto",
+      "severity": "low",
+      "title": "+ GET /doc/: The /doc/ directory is browsable. This may be /usr/doc. See: CVE-1999-0678:",
+      "description": "+ GET /doc/: The /doc/ directory is browsable. This may be /usr/doc. See: CVE-1999-0678:",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "03a05a16-b338-4862-b989-2f1f452dce4c",
+      "source": "nikto",
+      "severity": "low",
+      "title": "+ GET /?=PHPB8B5F2A0-3C92-11d3-A3A9-4C7B08C10000: PHP reveals potentially sensitive information via certain HTTP request",
+      "description": "+ GET /?=PHPB8B5F2A0-3C92-11d3-A3A9-4C7B08C10000: PHP reveals potentially sensitive information via certain HTTP requests that contain specific QUERY strings. See: OSVDB-12184:",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "1e5b149a-0298-48f8-a059-04a504b220ec",
+      "source": "nikto",
+      "severity": "low",
+      "title": "+ GET /?=PHPE9568F36-D428-11d2-A769-00AA001ACF42: PHP reveals potentially sensitive information via certain HTTP request",
+      "description": "+ GET /?=PHPE9568F36-D428-11d2-A769-00AA001ACF42: PHP reveals potentially sensitive information via certain HTTP requests that contain specific QUERY strings. See: OSVDB-12184:",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "a2f24280-31de-4840-9ae7-01b9574311be",
+      "source": "nikto",
+      "severity": "low",
+      "title": "+ GET /?=PHPE9568F34-D428-11d2-A769-00AA001ACF42: PHP reveals potentially sensitive information via certain HTTP request",
+      "description": "+ GET /?=PHPE9568F34-D428-11d2-A769-00AA001ACF42: PHP reveals potentially sensitive information via certain HTTP requests that contain specific QUERY strings. See: OSVDB-12184:",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "9a40c8d3-e960-414a-9a8c-d298ae7eb503",
+      "source": "nikto",
+      "severity": "low",
+      "title": "+ GET /?=PHPE9568F35-D428-11d2-A769-00AA001ACF42: PHP reveals potentially sensitive information via certain HTTP request",
+      "description": "+ GET /?=PHPE9568F35-D428-11d2-A769-00AA001ACF42: PHP reveals potentially sensitive information via certain HTTP requests that contain specific QUERY strings. See: OSVDB-12184:",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "e7ebe48f-4a83-4da3-a4f8-9260a7a78521",
+      "source": "nikto",
+      "severity": "low",
+      "title": "+ GET /phpMyAdmin/changelog.php: phpMyAdmin is for managing MySQL databases, and should be protected or limited to autho",
+      "description": "+ GET /phpMyAdmin/changelog.php: phpMyAdmin is for managing MySQL databases, and should be protected or limited to authorized hosts.",
+      "semantic": {
+        "classification": "SQL Injection",
+        "cvss_score": 9.1,
+        "attack_capability": "Read or modify backend database",
+        "mitre_tactic": "Initial Access",
+        "mitre_technique": "T1190"
+      }
+    },
+    {
+      "finding_id": "a77dc78a-ddbe-400f-875c-f01a94075338",
+      "source": "nikto",
+      "severity": "low",
+      "title": "+ GET /phpMyAdmin/ChangeLog: Server may leak inodes via ETags, header found with file /phpMyAdmin/ChangeLog, inode: 9246",
+      "description": "+ GET /phpMyAdmin/ChangeLog: Server may leak inodes via ETags, header found with file /phpMyAdmin/ChangeLog, inode: 92462, size: 40540, mtime: Tue Dec  9 12:24:00 2008. See: CVE-2003-1418:",
+      "semantic": {
+        "classification": "Information Disclosure",
+        "cvss_score": 5.6,
+        "attack_capability": "Access sensitive system information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "518e3a83-b9c3-4105-abac-45562bde6dd1",
+      "source": "nikto",
+      "severity": "low",
+      "title": "+ GET /phpMyAdmin/ChangeLog: phpMyAdmin is for managing MySQL databases, and should be protected or limited to authorize",
+      "description": "+ GET /phpMyAdmin/ChangeLog: phpMyAdmin is for managing MySQL databases, and should be protected or limited to authorized hosts.",
+      "semantic": {
+        "classification": "SQL Injection",
+        "cvss_score": 9.1,
+        "attack_capability": "Read or modify backend database",
+        "mitre_tactic": "Initial Access",
+        "mitre_technique": "T1190"
+      }
+    },
+    {
+      "finding_id": "6f6ac7ce-9b2e-4eef-bdc8-6091902ad889",
+      "source": "nikto",
+      "severity": "low",
+      "title": "+ GET /test/: Directory indexing found.",
+      "description": "+ GET /test/: Directory indexing found.",
+      "semantic": {
+        "classification": "Directory Traversal",
+        "cvss_score": 6.8,
+        "attack_capability": "Read arbitrary files from the system",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1083"
+      }
+    },
+    {
+      "finding_id": "9b49f789-d698-4500-86e2-dd3b038f37fb",
+      "source": "nikto",
+      "severity": "low",
+      "title": "+ GET /test/: This might be interesting.",
+      "description": "+ GET /test/: This might be interesting.",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "4fb51782-4733-4a27-9ed8-c65465491194",
+      "source": "nikto",
+      "severity": "low",
+      "title": "+ GET /phpinfo.php: PHP is installed, and a test script which runs phpinfo() was found. This gives a lot of system infor",
+      "description": "+ GET /phpinfo.php: PHP is installed, and a test script which runs phpinfo() was found. This gives a lot of system information. See: CWE-552:",
+      "semantic": {
+        "classification": "Information Disclosure",
+        "cvss_score": 5.6,
+        "attack_capability": "Access sensitive system information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "691506a7-9d2b-46a4-a02c-ab13c61b849e",
+      "source": "nikto",
+      "severity": "low",
+      "title": "+ GET /icons/: Directory indexing found.",
+      "description": "+ GET /icons/: Directory indexing found.",
+      "semantic": {
+        "classification": "Directory Traversal",
+        "cvss_score": 6.8,
+        "attack_capability": "Read arbitrary files from the system",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1083"
+      }
+    },
+    {
+      "finding_id": "cf5d7081-c47b-44b6-ac9f-88f8c7dba238",
+      "source": "nikto",
+      "severity": "low",
+      "title": "+ GET /icons/README: Apache default file found. See: https://www.vntweb.co.uk/apache-restricting-access-to-iconsreadme/:",
+      "description": "+ GET /icons/README: Apache default file found. See: https://www.vntweb.co.uk/apache-restricting-access-to-iconsreadme/:",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "ede0f801-6ab2-4262-a118-0e1b29fb28b7",
+      "source": "nikto",
+      "severity": "low",
+      "title": "+ GET /phpMyAdmin/: phpMyAdmin directory found.",
+      "description": "+ GET /phpMyAdmin/: phpMyAdmin directory found.",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "0e8fdd4d-0d63-4d77-994e-27e33a1f9d68",
+      "source": "nikto",
+      "severity": "low",
+      "title": "+ GET /phpMyAdmin/Documentation.html: phpMyAdmin is for managing MySQL databases, and should be protected or limited to ",
+      "description": "+ GET /phpMyAdmin/Documentation.html: phpMyAdmin is for managing MySQL databases, and should be protected or limited to authorized hosts.",
+      "semantic": {
+        "classification": "SQL Injection",
+        "cvss_score": 9.1,
+        "attack_capability": "Read or modify backend database",
+        "mitre_tactic": "Initial Access",
+        "mitre_technique": "T1190"
+      }
+    },
+    {
+      "finding_id": "1c7d0ee1-9649-4091-9cf9-1c40ecbca5b9",
+      "source": "nikto",
+      "severity": "low",
+      "title": "+ GET /phpMyAdmin/README: phpMyAdmin is for managing MySQL databases, and should be protected or limited to authorized h",
+      "description": "+ GET /phpMyAdmin/README: phpMyAdmin is for managing MySQL databases, and should be protected or limited to authorized hosts. See: https://typo3.org/:",
+      "semantic": {
+        "classification": "SQL Injection",
+        "cvss_score": 9.1,
+        "attack_capability": "Read or modify backend database",
+        "mitre_tactic": "Initial Access",
+        "mitre_technique": "T1190"
+      }
+    },
+    {
+      "finding_id": "cc8b762a-c34c-4b84-a642-f0f4775110d3",
+      "source": "nikto",
+      "severity": "low",
+      "title": "+ GET /#wp-config.php#: #wp-config.php# file found. This file contains the credentials.",
+      "description": "+ GET /#wp-config.php#: #wp-config.php# file found. This file contains the credentials.",
+      "semantic": {
+        "classification": "Authentication Weakness",
+        "cvss_score": 7.5,
+        "attack_capability": "Bypass authentication mechanisms",
+        "mitre_tactic": "Credential Access",
+        "mitre_technique": "T1110"
+      }
+    }
+  ]
+}
