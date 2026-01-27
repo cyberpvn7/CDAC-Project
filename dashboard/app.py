@@ -1,582 +1,865 @@
 #!/usr/bin/env python3
 """
-SecGuys Dashboard Server
-Flask API for frontend dashboard with real-time scan management and reporting
+SecGuys Security Dashboard - Backend
+Serves data from scan results and provides API endpoints for visualization
 """
 
-import sqlite3
 import json
 import os
+import sys
 import subprocess
 import threading
-import uuid
-from datetime import datetime, timedelta
+import time
+from datetime import datetime
 from pathlib import Path
-from typing import Dict, List, Any
+import sqlite3
 
 from flask import Flask, render_template, jsonify, request, send_file
 from flask_cors import CORS
-import sys
 
-# Add parent directories to path
-sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
-sys.path.insert(0, str(Path(__file__).parent.parent / "setup"))
+# Add parent directory to path to import src modules
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 
-from config import CONFIG
-
-# ===========================
-# FLASK APP SETUP
-# ===========================
-
-app = Flask(__name__, 
-    template_folder=str(Path(__file__).parent / "templates"),
-    static_folder=str(Path(__file__).parent / "static"))
+app = Flask(__name__)
 CORS(app)
 
-DB_PATH = CONFIG["database"]["path"]
-PROJECT_ROOT = Path(__file__).parent.parent
-SCAN_QUEUE = {}  # Track active scans
+# Configuration
+BASE_DIR = Path(__file__).parent.parent
+SCAN_RESULTS_DIR = BASE_DIR / 'scan_results'
+OUTPUT_DIR = BASE_DIR / 'output'
+DB_PATH = BASE_DIR / 'security_analysis.db'
 
-# ===========================
-# DATABASE HELPERS
-# ===========================
+# Globals for scan state
+current_scan_process = None
+current_scan_output = []
+scan_history = []
 
-def get_db():
-    """Get database connection"""
-    conn = sqlite3.connect(DB_PATH)
-    conn.row_factory = sqlite3.Row
-    return conn
-
-def dict_from_row(row):
-    """Convert sqlite3.Row to dict"""
-    return dict(row) if row else None
-
-# ===========================
-# ASSET ENDPOINTS
-# ===========================
-
-@app.route("/api/assets", methods=["GET"])
-def get_assets():
-    """Fetch all assets with summary statistics"""
+def load_json_file(filepath):
+    """Safely load JSON file"""
     try:
-        conn = get_db()
+        if os.path.exists(filepath):
+            with open(filepath, 'r') as f:
+                return json.load(f)
+    except Exception as e:
+        print(f"Error loading {filepath}: {e}")
+    return None
+
+def load_scan_history():
+    """Load all scan results from disk"""
+    history = []
+    
+    # Try loading final.json
+    final_json = load_json_file(OUTPUT_DIR / 'final.json')
+    if final_json:
+        history.append({
+            'id': 'final_scan',
+            'timestamp': datetime.now().isoformat(),
+            'target': final_json.get('target', 'Unknown'),
+            'type': 'Full Scan',
+            'status': 'completed',
+            'findings_count': len(final_json.get('findings', [])),
+            'tech_stack': final_json.get('tech_stack', [])
+        })
+    
+    return history
+
+@app.route('/')
+def index():
+    """Render main dashboard"""
+    return render_template('dashboard.html')
+
+@app.route('/api/dashboard-stats', methods=['GET'])
+def get_dashboard_stats():
+    """Get overall dashboard statistics"""
+    try:
+        asset_id = request.args.get('asset_id')
+        
+        stats = {
+            'total_assets': 0,
+            'total_findings': 0,
+            'critical_findings': 0,
+            'high_findings': 0,
+            'medium_findings': 0,
+            'low_findings': 0,
+            'info_findings': 0,
+            'average_risk_score': 0
+        }
+        
+        conn = sqlite3.connect(str(DB_PATH))
+        conn.row_factory = sqlite3.Row
         cur = conn.cursor()
         
-        # Get all assets with latest scan info
-        cur.execute("""
-            SELECT DISTINCT a.asset_id, a.primary_identifier, a.asset_type, a.created_at,
-                   (SELECT COUNT(*) FROM scans WHERE asset_id = a.asset_id) as total_scans,
-                   (SELECT COUNT(*) FROM findings WHERE asset_id = a.asset_id) as total_findings,
-                   (SELECT started_at FROM scans WHERE asset_id = a.asset_id ORDER BY started_at DESC LIMIT 1) as last_scan,
-                   (SELECT GROUP_CONCAT(DISTINCT type || ':' || value) FROM asset_identifiers WHERE asset_id = a.asset_id) as identifiers
-            FROM assets a
-            ORDER BY a.created_at DESC
-        """)
-        
-        assets = []
-        for row in cur.fetchall():
-            asset = dict(row)
-            
-            # Parse identifiers
-            if asset['identifiers']:
-                ident_list = asset['identifiers'].split(',')
-                asset['identifiers'] = [{'type': x.split(':')[0], 'value': x.split(':')[1]} 
-                                       for x in ident_list]
-            else:
-                asset['identifiers'] = []
-            
-            # Get severity summary
+        if asset_id:
+            # Get stats for specific asset
             cur.execute("""
-                SELECT severity, COUNT(*) as count
-                FROM findings
-                WHERE asset_id = ?
+                SELECT severity, COUNT(*) as count FROM findings 
+                WHERE asset_id = ? 
                 GROUP BY severity
-            """, (asset['asset_id'],))
+            """, (asset_id,))
+            stats['total_assets'] = 1
+        else:
+            # Get stats for all assets
+            cur.execute("SELECT COUNT(DISTINCT asset_id) as count FROM assets")
+            result = cur.fetchone()
+            stats['total_assets'] = result['count'] if result else 0
             
-            severity_summary = {}
-            for row2 in cur.fetchall():
-                severity_summary[row2['severity']] = row2['count']
+            # Get overall finding stats
+            cur.execute("""
+                SELECT severity, COUNT(*) as count FROM findings 
+                GROUP BY severity
+            """)
+        
+        severity_rows = cur.fetchall()
+        for row in severity_rows:
+            severity = row['severity'].lower()
+            count = row['count']
             
-            asset['severity_summary'] = severity_summary
-            assets.append(asset)
+            stats['total_findings'] += count
+            if severity == 'critical':
+                stats['critical_findings'] = count
+            elif severity == 'high':
+                stats['high_findings'] = count
+            elif severity == 'medium':
+                stats['medium_findings'] = count
+            elif severity == 'low':
+                stats['low_findings'] = count
+            else:
+                stats['info_findings'] = count
         
         conn.close()
-        return jsonify({"status": "success", "assets": assets})
-    
+        
+        total = sum([stats['critical_findings'], stats['high_findings'], 
+                    stats['medium_findings'], stats['low_findings']])
+        if total > 0:
+            stats['average_risk_score'] = round(
+                (stats['critical_findings'] * 10 + stats['high_findings'] * 7 + 
+                 stats['medium_findings'] * 4 + stats['low_findings'] * 1) / total, 2
+            )
+        
+        return jsonify(stats)
     except Exception as e:
-        return jsonify({"status": "error", "message": str(e)}), 500
+        print(f"Error getting dashboard stats: {e}")
+        return jsonify({'error': str(e)}), 500
 
-
-@app.route("/api/assets/<asset_id>", methods=["GET"])
-def get_asset_detail(asset_id):
-    """Fetch detailed asset information"""
+@app.route('/api/findings', methods=['GET'])
+def get_findings():
+    """Get all findings with optional filtering"""
     try:
-        conn = get_db()
+        severity = request.args.get('severity', '').lower()
+        asset_id = request.args.get('asset_id')
+        
+        conn = sqlite3.connect(str(DB_PATH))
+        conn.row_factory = sqlite3.Row
+        cur = conn.cursor()
+        
+        query = "SELECT * FROM findings WHERE 1=1"
+        params = []
+        
+        if severity:
+            query += " AND LOWER(severity) = ?"
+            params.append(severity)
+        
+        if asset_id:
+            query += " AND asset_id = ?"
+            params.append(asset_id)
+            
+        scan_id = request.args.get('scan_id')
+        if scan_id:
+            query += " AND scan_id = ?"
+            params.append(scan_id)
+        
+        query += " ORDER BY semantic_cvss DESC"
+        
+        cur.execute(query, params)
+        findings_rows = cur.fetchall()
+        
+        findings = []
+        for row in findings_rows:
+            findings.append({
+                'id': row['finding_id'],
+                'title': row['title'],
+                'severity': row['severity'],
+                'cve': row['cve'],
+                'description': row['description'],
+                'source': row['source'],
+                'semantic': {
+                    'cvss_score': row['semantic_cvss'] or 0,
+                    'mitre_tactic': row['mitre_tactic'] or 'Unknown',
+                    'mitre_technique': row['mitre_technique'] or 'Unknown'
+                }
+            })
+        
+        conn.close()
+        return jsonify({'findings': findings, 'total': len(findings)})
+    except Exception as e:
+        print(f"Error getting findings: {e}")
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/api/finding/<finding_id>', methods=['GET'])
+def get_finding_detail(finding_id):
+    """Get full details for a single finding"""
+    try:
+        conn = sqlite3.connect(str(DB_PATH))
+        conn.row_factory = sqlite3.Row
+        cur = conn.cursor()
+        
+        cur.execute("SELECT * FROM findings WHERE finding_id = ?", (finding_id,))
+        row = cur.fetchone()
+        conn.close()
+        
+        if not row:
+            return jsonify({'error': 'Finding not found'}), 404
+            
+        return jsonify({
+            'id': row['finding_id'],
+            'title': row['title'],
+            'severity': row['severity'],
+            'description': row['description'],
+            'solution': 'No automated solution available.', # Placeholder or use a real field if DB has it
+            'cve': row['cve'],
+            'cvss': row['semantic_cvss'],
+            'source': row['source'],
+            'raw': row['raw'], # Full tool output
+            'mitre': {
+                'tactic': row['mitre_tactic'],
+                'technique': row['mitre_technique']
+            }
+        })
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+# ... (Severity chart endpoint) ...
+
+# ...
+
+@app.route('/api/asset/<asset_id>/details', methods=['GET'])
+def get_asset_details(asset_id):
+    """Get detailed information about a specific asset"""
+    try:
+        conn = sqlite3.connect(str(DB_PATH))
+        conn.row_factory = sqlite3.Row
         cur = conn.cursor()
         
         # Get asset info
         cur.execute("SELECT * FROM assets WHERE asset_id = ?", (asset_id,))
-        asset = dict_from_row(cur.fetchone())
+        asset_row = cur.fetchone()
         
-        if not asset:
-            return jsonify({"status": "error", "message": "Asset not found"}), 404
+        if not asset_row:
+            conn.close()
+            return jsonify({'error': 'Asset not found'}), 404
         
-        # Get identifiers
+        details = {
+            'target': asset_row['primary_identifier'],
+            'tech_stack': [],
+            'services': [],
+            'findings': []
+        }
+        
+        # Get findings for this asset
         cur.execute("""
-            SELECT type, value FROM asset_identifiers WHERE asset_id = ?
+            SELECT 
+                finding_id, title, severity, cve, description, source,
+                semantic_cvss as cvss_score, mitre_tactic
+            FROM findings 
+            WHERE asset_id = ? 
+            ORDER BY semantic_cvss DESC
         """, (asset_id,))
-        asset['identifiers'] = [dict(row) for row in cur.fetchall()]
         
-        # Get scan history
+        findings_rows = cur.fetchall()
+        for f_row in findings_rows:
+            details['findings'].append({
+                'id': f_row['finding_id'],
+                'title': f_row['title'],
+                'severity': f_row['severity'],
+                'cve': f_row['cve'],
+                'description': f_row['description'],
+                'source': f_row['source'],
+                'semantic': {
+                    'cvss_score': f_row['cvss_score'] or 0,
+                    'mitre_tactic': f_row['mitre_tactic']
+                }
+            })
+        
+        # Extract unique services
+        cur.execute("""
+            SELECT DISTINCT source
+            FROM findings 
+            WHERE asset_id = ?
+        """, (asset_id,))
+        
+        service_rows = cur.fetchall()
+        for s_row in service_rows:
+            details['services'].append({
+                'service': s_row['source'],
+                'version': 'N/A'
+            })
+        
+        # Try to get tech stack from final.json
+        final_json = load_json_file(OUTPUT_DIR / 'final.json')
+        if final_json:
+            details['tech_stack'] = final_json.get('tech_stack', [])
+        
+        conn.close()
+        return jsonify(details)
+    except Exception as e:
+        print(f"Error getting asset details: {e}")
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/api/findings-by-severity', methods=['GET'])
+def get_findings_by_severity():
+    """Get severity distribution chart data"""
+    try:
+        asset_id = request.args.get('asset_id')
+        
+        conn = sqlite3.connect(str(DB_PATH))
+        conn.row_factory = sqlite3.Row
+        cur = conn.cursor()
+        
+        query = "SELECT severity, COUNT(*) as count FROM findings WHERE 1=1"
+        params = []
+        
+        if asset_id:
+            query += " AND asset_id = ?"
+            params.append(asset_id)
+        
+        query += " GROUP BY severity"
+        cur.execute(query, params)
+        
+        severity_count = {'critical': 0, 'high': 0, 'medium': 0, 'low': 0, 'info': 0}
+        total = 0
+        
+        for row in cur.fetchall():
+            severity = row['severity'].lower()
+            count = row['count']
+            if severity in severity_count:
+                severity_count[severity] = count
+            else:
+                severity_count['info'] = count
+            total += count
+        
+        conn.close()
+        return jsonify({'data': severity_count, 'total': total})
+    except Exception as e:
+        print(f"Error getting severity distribution: {e}")
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/api/findings-by-source', methods=['GET'])
+def get_findings_by_source():
+    """Get findings distribution by source (nuclei, exploits, nikto)"""
+    try:
+        asset_id = request.args.get('asset_id')
+        
+        conn = sqlite3.connect(str(DB_PATH))
+        conn.row_factory = sqlite3.Row
+        cur = conn.cursor()
+        
+        query = "SELECT source, COUNT(*) as count FROM findings WHERE 1=1"
+        params = []
+        
+        if asset_id:
+            query += " AND asset_id = ?"
+            params.append(asset_id)
+        
+        query += " GROUP BY source"
+        cur.execute(query, params)
+        
+        source_count = {}
+        for row in cur.fetchall():
+            source_count[row['source'] or 'unknown'] = row['count']
+        
+        conn.close()
+        return jsonify({'data': source_count})
+    except Exception as e:
+        print(f"Error getting source distribution: {e}")
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/api/top-vulnerabilities', methods=['GET'])
+def get_top_vulnerabilities():
+    """Get top 10 vulnerabilities by CVSS score"""
+    try:
+        asset_id = request.args.get('asset_id')
+        
+        conn = sqlite3.connect(str(DB_PATH))
+        conn.row_factory = sqlite3.Row
+        cur = conn.cursor()
+        
+        query = """
+            SELECT title, severity, semantic_cvss, mitre_tactic 
+            FROM findings 
+            WHERE 1=1
+        """
+        params = []
+        
+        if asset_id:
+            query += " AND asset_id = ?"
+            params.append(asset_id)
+        
+        query += " ORDER BY semantic_cvss DESC LIMIT 10"
+        cur.execute(query, params)
+        
+        result = []
+        for row in cur.fetchall():
+            result.append({
+                'title': row['title'] or 'Unknown',
+                'severity': row['severity'] or 'unknown',
+                'cvss_score': row['semantic_cvss'] or 0,
+                'mitre_tactic': row['mitre_tactic'] or 'N/A'
+            })
+        
+        conn.close()
+        return jsonify({'vulnerabilities': result})
+    except Exception as e:
+        print(f"Error getting top vulnerabilities: {e}")
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/api/mitre-tactics', methods=['GET'])
+def get_mitre_tactics():
+    """Get MITRE ATT&CK tactics distribution"""
+    try:
+        asset_id = request.args.get('asset_id')
+        
+        conn = sqlite3.connect(str(DB_PATH))
+        conn.row_factory = sqlite3.Row
+        cur = conn.cursor()
+        
+        query = """
+            SELECT mitre_tactic, COUNT(*) as count 
+            FROM findings 
+            WHERE mitre_tactic IS NOT NULL AND 1=1
+        """
+        params = []
+        
+        if asset_id:
+            query += " AND asset_id = ?"
+            params.append(asset_id)
+        
+        query += " GROUP BY mitre_tactic ORDER BY count DESC"
+        cur.execute(query, params)
+        
+        tactic_count = {}
+        for row in cur.fetchall():
+            tactic_count[row['mitre_tactic'] or 'Unknown'] = row['count']
+        
+        conn.close()
+        return jsonify({'data': tactic_count})
+    except Exception as e:
+        print(f"Error getting MITRE tactics: {e}")
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/api/assets', methods=['GET'])
+def get_assets():
+    """Get all scanned assets from database"""
+    try:
+        conn = sqlite3.connect(str(DB_PATH))
+        conn.row_factory = sqlite3.Row
+        cur = conn.cursor()
+        
+        # Query assets from database
+        cur.execute("""
+            SELECT 
+                a.asset_id,
+                a.primary_identifier as target,
+                COUNT(DISTINCT f.finding_id) as findings_count,
+                MAX(s.completed_at) as last_scan
+            FROM assets a
+            LEFT JOIN findings f ON a.asset_id = f.asset_id
+            LEFT JOIN scans s ON a.asset_id = s.asset_id
+            GROUP BY a.asset_id
+            ORDER BY s.completed_at DESC
+        """)
+        
+        assets = []
+        for row in cur.fetchall():
+            # Get tech stack from final.json for additional context
+            tech_stack = []
+            final_json = load_json_file(OUTPUT_DIR / 'final.json')
+            if final_json:
+                tech_stack = final_json.get('tech_stack', [])
+            
+            assets.append({
+                'id': row['asset_id'],
+                'target': row['target'],
+                'tech_stack': tech_stack,
+                'findings_count': row['findings_count'] or 0,
+                'last_scan': row['last_scan'] if row['last_scan'] else datetime.now().isoformat()
+            })
+        
+        conn.close()
+        return jsonify({'assets': assets})
+    except Exception as e:
+        print(f"Error getting assets: {e}")
+        return jsonify({'error': str(e), 'assets': []}), 500
+
+
+
+
+@app.route('/api/asset/<asset_id>/scans', methods=['GET'])
+def get_asset_scans(asset_id):
+    """Get scan history for a specific asset"""
+    try:
+        conn = sqlite3.connect(str(DB_PATH))
+        conn.row_factory = sqlite3.Row
+        cur = conn.cursor()
+
         cur.execute("""
             SELECT scan_id, tool, status, started_at, completed_at
             FROM scans
             WHERE asset_id = ?
             ORDER BY started_at DESC
         """, (asset_id,))
-        asset['scans'] = [dict(row) for row in cur.fetchall()]
-        
-        # Get findings summary
-        cur.execute("""
-            SELECT severity, COUNT(*) as count
-            FROM findings
-            WHERE asset_id = ?
-            GROUP BY severity
-        """, (asset_id,))
-        severity_summary = {}
+
+        scans = []
         for row in cur.fetchall():
-            severity_summary[row['severity']] = row['count']
-        asset['severity_summary'] = severity_summary
-        
-        conn.close()
-        return jsonify({"status": "success", "asset": asset})
-    
-    except Exception as e:
-        return jsonify({"status": "error", "message": str(e)}), 500
-
-
-# ===========================
-# FINDINGS ENDPOINTS
-# ===========================
-
-@app.route("/api/findings/<asset_id>", methods=["GET"])
-def get_findings(asset_id):
-    """Get findings for an asset with filters"""
-    try:
-        severity = request.args.get("severity", "").split(",") if request.args.get("severity") else []
-        classification = request.args.get("classification")
-        
-        conn = get_db()
-        cur = conn.cursor()
-        
-        query = """
-            SELECT finding_id, source, severity, title, description, cve, cwe,
-                   semantic_classification, semantic_cvss, attack_capability,
-                   mitre_tactic, mitre_technique, created_at
-            FROM findings
-            WHERE asset_id = ?
-        """
-        params = [asset_id]
-        
-        if severity:
-            placeholders = ",".join("?" * len(severity))
-            query += f" AND severity IN ({placeholders})"
-            params.extend(severity)
-        
-        if classification:
-            query += " AND semantic_classification = ?"
-            params.append(classification)
-        
-        query += " ORDER BY semantic_cvss DESC"
-        
-        cur.execute(query, params)
-        findings = [dict(row) for row in cur.fetchall()]
-        
-        conn.close()
-        return jsonify({"status": "success", "findings": findings})
-    
-    except Exception as e:
-        return jsonify({"status": "error", "message": str(e)}), 500
-
-
-@app.route("/api/findings/latest-scan/<asset_id>", methods=["GET"])
-def get_latest_findings(asset_id):
-    """Get findings from latest scan for an asset"""
-    try:
-        conn = get_db()
-        cur = conn.cursor()
-        
-        # Get latest scan
-        cur.execute("""
-            SELECT scan_id FROM scans
-            WHERE asset_id = ? AND status = 'completed'
-            ORDER BY started_at DESC
-            LIMIT 1
-        """, (asset_id,))
-        
-        scan = cur.fetchone()
-        if not scan:
-            return jsonify({"status": "success", "findings": []})
-        
-        scan_id = scan[0]
-        
-        # Get findings from this scan
-        cur.execute("""
-            SELECT finding_id, source, severity, title, description, cve, cwe,
-                   semantic_classification, semantic_cvss, attack_capability,
-                   mitre_tactic, mitre_technique
-            FROM findings
-            WHERE scan_id = ?
-            ORDER BY semantic_cvss DESC
-        """, (scan_id,))
-        
-        findings = [dict(row) for row in cur.fetchall()]
-        
-        conn.close()
-        return jsonify({"status": "success", "findings": findings})
-    
-    except Exception as e:
-        return jsonify({"status": "error", "message": str(e)}), 500
-
-
-# ===========================
-# ANALYTICS ENDPOINTS
-# ===========================
-
-@app.route("/api/analytics/severity-distribution", methods=["GET"])
-def get_severity_distribution():
-    """Get vulnerability severity distribution"""
-    try:
-        asset_id = request.args.get("asset_id")
-        
-        conn = get_db()
-        cur = conn.cursor()
-        
-        if asset_id:
-            cur.execute("""
-                SELECT severity, COUNT(*) as count
-                FROM findings
-                WHERE asset_id = ?
-                GROUP BY severity
-            """, (asset_id,))
-        else:
-            cur.execute("""
-                SELECT severity, COUNT(*) as count
-                FROM findings
-                GROUP BY severity
-            """)
-        
-        distribution = {row['severity']: row['count'] for row in cur.fetchall()}
-        
-        conn.close()
-        return jsonify({"status": "success", "distribution": distribution})
-    
-    except Exception as e:
-        return jsonify({"status": "error", "message": str(e)}), 500
-
-
-@app.route("/api/analytics/classification-breakdown", methods=["GET"])
-def get_classification_breakdown():
-    """Get findings by semantic classification"""
-    try:
-        asset_id = request.args.get("asset_id")
-        
-        conn = get_db()
-        cur = conn.cursor()
-        
-        if asset_id:
-            cur.execute("""
-                SELECT semantic_classification, COUNT(*) as count, AVG(semantic_cvss) as avg_cvss
-                FROM findings
-                WHERE asset_id = ?
-                GROUP BY semantic_classification
-                ORDER BY count DESC
-            """, (asset_id,))
-        else:
-            cur.execute("""
-                SELECT semantic_classification, COUNT(*) as count, AVG(semantic_cvss) as avg_cvss
-                FROM findings
-                GROUP BY semantic_classification
-                ORDER BY count DESC
-            """)
-        
-        classifications = []
-        for row in cur.fetchall():
-            classifications.append({
-                "classification": row['semantic_classification'],
-                "count": row['count'],
-                "avg_cvss": row['avg_cvss']
+            scans.append({
+                'scan_id': row['scan_id'],
+                'tool': row['tool'],
+                'status': row['status'],
+                'started_at': row['started_at'],
+                'completed_at': row['completed_at']
             })
-        
+
         conn.close()
-        return jsonify({"status": "success", "classifications": classifications})
-    
+        return jsonify({'scans': scans, 'total': len(scans)})
     except Exception as e:
-        return jsonify({"status": "error", "message": str(e)}), 500
+        print(f"Error getting asset scans: {e}")
+        return jsonify({'error': str(e), 'scans': []}), 500
 
 
-@app.route("/api/analytics/mitre-mapping", methods=["GET"])
-def get_mitre_mapping():
-    """Get MITRE ATT&CK techniques distribution"""
+@app.route('/api/asset/<asset_id>', methods=['DELETE'])
+def delete_asset(asset_id):
+    """Delete an asset and related data (findings, scans, reports)"""
     try:
-        asset_id = request.args.get("asset_id")
-        
-        conn = get_db()
+        conn = sqlite3.connect(str(DB_PATH))
+        conn.row_factory = sqlite3.Row
         cur = conn.cursor()
-        
-        if asset_id:
-            cur.execute("""
-                SELECT mitre_tactic, mitre_technique, COUNT(*) as count
-                FROM findings
-                WHERE asset_id = ? AND mitre_tactic IS NOT NULL
-                GROUP BY mitre_tactic, mitre_technique
-                ORDER BY count DESC
-            """, (asset_id,))
-        else:
-            cur.execute("""
-                SELECT mitre_tactic, mitre_technique, COUNT(*) as count
-                FROM findings
-                WHERE mitre_tactic IS NOT NULL
-                GROUP BY mitre_tactic, mitre_technique
-                ORDER BY count DESC
-            """)
-        
-        mitre_data = []
-        for row in cur.fetchall():
-            mitre_data.append({
-                "tactic": row['mitre_tactic'],
-                "technique": row['mitre_technique'],
-                "count": row['count']
-            })
-        
+
+        # Ensure asset exists
+        cur.execute("SELECT asset_id, primary_identifier FROM assets WHERE asset_id = ?", (asset_id,))
+        row = cur.fetchone()
+        if not row:
+            conn.close()
+            return jsonify({'error': 'Asset not found'}), 404
+
+        target_name = row['primary_identifier']
+
+        # Delete reports and remove files
+        cur.execute("SELECT report_id, report_path FROM reports WHERE asset_id = ?", (asset_id,))
+        report_rows = cur.fetchall()
+        report_paths = [r['report_path'] for r in report_rows if r['report_path']]
+
+        cur.execute("DELETE FROM reports WHERE asset_id = ?", (asset_id,))
+
+        # Delete findings
+        cur.execute("DELETE FROM findings WHERE asset_id = ?", (asset_id,))
+
+        # Delete scans
+        cur.execute("DELETE FROM scans WHERE asset_id = ?", (asset_id,))
+
+        # Delete asset
+        cur.execute("DELETE FROM assets WHERE asset_id = ?", (asset_id,))
+
+        conn.commit()
         conn.close()
-        return jsonify({"status": "success", "mitre": mitre_data})
-    
+
+        # Remove report files from disk
+        for rp in report_paths:
+            try:
+                p = Path(rp)
+                if not p.is_absolute():
+                    p = BASE_DIR / rp
+                if p.exists():
+                    p.unlink()
+                    print(f"Deleted report file: {p}")
+            except Exception as e:
+                print(f"Error deleting report file {rp}: {e}")
+
+        print(f"Deleted asset {asset_id} ({target_name}) and related data")
+        return jsonify({'status': 'deleted', 'asset_id': asset_id, 'target': target_name})
     except Exception as e:
-        return jsonify({"status": "error", "message": str(e)}), 500
+        print(f"Error deleting asset: {e}")
+        return jsonify({'error': str(e)}), 500
 
-
-@app.route("/api/analytics/source-breakdown", methods=["GET"])
-def get_source_breakdown():
-    """Get findings by scanner source"""
+@app.route('/api/report', methods=['GET'])
+def get_report():
+    """Get the full security assessment report"""
     try:
-        asset_id = request.args.get("asset_id")
-        
-        conn = get_db()
-        cur = conn.cursor()
-        
-        if asset_id:
-            cur.execute("""
-                SELECT source, COUNT(*) as count, 
-                       COUNT(CASE WHEN severity = 'critical' THEN 1 END) as critical,
-                       COUNT(CASE WHEN severity = 'high' THEN 1 END) as high
-                FROM findings
-                WHERE asset_id = ?
-                GROUP BY source
-            """, (asset_id,))
-        else:
-            cur.execute("""
-                SELECT source, COUNT(*) as count,
-                       COUNT(CASE WHEN severity = 'critical' THEN 1 END) as critical,
-                       COUNT(CASE WHEN severity = 'high' THEN 1 END) as high
-                FROM findings
-                GROUP BY source
-            """)
-        
-        sources = []
-        for row in cur.fetchall():
-            sources.append({
-                "source": row['source'],
-                "count": row['count'],
-                "critical": row['critical'],
-                "high": row['high']
-            })
-        
-        conn.close()
-        return jsonify({"status": "success", "sources": sources})
-    
+        report_path = BASE_DIR / 'db_report.md'
+        if os.path.exists(report_path):
+            with open(report_path, 'r') as f:
+                report_content = f.read()
+            return jsonify({'report': report_content})
+        return jsonify({'error': 'Report not found'}), 404
     except Exception as e:
-        return jsonify({"status": "error", "message": str(e)}), 500
+        print(f"Error getting report: {e}")
+        return jsonify({'error': str(e)}), 500
 
+def capture_scan_output(process):
+    """Capture output from a running process"""
+    global current_scan_output
+    current_scan_output = []
+    
+    while process.poll() is None:
+        output = process.stdout.readline()
+        if output:
+            line = output.decode('utf-8').strip()
+            if line:
+                current_scan_output.append({
+                    'timestamp': datetime.now().isoformat(),
+                    'message': line
+                })
+                print(line)
+        time.sleep(0.1)
+    
+    # Capture any remaining output
+    remaining = process.stdout.read().decode('utf-8')
+    if remaining:
+        for line in remaining.split('\n'):
+            if line.strip():
+                current_scan_output.append({
+                    'timestamp': datetime.now().isoformat(),
+                    'message': line.strip()
+                })
 
-# ===========================
-# SCAN ENDPOINTS
-# ===========================
-
-@app.route("/api/scans/new", methods=["POST"])
-def start_new_scan():
-    """Start a new scan on a target"""
+@app.route('/api/scan/start', methods=['POST'])
+def start_scan():
+    """Start a new security scan"""
+    global current_scan_process, current_scan_output
+    
     try:
         data = request.json
-        target = data.get("target")
+        target = data.get('target')
         
         if not target:
-            return jsonify({"status": "error", "message": "Target required"}), 400
+            return jsonify({'error': 'Target is required'}), 400
         
-        # Queue scan as background job
-        scan_id = str(uuid.uuid4())
-        SCAN_QUEUE[scan_id] = {"status": "queued", "target": target, "created_at": datetime.now().isoformat()}
+        if current_scan_process and current_scan_process.poll() is None:
+            return jsonify({'error': 'A scan is already in progress'}), 400
         
-        # Start scan in background thread
-        thread = threading.Thread(target=_run_scan, args=(target, scan_id))
-        thread.daemon = True
-        thread.start()
+        # Start the main scanner script
+        main_script = BASE_DIR / 'main.py'
+        current_scan_output = []
         
-        return jsonify({"status": "success", "scan_id": scan_id})
-    
-    except Exception as e:
-        return jsonify({"status": "error", "message": str(e)}), 500
-
-
-@app.route("/api/scans/<scan_id>/status", methods=["GET"])
-def get_scan_status(scan_id):
-    """Get scan status"""
-    try:
-        if scan_id in SCAN_QUEUE:
-            return jsonify({"status": "success", "scan": SCAN_QUEUE[scan_id]})
-        else:
-            return jsonify({"status": "error", "message": "Scan not found"}), 404
-    
-    except Exception as e:
-        return jsonify({"status": "error", "message": str(e)}), 500
-
-
-def _run_scan(target, scan_id):
-    """Background task: run security scan"""
-    try:
-        SCAN_QUEUE[scan_id]["status"] = "running"
-        SCAN_QUEUE[scan_id]["started_at"] = datetime.now().isoformat()
-        
-        # Run main.py scan
-        result = subprocess.run(
-            [sys.executable, str(PROJECT_ROOT / "main.py"), target],
-            capture_output=True,
-            text=True,
-            timeout=3600
+        current_scan_process = subprocess.Popen(
+            ['python3', str(main_script), target],
+            stdout=subprocess.PIPE,
+            stderr=subprocess.STDOUT,
+            cwd=str(BASE_DIR)
         )
         
-        if result.returncode == 0:
-            SCAN_QUEUE[scan_id]["status"] = "completed"
-        else:
-            SCAN_QUEUE[scan_id]["status"] = "failed"
-            SCAN_QUEUE[scan_id]["error"] = result.stderr
+        # Start capturing output in a separate thread
+        output_thread = threading.Thread(target=capture_scan_output, args=(current_scan_process,))
+        output_thread.daemon = True
+        output_thread.start()
         
-        SCAN_QUEUE[scan_id]["completed_at"] = datetime.now().isoformat()
-    
+        return jsonify({
+            'status': 'started',
+            'target': target,
+            'pid': current_scan_process.pid
+        })
     except Exception as e:
-        SCAN_QUEUE[scan_id]["status"] = "failed"
-        SCAN_QUEUE[scan_id]["error"] = str(e)
-        SCAN_QUEUE[scan_id]["completed_at"] = datetime.now().isoformat()
+        print(f"Error starting scan: {e}")
+        return jsonify({'error': str(e)}), 500
 
-
-# ===========================
-# REPORT ENDPOINTS
-# ===========================
-
-@app.route("/api/reports/latest/<asset_id>", methods=["GET"])
-def get_latest_report(asset_id):
-    """Get latest AI-generated report for asset"""
+@app.route('/api/scan/status', methods=['GET'])
+def get_scan_status():
+    """Get current scan status"""
+    global current_scan_process, current_scan_output
+    
     try:
-        conn = get_db()
+        if not current_scan_process:
+            return jsonify({'status': 'idle', 'output': []})
+        
+        poll_result = current_scan_process.poll()
+        
+        if poll_result is None:
+            status = 'running'
+        elif poll_result == 0:
+            status = 'completed'
+        else:
+            status = 'failed'
+        
+        return jsonify({
+            'status': status,
+            'output': current_scan_output[-50:],  # Last 50 lines
+            'output_count': len(current_scan_output),
+            'exit_code': poll_result
+        })
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/api/scan/stop', methods=['POST'])
+def stop_scan():
+    """Stop the current scan"""
+    global current_scan_process
+    
+    try:
+        if current_scan_process and current_scan_process.poll() is None:
+            current_scan_process.terminate()
+            time.sleep(1)
+            if current_scan_process.poll() is None:
+                current_scan_process.kill()
+            return jsonify({'status': 'stopped'})
+        return jsonify({'status': 'no_scan_running'})
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+# ===========================
+# REPORTS API ENDPOINTS
+# ===========================
+
+@app.route('/api/reports', methods=['GET'])
+def get_reports():
+    """Get all generated reports with metadata"""
+    try:
+        conn = sqlite3.connect(str(DB_PATH))
+        conn.row_factory = sqlite3.Row
         cur = conn.cursor()
         
-        # Get latest scan's findings for summary
         cur.execute("""
-            SELECT s.scan_id, s.started_at
-            FROM scans s
-            WHERE s.asset_id = ? AND s.status = 'completed'
-            ORDER BY s.started_at DESC
-            LIMIT 1
-        """, (asset_id,))
+            SELECT 
+                report_id,
+                target_name,
+                generated_at,
+                report_path,
+                report_type,
+                status
+            FROM reports
+            ORDER BY generated_at DESC
+        """)
         
-        scan = cur.fetchone()
-        if not scan:
-            return jsonify({"status": "error", "message": "No completed scans"}), 404
-        
-        scan_id = scan[0]
-        
-        # Get findings summary
-        cur.execute("""
-            SELECT severity, COUNT(*) as count
-            FROM findings
-            WHERE scan_id = ?
-            GROUP BY severity
-        """, (scan_id,))
-        
-        severity_summary = {row['severity']: row['count'] for row in cur.fetchall()}
-        
-        # Get top findings
-        cur.execute("""
-            SELECT title, description, semantic_classification, semantic_cvss, cve
-            FROM findings
-            WHERE scan_id = ?
-            ORDER BY semantic_cvss DESC
-            LIMIT 20
-        """, (scan_id,))
-        
-        findings = [dict(row) for row in cur.fetchall()]
-        
-        # Get asset info
-        cur.execute("""
-            SELECT a.*, GROUP_CONCAT(DISTINCT ai.value) as identifiers
-            FROM assets a
-            LEFT JOIN asset_identifiers ai ON a.asset_id = ai.asset_id
-            WHERE a.asset_id = ?
-            GROUP BY a.asset_id
-        """, (asset_id,))
-        
-        asset = dict(cur.fetchone())
+        reports = []
+        for row in cur.fetchall():
+            reports.append({
+                'id': row['report_id'],
+                'target_name': row['target_name'],
+                'generated_at': row['generated_at'],
+                'report_path': row['report_path'],
+                'report_type': row['report_type'],
+                'status': row['status']
+            })
         
         conn.close()
-        
-        # Build report
-        report = {
-            "asset": asset,
-            "scan_date": scan[1],
-            "severity_summary": severity_summary,
-            "total_findings": len(findings),
-            "top_findings": findings
-        }
-        
-        return jsonify({"status": "success", "report": report})
-    
+        return jsonify({'reports': reports, 'total': len(reports)})
     except Exception as e:
-        return jsonify({"status": "error", "message": str(e)}), 500
+        print(f"Error getting reports: {e}")
+        return jsonify({'error': str(e), 'reports': [], 'total': 0}), 500
 
-
-# ===========================
-# STATIC PAGES
-# ===========================
-
-@app.route("/")
-def index():
-    """Serve dashboard index"""
-    return render_template("index.html")
-
-
-@app.route("/asset/<asset_id>")
-def asset_detail(asset_id):
-    """Serve asset detail page"""
-    return render_template("asset.html", asset_id=asset_id)
-
-
-# ===========================
-# HEALTH CHECK
-# ===========================
-
-@app.route("/api/health", methods=["GET"])
-def health_check():
-    """Health check endpoint"""
+@app.route('/api/reports/<int:report_id>', methods=['GET'])
+def get_report_content(report_id):
+    """Get specific report content"""
     try:
-        conn = get_db()
+        conn = sqlite3.connect(str(DB_PATH))
+        conn.row_factory = sqlite3.Row
+        cur = conn.cursor()
+        
+        cur.execute("""
+            SELECT report_path, target_name, generated_at
+            FROM reports
+            WHERE report_id = ?
+        """, (report_id,))
+        
+        row = cur.fetchone()
         conn.close()
-        return jsonify({"status": "healthy"})
-    except:
-        return jsonify({"status": "unhealthy"}), 500
+        
+        if not row:
+            return jsonify({'error': 'Report not found'}), 404
+        
+        report_path = Path(row['report_path'])
+        if not report_path.exists():
+            return jsonify({'error': 'Report file not found'}), 404
+        
+        with open(report_path, 'r') as f:
+            content = f.read()
+        
+        return jsonify({
+            'id': report_id,
+            'target_name': row['target_name'],
+            'generated_at': row['generated_at'],
+            'content': content
+        })
+    except Exception as e:
+        print(f"Error getting report content: {e}")
+        return jsonify({'error': str(e)}), 500
 
+@app.route('/api/reports/<int:report_id>/download', methods=['GET'])
+def download_report(report_id):
+    """Download report as file"""
+    try:
+        conn = sqlite3.connect(str(DB_PATH))
+        conn.row_factory = sqlite3.Row
+        cur = conn.cursor()
+        
+        cur.execute("""
+            SELECT report_path, target_name, generated_at
+            FROM reports
+            WHERE report_id = ?
+        """, (report_id,))
+        
+        row = cur.fetchone()
+        conn.close()
+        
+        if not row:
+            return jsonify({'error': 'Report not found'}), 404
+        
+        report_path = Path(row['report_path'])
+        if not report_path.exists():
+            return jsonify({'error': 'Report file not found'}), 404
+        
+        return send_file(
+            report_path,
+            as_attachment=True,
+            download_name=report_path.name,
+            mimetype='text/markdown'
+        )
+    except Exception as e:
+        print(f"Error downloading report: {e}")
+        return jsonify({'error': str(e)}), 500
 
-if __name__ == "__main__":
-    print("🚀 SecGuys Dashboard Server Starting...")
-    print(f"📊 Database: {DB_PATH}")
-    print(f"📁 Project Root: {PROJECT_ROOT}")
-    app.run(debug=True, host="0.0.0.0", port=5000)
+@app.route('/api/reports/<int:report_id>', methods=['DELETE'])
+def delete_report(report_id):
+    """Delete a report"""
+    try:
+        conn = sqlite3.connect(str(DB_PATH))
+        conn.row_factory = sqlite3.Row
+        cur = conn.cursor()
+        
+        cur.execute("""
+            SELECT report_path
+            FROM reports
+            WHERE report_id = ?
+        """, (report_id,))
+        
+        row = cur.fetchone()
+        if not row:
+            conn.close()
+            return jsonify({'error': 'Report not found'}), 404
+        
+        report_path = Path(row['report_path'])
+        
+        # Delete from database
+        cur.execute("DELETE FROM reports WHERE report_id = ?", (report_id,))
+        conn.commit()
+        conn.close()
+        
+        # Delete file if exists
+        if report_path.exists():
+            report_path.unlink()
+            print(f"Deleted report file: {report_path}")
+        
+        return jsonify({'status': 'deleted', 'message': f'Report {report_id} deleted'})
+    except Exception as e:
+        print(f"Error deleting report: {e}")
+        return jsonify({'error': str(e)}), 500
+
+@app.errorhandler(404)
+def not_found(error):
+    return jsonify({'error': 'Not found'}), 404
+
+@app.errorhandler(500)
+def server_error(error):
+    return jsonify({'error': 'Server error'}), 500
+
+if __name__ == '__main__':
+    print("Starting SecGuys Dashboard on http://localhost:5000")
+    print("Press Ctrl+C to stop")
+    app.run(debug=False, host='0.0.0.0', port=5000, threaded=True)

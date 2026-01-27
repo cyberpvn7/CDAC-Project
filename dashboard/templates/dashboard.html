@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SecGuys Security Dashboard</title>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- DevIcons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/markdown-it@13/dist/markdown-it.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+
+<body>
+    <div class="dashboard-wrapper">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo-area">
+                    <i class="fa-solid fa-shield-halved logo-icon"></i>
+                    <div class="logo-text">
+                        <h1>SecGuys</h1>
+                        <p>Security Center</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="asset-context">
+                <label><i class="fa-solid fa-crosshairs"></i> Current Target</label>
+                <select id="sidebar-asset-selector" class="context-select">
+                    <option value="">All Assets</option>
+                </select>
+            </div>
+
+            <ul class="nav-menu">
+                <li class="nav-category">Main</li>
+                <li><a href="#" class="nav-link active" data-section="overview"><i class="fa-solid fa-gauge-high"></i>
+                        Dashboard</a></li>
+                <li><a href="#" class="nav-link" data-section="findings"><i class="fa-solid fa-list-check"></i>
+                        Findings</a></li>
+
+                <li class="nav-category">Operations</li>
+                <li><a href="#" class="nav-link" data-section="scan"><i class="fa-solid fa-radar"></i> New Scan</a></li>
+                <li><a href="#" class="nav-link" data-section="assets"><i class="fa-solid fa-server"></i> Assets</a>
+                </li>
+                <li><a href="#" class="nav-link" data-section="reports"><i class="fa-solid fa-file-contract"></i>
+                        Reports</a></li>
+            </ul>
+
+            <div class="sidebar-footer">
+                <div class="system-status">
+                    <span class="indicator online"></span> System Operations Normal
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="top-bar">
+                <div class="page-header">
+                    <h2 class="page-title" id="page-title">Dashboard Overview</h2>
+                    <p class="page-subtitle" id="page-subtitle">Security posture at a glance</p>
+                </div>
+                <div class="header-actions">
+                    <div class="last-updated"><i class="fa-regular fa-clock"></i> Updated: <span
+                            id="last-updated">--:--:--</span></div>
+                    <button class="btn btn-icon"><i class="fa-solid fa-bell"></i></button>
+                    <div class="user-profile">
+                        <div class="avatar"><i class="fa-solid fa-user-secret"></i></div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="content-wrapper">
+                <!-- Overview Section -->
+                <section id="overview" class="content-section active">
+                    <!-- Key Metrics -->
+                    <div class="stats-grid">
+                        <div class="stat-card critical-card">
+                            <div class="stat-icon"><i class="fa-solid fa-radiation"></i></div>
+                            <div class="stat-info">
+                                <div class="stat-value" id="stat-critical">0</div>
+                                <div class="stat-label">Critical Issues</div>
+                            </div>
+                        </div>
+                        <div class="stat-card high-card">
+                            <div class="stat-icon"><i class="fa-solid fa-bolt"></i></div>
+                            <div class="stat-info">
+                                <div class="stat-value" id="stat-high">0</div>
+                                <div class="stat-label">High Priority</div>
+                            </div>
+                        </div>
+                        <div class="stat-card medium-card">
+                            <div class="stat-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
+                            <div class="stat-info">
+                                <div class="stat-value" id="stat-medium">0</div>
+                                <div class="stat-label">Medium Risk</div>
+                            </div>
+                        </div>
+                        <div class="stat-card info-card">
+                            <div class="stat-icon"><i class="fa-solid fa-circle-info"></i></div>
+                            <div class="stat-info">
+                                <div class="stat-value" id="stat-low">0</div>
+                                <div class="stat-label">Low / Info</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tech Stack & Attack Surface -->
+                    <div class="grid-3-col">
+                        <div class="card full-height">
+                            <div class="card-header">
+                                <h3><i class="fa-solid fa-layer-group"></i> Detected Tech Stack</h3>
+                            </div>
+                            <div class="card-body">
+                                <div id="tech-stack-container" class="tech-stack-grid">
+                                    <div class="loading-sm">Scanning...</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card chart-card span-2">
+                            <div class="card-header">
+                                <h3><i class="fa-solid fa-shield-virus"></i> Top Vulnerabilities</h3>
+                            </div>
+                            <div class="card-body">
+                                <canvas id="topVulnsChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Charts Row 1 -->
+                    <div class="grid-2-col">
+                        <div class="card chart-card">
+                            <div class="card-header">
+                                <h3><i class="fa-solid fa-chart-pie"></i> Severity Distribution</h3>
+                            </div>
+                            <div class="card-body">
+                                <canvas id="severityChart"></canvas>
+                            </div>
+                        </div>
+                        <div class="card chart-card">
+                            <div class="card-header">
+                                <h3><i class="fa-solid fa-chart-line"></i> Risk Trend</h3>
+                            </div>
+                            <div class="card-body">
+                                <canvas id="riskChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- Advanced Visuals: MITRE Matrix -->
+                    <div class="card full-width">
+                        <div class="card-header">
+                            <h3><i class="fa-solid fa-chess-knight"></i> MITRE ATT&CK Matrix</h3>
+                            <span class="badge badge-low">Tactics Coverage</span>
+                        </div>
+                        <div class="card-body">
+                            <div id="mitre-matrix" class="mitre-grid">
+                                <!-- Populated by JS -->
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Findings Section (New) -->
+                <section id="findings" class="content-section">
+                    <div class="card">
+                        <div class="card-header flex-center">
+                            <h3>Vulnerability Findings</h3>
+                            <div class="filters">
+                                <select id="findings-severity-filter" class="table-filter">
+                                    <option value="all">All Severities</option>
+                                    <option value="critical">Critical</option>
+                                    <option value="high">High</option>
+                                    <option value="medium">Medium</option>
+                                    <option value="low">Low</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="card-body p-0">
+                            <div class="table-responsive">
+                                <table class="data-table" id="findings-table">
+                                    <thead>
+                                        <tr>
+                                            <th data-sort="severity">Severity <i class="fa-solid fa-sort"></i></th>
+                                            <th data-sort="title">Title <i class="fa-solid fa-sort"></i></th>
+                                            <th data-sort="source">Source <i class="fa-solid fa-sort"></i></th>
+                                            <th data-sort="cvss">CVSS <i class="fa-solid fa-sort"></i></th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="findings-table-body">
+                                        <!-- Populated by JS -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Scan Section -->
+                <section id="scan" class="content-section">
+                    <div class="scan-wrapper">
+                        <div class="scan-config card">
+                            <div class="card-header">
+                                <h3><i class="fa-solid fa-satellite-dish"></i> New Scan Configuration</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label for="target-input">Target Asset</label>
+                                    <div class="input-group">
+                                        <i class="fa-solid fa-globe input-icon"></i>
+                                        <input type="text" id="target-input" placeholder="IP Address, Hostname, or URL">
+                                    </div>
+                                    <small>Example: 192.168.1.100 or https://example.com</small>
+                                </div>
+                                <div class="scan-actions">
+                                    <button id="start-scan-btn" class="btn btn-primary btn-lg"><i
+                                            class="fa-solid fa-play"></i> Start Scan</button>
+                                    <button id="stop-scan-btn" class="btn btn-danger btn-lg" disabled><i
+                                            class="fa-solid fa-stop"></i> Stop Scan</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="scan-status-card" class="card scan-monitor hidden">
+                            <div class="card-header flex-between">
+                                <h3><i class="fa-solid fa-terminal"></i> Scan Operations</h3>
+                                <div class="status-badge" id="scan-status-badge">Running</div>
+                            </div>
+                            <div class="card-body p-0">
+                                <div class="terminal-window">
+                                    <div id="output-log" class="terminal-content"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Assets Section -->
+                <section id="assets" class="content-section">
+                    <div class="assets-controls mb-4">
+                        <button class="btn btn-secondary"><i class="fa-solid fa-plus"></i> Manual Add</button>
+                        <button class="btn btn-secondary" onclick="loadAssets()"><i class="fa-solid fa-rotate"></i>
+                            Refresh</button>
+                    </div>
+
+                    <div id="assets-list" class="assets-grid">
+                        <div class="loading">Loading assets...</div>
+                    </div>
+
+                    <div id="asset-detail" class="asset-detail-view hidden">
+                        <button id="back-to-assets" class="btn btn-secondary mb-3"><i
+                                class="fa-solid fa-arrow-left"></i> Back to Assets</button>
+                        <div id="asset-detail-content"></div>
+                    </div>
+                </section>
+
+                <!-- Reports Section -->
+                <section id="reports" class="content-section">
+                    <div class="card">
+                        <div class="card-header flex-between">
+                            <h3>Generated Reports</h3>
+                            <div class="search-box">
+                                <i class="fa-solid fa-search"></i>
+                                <input type="text" id="reports-search" placeholder="Search reports...">
+                            </div>
+                        </div>
+                        <div class="card-body p-0">
+                            <div id="reports-list" class="reports-table-wrapper">
+                                <div class="loading">Loading reports...</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Simple Report Viewer Modal -->
+                    <div id="report-viewer" class="modal hidden">
+                        <div class="modal-content large"
+                            style="height: 90vh; max-width: 1000px; display: flex; flex-direction: column;">
+                            <div class="modal-header">
+                                <h3 id="report-modal-title">Report View</h3>
+                                <div class="modal-actions">
+                                    <button id="download-report-btn" class="btn btn-primary"><i
+                                            class="fa-solid fa-download"></i> Download MD</button>
+                                    <button id="close-viewer-btn" class="btn btn-icon"><i
+                                            class="fa-solid fa-xmark"></i></button>
+                                </div>
+                            </div>
+                            <div class="modal-body"
+                                style="flex: 1; padding: 30px; overflow-y: auto; background: var(--bg-card);">
+                                <div id="report-viewer-content" class="markdown-body"
+                                    style="background: transparent; color: var(--text-main);"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Finding Detail Modal -->
+                    <div id="finding-detail-modal" class="modal hidden">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h3 id="finding-modal-title">Finding Details</h3>
+                                <button id="close-finding-btn" class="btn btn-icon"><i
+                                        class="fa-solid fa-xmark"></i></button>
+                            </div>
+                            <div class="modal-body">
+                                <div id="finding-detail-content">
+                                    <div class="loading">Loading...</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='dashboard.js') }}"></script>
+</body>
+
+</html>

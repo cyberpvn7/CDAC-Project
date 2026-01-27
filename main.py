@@ -414,8 +414,8 @@ def run_pipeline(
         ("Scan", lambda: phase_scan(targets, skip=skip_scan)),
         ("Normalize", lambda: phase_normalize(targets)),
         ("Ingest", lambda: phase_ingest()),
-        ("Analyze", lambda: phase_analyze() if not skip_analyze else True),
         ("Semantic", lambda: phase_semantic() if not skip_semantic else True),
+        ("Analyze", lambda: phase_analyze() if not skip_analyze else True),
     ]
     
     results = {}

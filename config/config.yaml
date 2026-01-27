@@ -10,7 +10,7 @@ scanner:
   parallel: false        # run scanners in parallel (WIP)
 
 gemini:
-  api_key: "AIzaSyBJ1vxArFi-KBCj7dd8uK2J46FXqwbQ4LI"            # Set via GEMINI_API_KEY env var
+  api_key: "AIzaSyC9WyiAFkNLEsoGnWzrKAPFcVglM5-E2Tk"            # Set via GEMINI_API_KEY env var
   model: gemini-2.5-flash-lite
 
 semantic:

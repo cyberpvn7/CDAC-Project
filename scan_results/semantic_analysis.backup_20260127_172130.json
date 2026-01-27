@@ -1,10 +1,10 @@
 {
-  "export_timestamp": "2026-01-27T12:56:27.172333",
-  "scan_id": "bb99e7c7-b858-4b1b-aeb3-dc174a01ef3a",
-  "total_findings": 104,
+  "export_timestamp": "2026-01-27T11:39:23.991454",
+  "scan_id": "0c8645c0-d47b-4dfc-88cc-9fe915154e49",
+  "total_findings": 88,
   "findings": [
     {
-      "finding_id": "42a68fa9-c97e-4815-a56e-83a793ff8939",
+      "finding_id": "81acc9d4-dfd5-4ffc-ab67-5d1acee5cba9",
       "source": "nuclei",
       "severity": "medium",
       "title": "ProFTPd-1.3.3c - Backdoor Command Execution",
@@ -18,7 +18,7 @@
       }
     },
     {
-      "finding_id": "e1aeeeed-b102-4c03-9070-4dbf2a00164c",
+      "finding_id": "a2fdd54b-ca29-4beb-bf71-9583577136b1",
       "source": "nuclei",
       "severity": "medium",
       "title": "FTP Service - Detect",
@@ -32,7 +32,7 @@
       }
     },
     {
-      "finding_id": "216146ac-da9d-4d70-b2d5-bcf04b60c7c2",
+      "finding_id": "28ecf6dd-88d8-4e6c-92d5-715aef0ff7bf",
       "source": "searchsploit",
       "severity": "high",
       "title": "FreeBSD - 'ftpd / ProFTPd' Remote Command Execution",
@@ -46,7 +46,7 @@
       }
     },
     {
-      "finding_id": "76e9c588-152f-4338-9ef8-a01b1972dac4",
+      "finding_id": "c761eb72-8a05-4903-8b91-2370963bf3c6",
       "source": "searchsploit",
       "severity": "high",
       "title": "ProFTPd - 'ftpdctl' 'pr_ctrls_connect' Local Overflow",
@@ -60,7 +60,7 @@
       }
     },
     {
-      "finding_id": "6504af00-f60b-4d9e-8073-87465ea2bc75",
+      "finding_id": "8751b0af-8b08-4943-857f-44eecda208ca",
       "source": "searchsploit",
       "severity": "high",
       "title": "ProFTPd - 'mod_mysql' Authentication Bypass",
@@ -74,7 +74,7 @@
       }
     },
     {
-      "finding_id": "68a5a235-579c-4b57-9074-69b62f9ef439",
+      "finding_id": "4d553ef3-c9b9-4f50-b888-78192fb075c0",
       "source": "searchsploit",
       "severity": "high",
       "title": "ProFTPd - 'mod_sftp' Integer Overflow Denial of Service (PoC)",
@@ -88,7 +88,7 @@
       }
     },
     {
-      "finding_id": "b1106dd1-3c54-4d6c-9b24-66dcd140d01d",
+      "finding_id": "75021a76-8154-469b-8398-8d03276eb0b5",
       "source": "searchsploit",
       "severity": "high",
       "title": "ProFTPd 1.2 - 'SIZE' Remote Denial of Service",
@@ -102,7 +102,7 @@
       }
     },
     {
-      "finding_id": "4618ddda-dfc4-42bd-8b30-c6ff91f9fccb",
+      "finding_id": "95f845fe-0926-4f12-948e-a59a0ffe5d7b",
       "source": "searchsploit",
       "severity": "high",
       "title": "ProFTPd 1.2 < 1.3.0 (Linux) - 'sreplace' Remote Buffer Overflow (Metasploit)",
@@ -116,7 +116,7 @@
       }
     },
     {
-      "finding_id": "06c17c41-861d-4514-96d1-3fc7d15b3e31",
+      "finding_id": "ce859c6b-e39a-402f-874f-2ab26f8ed408",
       "source": "searchsploit",
       "severity": "high",
       "title": "ProFTPd 1.2 pre1/pre2/pre3/pre4/pre5 - Remote Buffer Overflow (1)",
@@ -130,7 +130,7 @@
       }
     },
     {
-      "finding_id": "fff4a3e7-2c60-4a61-b045-3e44e3abb043",
+      "finding_id": "a722fcc3-40c2-4e85-8576-1ef4635493e7",
       "source": "searchsploit",
       "severity": "high",
       "title": "ProFTPd 1.2 pre1/pre2/pre3/pre4/pre5 - Remote Buffer Overflow (2)",
@@ -144,7 +144,7 @@
       }
     },
     {
-      "finding_id": "df0831c8-1ead-4e9f-9d13-09087c5c7fa1",
+      "finding_id": "f2c674ad-4ee4-424e-a3d0-85f9c0d07d18",
       "source": "searchsploit",
       "severity": "high",
       "title": "ProFTPd 1.2 pre6 - 'snprintf' Remote Root",
@@ -158,7 +158,7 @@
       }
     },
     {
-      "finding_id": "54d47c7f-a4bb-4524-8172-b8186450e06d",
+      "finding_id": "a609eaf5-c478-496f-b7cd-af5cf04e0a47",
       "source": "searchsploit",
       "severity": "high",
       "title": "ProFTPd 1.2.0 pre10 - Remote Denial of Service",
@@ -172,7 +172,7 @@
       }
     },
     {
-      "finding_id": "1ff2f709-daf6-45fc-8d39-83cabab7f53e",
+      "finding_id": "3f9eb35d-2530-425c-8584-ebe007d7b970",
       "source": "searchsploit",
       "severity": "high",
       "title": "ProFTPd 1.2.0 rc2 - Memory Leakage",
@@ -186,7 +186,7 @@
       }
     },
     {
-      "finding_id": "68035279-3722-455c-b216-e2d21602eec8",
+      "finding_id": "5d87151f-dab0-4535-8700-1c3bb60827a9",
       "source": "searchsploit",
       "severity": "high",
       "title": "ProFTPd 1.2.10 - Remote Users Enumeration",
@@ -200,7 +200,7 @@
       }
     },
     {
-      "finding_id": "7e704a46-c369-4d39-b811-ab23d5f65c92",
+      "finding_id": "9dad7e9c-bd01-473e-9ed9-6fd35d23a7cd",
       "source": "searchsploit",
       "severity": "high",
       "title": "ProFTPd 1.2.7 < 1.2.9rc2 - Remote Code Execution / Brute Force",
@@ -214,7 +214,7 @@
       }
     },
     {
-      "finding_id": "f40c27e8-f472-4e4b-b9e3-f53b83d34623",
+      "finding_id": "4b127edf-a2ee-4bae-88d6-a9c53fe5d9fa",
       "source": "searchsploit",
       "severity": "high",
       "title": "ProFTPd 1.2.7/1.2.8 - '.ASCII' File Transfer Buffer Overrun",
@@ -228,7 +228,7 @@
       }
     },
     {
-      "finding_id": "7394264b-432d-48b7-a2b1-4f4b73672446",
+      "finding_id": "4d989863-967b-4c7c-9e3a-9feb4945a9d6",
       "source": "searchsploit",
       "severity": "high",
       "title": "ProFTPd 1.2.9 RC1 - 'mod_sql' SQL Injection",
@@ -242,7 +242,7 @@
       }
     },
     {
-      "finding_id": "b678d905-84b5-4fc9-956e-98a98d4cf6d7",
+      "finding_id": "c1d8a20f-556a-4f50-ba38-96f484648f31",
       "source": "searchsploit",
       "severity": "high",
       "title": "ProFTPd 1.2.9 rc2 - '.ASCII' File Remote Code Execution (1)",
@@ -256,7 +256,7 @@
       }
     },
     {
-      "finding_id": "d3e31a97-5e5e-449c-aa50-1c56a7a87556",
+      "finding_id": "2d089b4d-60f0-4438-bf27-883d83cd8002",
       "source": "searchsploit",
       "severity": "high",
       "title": "ProFTPd 1.2.9 rc2 - '.ASCII' File Remote Code Execution (2)",
@@ -270,7 +270,7 @@
       }
     },
     {
-      "finding_id": "3f3b15f8-3941-4235-bc47-d2635980d081",
+      "finding_id": "6060d8da-6e0d-4488-a1cc-f297a46fde96",
       "source": "searchsploit",
       "severity": "high",
       "title": "ProFTPd 1.2.x - 'STAT' Denial of Service",
@@ -284,7 +284,7 @@
       }
     },
     {
-      "finding_id": "feb03837-f889-4c45-8334-ac05757ca9f3",
+      "finding_id": "421366c9-6f6c-4a48-8dc5-af9d57bfaff0",
       "source": "searchsploit",
       "severity": "high",
       "title": "ProFTPd 1.3 - 'mod_sql' 'Username' SQL Injection",
@@ -298,7 +298,7 @@
       }
     },
     {
-      "finding_id": "1595ec53-b11a-4f8b-bdd0-eb89292b380b",
+      "finding_id": "c2aad68d-ded1-4f30-b628-e6d82f47dff2",
       "source": "searchsploit",
       "severity": "high",
       "title": "ProFTPd 1.3.0 (OpenSUSE) - 'mod_ctrls' Local Stack Overflow",
@@ -312,7 +312,7 @@
       }
     },
     {
-      "finding_id": "26e4e416-e0bb-4918-9820-c1072b3c0e66",
+      "finding_id": "71ccc448-af7e-4782-a7ec-ef9f87a79d8b",
       "source": "searchsploit",
       "severity": "high",
       "title": "ProFTPd 1.3.0 - 'sreplace' Remote Stack Overflow (Metasploit)",
@@ -326,7 +326,7 @@
       }
     },
     {
-      "finding_id": "fd02f3a8-6c13-44a4-b8e5-ac086876f811",
+      "finding_id": "69d98cbd-3d5a-40a4-ba47-3768f5df4ecb",
       "source": "searchsploit",
       "severity": "high",
       "title": "ProFTPd 1.3.0/1.3.0a - 'mod_ctrls' 'support' Local Buffer Overflow (1)",
@@ -340,7 +340,7 @@
       }
     },
     {
-      "finding_id": "86cb67d9-4a23-4465-b1f5-5c52b24840a8",
+      "finding_id": "1a7ffd41-bd5a-4659-92bd-c0af5d72f912",
       "source": "searchsploit",
       "severity": "high",
       "title": "ProFTPd 1.3.0/1.3.0a - 'mod_ctrls' 'support' Local Buffer Overflow (2)",
@@ -354,7 +354,7 @@
       }
     },
     {
-      "finding_id": "36781ea6-3985-4c80-86df-de17d5539447",
+      "finding_id": "19f6801f-ca3a-4fb0-b24b-5cbc9be630ef",
       "source": "searchsploit",
       "severity": "high",
       "title": "ProFTPd 1.3.0/1.3.0a - 'mod_ctrls' exec-shield Local Overflow",
@@ -368,7 +368,7 @@
       }
     },
     {
-      "finding_id": "965bdf8d-91a7-4421-897a-dcb798efc9e2",
+      "finding_id": "3dee4ce9-a6a5-48ff-a015-78326db76d0e",
       "source": "searchsploit",
       "severity": "high",
       "title": "ProFTPd 1.3.0a - 'mod_ctrls' 'support' Local Buffer Overflow (PoC)",
@@ -382,7 +382,7 @@
       }
     },
     {
-      "finding_id": "03aea1b7-d2ee-4bde-b8fa-4b196e8f6370",
+      "finding_id": "cb0a115a-a037-4088-85c0-461215ca8d5f",
       "source": "searchsploit",
       "severity": "high",
       "title": "ProFTPd 1.3.2 rc3 < 1.3.3b (FreeBSD) - Telnet IAC Buffer Overflow (Metasploit)",
@@ -396,7 +396,7 @@
       }
     },
     {
-      "finding_id": "0795878e-4463-47cc-8081-06995a4af0d5",
+      "finding_id": "884db62c-d3e9-46b1-a384-5589679a0c75",
       "source": "searchsploit",
       "severity": "high",
       "title": "ProFTPd 1.3.2 rc3 < 1.3.3b (Linux) - Telnet IAC Buffer Overflow (Metasploit)",
@@ -410,7 +410,7 @@
       }
     },
     {
-      "finding_id": "7ec1dd06-86e2-462c-b437-d6252b678283",
+      "finding_id": "0fcb18dd-2b96-451a-b6a3-730d907d588d",
       "source": "searchsploit",
       "severity": "high",
       "title": "ProFTPd 1.3.3c - Compromised Source Backdoor Remote Code Execution",
@@ -424,7 +424,7 @@
       }
     },
     {
-      "finding_id": "406a07f3-265c-4c5a-8d51-1d8006bd0032",
+      "finding_id": "845b2a70-7a3b-4bd2-99a7-54e670ac1bfa",
       "source": "searchsploit",
       "severity": "high",
       "title": "ProFTPd 1.3.5 - 'mod_copy' Command Execution (Metasploit)",
@@ -438,7 +438,7 @@
       }
     },
     {
-      "finding_id": "a0cdeb02-f1a3-4ead-a32a-0b82f18c44d3",
+      "finding_id": "af9eccb0-5d04-433d-a94e-ccfce4e252fc",
       "source": "searchsploit",
       "severity": "high",
       "title": "ProFTPd 1.3.5 - 'mod_copy' Remote Command Execution (2)",
@@ -452,7 +452,7 @@
       }
     },
     {
-      "finding_id": "1b77cd8e-12b5-4a55-bec7-d757d838fc11",
+      "finding_id": "3efe089d-5dfa-4647-9340-99a86d0e33ab",
       "source": "searchsploit",
       "severity": "high",
       "title": "ProFTPd 1.3.5 - 'mod_copy' Remote Command Execution",
@@ -466,7 +466,7 @@
       }
     },
     {
-      "finding_id": "c1ea64af-61a6-4cfe-b2ed-19f1b12ab6d6",
+      "finding_id": "62bad914-9930-464c-a082-47fb9f1e39a9",
       "source": "searchsploit",
       "severity": "high",
       "title": "ProFTPd 1.3.5 - File Copy",
@@ -480,7 +480,7 @@
       }
     },
     {
-      "finding_id": "f2bb6f95-de69-43dd-bcd2-f200ceacc4df",
+      "finding_id": "d7478d2c-8abe-4d0f-a182-6e87b69c115e",
       "source": "searchsploit",
       "severity": "high",
       "title": "ProFTPD 1.3.7a - Remote Denial of Service",
@@ -494,7 +494,7 @@
       }
     },
     {
-      "finding_id": "c0d41286-f5dd-4711-9945-955435311394",
+      "finding_id": "4f40e2f5-9d56-4b79-99ac-db72f51823bb",
       "source": "searchsploit",
       "severity": "high",
       "title": "ProFTPd 1.x - 'mod_tls' Remote Buffer Overflow",
@@ -508,7 +508,7 @@
       }
     },
     {
-      "finding_id": "ae0bff10-3a4c-4c41-84c5-b42ae7126f59",
+      "finding_id": "d9840f7c-f338-4589-9ff4-5a32a2f9695b",
       "source": "searchsploit",
       "severity": "high",
       "title": "ProFTPd IAC 1.3.x - Remote Command Execution",
@@ -522,7 +522,7 @@
       }
     },
     {
-      "finding_id": "42bd44f1-1fdd-4211-97da-c9582c692255",
+      "finding_id": "54b72394-bb1f-451c-85e7-87e3825186b4",
       "source": "searchsploit",
       "severity": "high",
       "title": "ProFTPd-1.3.3c - Backdoor Command Execution (Metasploit)",
@@ -536,7 +536,7 @@
       }
     },
     {
-      "finding_id": "a8fe2d61-0198-40b5-a105-005385f3ab0c",
+      "finding_id": "37dc8984-39f5-4efc-9167-444a0c3d30f3",
       "source": "searchsploit",
       "severity": "high",
       "title": "WU-FTPD 2.4.2 / SCO Open Server 5.0.5 / ProFTPd 1.2 pre1 - 'realpath' Remote Buffer Overflow (1)",
@@ -550,7 +550,7 @@
       }
     },
     {
-      "finding_id": "6f54db0c-4a3e-4e36-82e8-84f6b10ef088",
+      "finding_id": "f9d7a958-b6b4-496c-88c4-1e05fd79fa6b",
       "source": "searchsploit",
       "severity": "high",
       "title": "WU-FTPD 2.4.2 / SCO Open Server 5.0.5 / ProFTPd 1.2 pre1 - 'realpath' Remote Buffer Overflow (2)",
@@ -564,7 +564,7 @@
       }
     },
     {
-      "finding_id": "96821c95-4435-409a-9ca4-a525f5e0eb5b",
+      "finding_id": "fd041b54-ed77-4dd8-a657-1f83be396989",
       "source": "searchsploit",
       "severity": "high",
       "title": "WU-FTPD 2.4/2.5/2.6 / Trolltech ftpd 1.2 / ProFTPd 1.2 / BeroFTPD 1.3.4 FTP - glob Expansion",
@@ -578,7 +578,7 @@
       }
     },
     {
-      "finding_id": "30abb8b6-1565-4e4f-99d7-3b129019d577",
+      "finding_id": "6e2e29c0-7632-4acf-9a1e-108c17a72aca",
       "source": "nuclei",
       "severity": "medium",
       "title": "OpenSSH Terrapin Attack - Detection",
@@ -592,7 +592,7 @@
       }
     },
     {
-      "finding_id": "ce3178d1-1a79-4fc4-8823-c5ced4c5948d",
+      "finding_id": "d5f2ab8c-6321-4b1b-892e-33756413ed97",
       "source": "nuclei",
       "severity": "medium",
       "title": "SSH Auth Methods - Detection",
@@ -606,21 +606,7 @@
       }
     },
     {
-      "finding_id": "cd04111d-a288-4013-a468-dd6b3437a3f9",
-      "source": "nuclei",
-      "severity": "medium",
-      "title": "SSH SHA-1 HMAC Algorithms Enabled",
-      "description": "ssh service on port 22",
-      "semantic": {
-        "classification": "Informational",
-        "cvss_score": 3.4,
-        "attack_capability": "Gather system and service information",
-        "mitre_tactic": "Discovery",
-        "mitre_technique": "T1082"
-      }
-    },
-    {
-      "finding_id": "29e83d52-e6b6-43d5-a2d5-79161253f643",
+      "finding_id": "5854969f-fa23-4431-94ab-5721bd9cf129",
       "source": "nuclei",
       "severity": "medium",
       "title": "SSH Password-based Authentication",
@@ -634,7 +620,7 @@
       }
     },
     {
-      "finding_id": "bc10b5e6-d5a3-4650-ac92-6b5cf6ae8c7c",
+      "finding_id": "08a86058-6021-40d6-9844-cd9570662204",
       "source": "nuclei",
       "severity": "medium",
       "title": "SSH Server Software Enumeration",
@@ -648,7 +634,21 @@
       }
     },
     {
-      "finding_id": "d70d704a-132e-4d69-8bcc-93883d58f8c1",
+      "finding_id": "e74c1eb4-aaf9-4f42-a525-a3849bf59cee",
+      "source": "nuclei",
+      "severity": "medium",
+      "title": "SSH SHA-1 HMAC Algorithms Enabled",
+      "description": "ssh service on port 22",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "28d61943-d801-482f-8e11-84e04f9f9c98",
       "source": "nuclei",
       "severity": "medium",
       "title": "OpenSSH Service - Detect",
@@ -662,7 +662,7 @@
       }
     },
     {
-      "finding_id": "bda391b1-8dc1-4d87-9636-4c60a56c346f",
+      "finding_id": "7dcd7461-b9c7-42b3-b0b5-43bbb2f6df03",
       "source": "nuclei",
       "severity": "medium",
       "title": "WAF Detection",
@@ -676,161 +676,7 @@
       }
     },
     {
-      "finding_id": "5977b667-f3d2-4eaf-8783-1784957c8047",
-      "source": "nuclei",
-      "severity": "medium",
-      "title": "HTTP Missing Security Headers",
-      "description": "http service on port 80",
-      "semantic": {
-        "classification": "Information Disclosure",
-        "cvss_score": 5.6,
-        "attack_capability": "Access sensitive system information",
-        "mitre_tactic": "Discovery",
-        "mitre_technique": "T1082"
-      }
-    },
-    {
-      "finding_id": "ec528462-6211-4c9a-916b-2971fc6a0bc7",
-      "source": "nuclei",
-      "severity": "medium",
-      "title": "HTTP Missing Security Headers",
-      "description": "http service on port 80",
-      "semantic": {
-        "classification": "Information Disclosure",
-        "cvss_score": 5.6,
-        "attack_capability": "Access sensitive system information",
-        "mitre_tactic": "Discovery",
-        "mitre_technique": "T1082"
-      }
-    },
-    {
-      "finding_id": "54ef05aa-8db5-42cf-b076-4099a18cbaa5",
-      "source": "nuclei",
-      "severity": "medium",
-      "title": "HTTP Missing Security Headers",
-      "description": "http service on port 80",
-      "semantic": {
-        "classification": "Information Disclosure",
-        "cvss_score": 5.6,
-        "attack_capability": "Access sensitive system information",
-        "mitre_tactic": "Discovery",
-        "mitre_technique": "T1082"
-      }
-    },
-    {
-      "finding_id": "be258ac3-fbe7-4a42-83b2-409efb44e8d4",
-      "source": "nuclei",
-      "severity": "medium",
-      "title": "HTTP Missing Security Headers",
-      "description": "http service on port 80",
-      "semantic": {
-        "classification": "Information Disclosure",
-        "cvss_score": 5.6,
-        "attack_capability": "Access sensitive system information",
-        "mitre_tactic": "Discovery",
-        "mitre_technique": "T1082"
-      }
-    },
-    {
-      "finding_id": "2efbacbc-abec-44ff-92c6-d397a3629aca",
-      "source": "nuclei",
-      "severity": "medium",
-      "title": "HTTP Missing Security Headers",
-      "description": "http service on port 80",
-      "semantic": {
-        "classification": "Information Disclosure",
-        "cvss_score": 5.6,
-        "attack_capability": "Access sensitive system information",
-        "mitre_tactic": "Discovery",
-        "mitre_technique": "T1082"
-      }
-    },
-    {
-      "finding_id": "eb938fc2-844e-48c8-8e07-23b0d878b646",
-      "source": "nuclei",
-      "severity": "medium",
-      "title": "HTTP Missing Security Headers",
-      "description": "http service on port 80",
-      "semantic": {
-        "classification": "Information Disclosure",
-        "cvss_score": 5.6,
-        "attack_capability": "Access sensitive system information",
-        "mitre_tactic": "Discovery",
-        "mitre_technique": "T1082"
-      }
-    },
-    {
-      "finding_id": "5ca2ad28-88af-43dd-8f04-a3124284e15c",
-      "source": "nuclei",
-      "severity": "medium",
-      "title": "HTTP Missing Security Headers",
-      "description": "http service on port 80",
-      "semantic": {
-        "classification": "Information Disclosure",
-        "cvss_score": 5.6,
-        "attack_capability": "Access sensitive system information",
-        "mitre_tactic": "Discovery",
-        "mitre_technique": "T1082"
-      }
-    },
-    {
-      "finding_id": "bbf26ee2-328e-4f6b-a61e-befb59c55da8",
-      "source": "nuclei",
-      "severity": "medium",
-      "title": "HTTP Missing Security Headers",
-      "description": "http service on port 80",
-      "semantic": {
-        "classification": "Information Disclosure",
-        "cvss_score": 5.6,
-        "attack_capability": "Access sensitive system information",
-        "mitre_tactic": "Discovery",
-        "mitre_technique": "T1082"
-      }
-    },
-    {
-      "finding_id": "d99a012c-e599-40e1-bf0c-a196520c87e0",
-      "source": "nuclei",
-      "severity": "medium",
-      "title": "HTTP Missing Security Headers",
-      "description": "http service on port 80",
-      "semantic": {
-        "classification": "Information Disclosure",
-        "cvss_score": 5.6,
-        "attack_capability": "Access sensitive system information",
-        "mitre_tactic": "Discovery",
-        "mitre_technique": "T1082"
-      }
-    },
-    {
-      "finding_id": "de5332e0-6dfc-4905-8b7e-1701afdc4370",
-      "source": "nuclei",
-      "severity": "medium",
-      "title": "HTTP Missing Security Headers",
-      "description": "http service on port 80",
-      "semantic": {
-        "classification": "Information Disclosure",
-        "cvss_score": 5.6,
-        "attack_capability": "Access sensitive system information",
-        "mitre_tactic": "Discovery",
-        "mitre_technique": "T1082"
-      }
-    },
-    {
-      "finding_id": "5f274ff9-4830-422a-8650-c8edc6b83033",
-      "source": "nuclei",
-      "severity": "medium",
-      "title": "HTTP Missing Security Headers",
-      "description": "http service on port 80",
-      "semantic": {
-        "classification": "Information Disclosure",
-        "cvss_score": 5.6,
-        "attack_capability": "Access sensitive system information",
-        "mitre_tactic": "Discovery",
-        "mitre_technique": "T1082"
-      }
-    },
-    {
-      "finding_id": "cf2a1df1-afcd-4a73-bf11-477341e5ae20",
+      "finding_id": "7769fc91-5e5e-4099-aba1-85d24e753b61",
       "source": "nuclei",
       "severity": "medium",
       "title": "Apache Detection",
@@ -844,7 +690,7 @@
       }
     },
     {
-      "finding_id": "4a0d72fe-7939-4292-ae0c-53363fe535a5",
+      "finding_id": "40a50c93-72b1-4f28-8ff1-e2ec91b4b6cc",
       "source": "nuclei",
       "severity": "medium",
       "title": "Allowed Options Method",
@@ -858,7 +704,161 @@
       }
     },
     {
-      "finding_id": "b65d61ea-1338-40d1-b62f-53ddd89de4f9",
+      "finding_id": "c57118e0-f376-4231-8eee-ca7ae74e174a",
+      "source": "nuclei",
+      "severity": "medium",
+      "title": "HTTP Missing Security Headers",
+      "description": "http service on port 80",
+      "semantic": {
+        "classification": "Information Disclosure",
+        "cvss_score": 5.6,
+        "attack_capability": "Access sensitive system information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "dae6775f-8374-4b22-b3b0-c651ef6dc8c7",
+      "source": "nuclei",
+      "severity": "medium",
+      "title": "HTTP Missing Security Headers",
+      "description": "http service on port 80",
+      "semantic": {
+        "classification": "Information Disclosure",
+        "cvss_score": 5.6,
+        "attack_capability": "Access sensitive system information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "c1ec3fcc-d952-44f1-9301-7dad9a131263",
+      "source": "nuclei",
+      "severity": "medium",
+      "title": "HTTP Missing Security Headers",
+      "description": "http service on port 80",
+      "semantic": {
+        "classification": "Information Disclosure",
+        "cvss_score": 5.6,
+        "attack_capability": "Access sensitive system information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "03bff8e8-ea89-4ec7-abf7-3d94590a8973",
+      "source": "nuclei",
+      "severity": "medium",
+      "title": "HTTP Missing Security Headers",
+      "description": "http service on port 80",
+      "semantic": {
+        "classification": "Information Disclosure",
+        "cvss_score": 5.6,
+        "attack_capability": "Access sensitive system information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "c2cea101-c6f2-46b1-b49c-8d95debb04fc",
+      "source": "nuclei",
+      "severity": "medium",
+      "title": "HTTP Missing Security Headers",
+      "description": "http service on port 80",
+      "semantic": {
+        "classification": "Information Disclosure",
+        "cvss_score": 5.6,
+        "attack_capability": "Access sensitive system information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "3fdaf983-4711-453b-8ca1-3446412f930c",
+      "source": "nuclei",
+      "severity": "medium",
+      "title": "HTTP Missing Security Headers",
+      "description": "http service on port 80",
+      "semantic": {
+        "classification": "Information Disclosure",
+        "cvss_score": 5.6,
+        "attack_capability": "Access sensitive system information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "282cba6f-6f70-47be-ad6e-080c6d0e15e3",
+      "source": "nuclei",
+      "severity": "medium",
+      "title": "HTTP Missing Security Headers",
+      "description": "http service on port 80",
+      "semantic": {
+        "classification": "Information Disclosure",
+        "cvss_score": 5.6,
+        "attack_capability": "Access sensitive system information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "70623c88-b632-4954-ae1e-832839d30b95",
+      "source": "nuclei",
+      "severity": "medium",
+      "title": "HTTP Missing Security Headers",
+      "description": "http service on port 80",
+      "semantic": {
+        "classification": "Information Disclosure",
+        "cvss_score": 5.6,
+        "attack_capability": "Access sensitive system information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "6f844136-b179-47b7-bc7e-b9a27c01557a",
+      "source": "nuclei",
+      "severity": "medium",
+      "title": "HTTP Missing Security Headers",
+      "description": "http service on port 80",
+      "semantic": {
+        "classification": "Information Disclosure",
+        "cvss_score": 5.6,
+        "attack_capability": "Access sensitive system information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "44845d60-cf63-4278-9511-30931b557b39",
+      "source": "nuclei",
+      "severity": "medium",
+      "title": "HTTP Missing Security Headers",
+      "description": "http service on port 80",
+      "semantic": {
+        "classification": "Information Disclosure",
+        "cvss_score": 5.6,
+        "attack_capability": "Access sensitive system information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "a76d0d1a-5c11-4de6-999b-162675bedbaa",
+      "source": "nuclei",
+      "severity": "medium",
+      "title": "HTTP Missing Security Headers",
+      "description": "http service on port 80",
+      "semantic": {
+        "classification": "Information Disclosure",
+        "cvss_score": 5.6,
+        "attack_capability": "Access sensitive system information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "faf616fe-9e62-4117-b445-c4388ca12270",
       "source": "nikto",
       "severity": "low",
       "title": "+ Target Host: 192.168.100.136",
@@ -872,7 +872,7 @@
       }
     },
     {
-      "finding_id": "5dff3302-24dc-4862-a0bb-aa8a673ae242",
+      "finding_id": "b82c3ff9-a7c1-472f-9e61-d94f317c8740",
       "source": "nikto",
       "severity": "low",
       "title": "+ Target Port: 80",
@@ -886,7 +886,7 @@
       }
     },
     {
-      "finding_id": "fede6a29-28dc-41d9-b808-4ff9ab8f88f1",
+      "finding_id": "f608d391-8fd8-4221-98fd-dea4374f5378",
       "source": "nikto",
       "severity": "low",
       "title": "+ GET /: The anti-clickjacking X-Frame-Options header is not present. See: https://developer.mozilla.org/en-US/docs/Web/",
@@ -900,7 +900,7 @@
       }
     },
     {
-      "finding_id": "b9b2df5b-e559-4b0d-be2c-82252870c637",
+      "finding_id": "2e1934ff-b780-4a8f-81eb-cabe86896e98",
       "source": "nikto",
       "severity": "low",
       "title": "+ GET /: The X-Content-Type-Options header is not set. This could allow the user agent to render the content of the site",
@@ -914,7 +914,7 @@
       }
     },
     {
-      "finding_id": "e9a626f1-7330-427c-b379-82c5d570e605",
+      "finding_id": "8cead8cc-04f7-43b9-988e-e7d73b8a4f8a",
       "source": "nikto",
       "severity": "low",
       "title": "+ HEAD Apache/2.4.51 appears to be outdated (current is at least Apache/2.4.54). Apache 2.2.34 is the EOL for the 2.x br",
@@ -928,7 +928,7 @@
       }
     },
     {
-      "finding_id": "8330322f-87e7-4096-be6f-05f233428f00",
+      "finding_id": "0217166e-6bc3-4a2f-afb2-9e82a0cb8637",
       "source": "nikto",
       "severity": "low",
       "title": "+ GET /: Server may leak inodes via ETags, header found with file /, inode: 15c, size: 5cf63c252ab85, mtime: gzip. See: ",
@@ -942,7 +942,7 @@
       }
     },
     {
-      "finding_id": "48f98e59-f737-4fcc-81fe-9afba912e7de",
+      "finding_id": "1fab5b5c-d399-41c5-9f86-cfa1a891d999",
       "source": "nikto",
       "severity": "low",
       "title": "+ OPTIONS OPTIONS: Allowed HTTP Methods: GET, POST, OPTIONS, HEAD .",
@@ -956,7 +956,7 @@
       }
     },
     {
-      "finding_id": "9d8d1690-2625-46dc-8718-d291af19e5f0",
+      "finding_id": "b05f9541-6551-4ad5-bba2-e8538eea2f5e",
       "source": "nikto",
       "severity": "low",
       "title": "+ Target Host: 192.168.100.137",
@@ -970,7 +970,7 @@
       }
     },
     {
-      "finding_id": "faac63c3-5720-40f1-b90f-d226d4d80b52",
+      "finding_id": "223f7c66-f6c5-4b47-a901-4e8a6fb203a5",
       "source": "nikto",
       "severity": "low",
       "title": "+ Target Port: 80",
@@ -984,7 +984,7 @@
       }
     },
     {
-      "finding_id": "5fd69a84-f109-4507-9d99-ca5eabb69366",
+      "finding_id": "65a4877c-7093-4ee1-87eb-df9eebd3c6ce",
       "source": "nikto",
       "severity": "low",
       "title": "+ GET /: The anti-clickjacking X-Frame-Options header is not present. See: https://developer.mozilla.org/en-US/docs/Web/",
@@ -998,7 +998,7 @@
       }
     },
     {
-      "finding_id": "f42271ce-ec85-4990-9a50-40af0c13d8bd",
+      "finding_id": "3474eeae-712d-437f-9f92-dbbb292dd0d1",
       "source": "nikto",
       "severity": "low",
       "title": "+ GET /: The X-Content-Type-Options header is not set. This could allow the user agent to render the content of the site",
@@ -1012,7 +1012,7 @@
       }
     },
     {
-      "finding_id": "6d3a9c73-e15a-4c0b-95a0-4c5f7977e518",
+      "finding_id": "304f8b55-46ce-4952-9fe0-c42cc7322e68",
       "source": "nikto",
       "severity": "low",
       "title": "+ HEAD Apache/2.4.18 appears to be outdated (current is at least Apache/2.4.54). Apache 2.2.34 is the EOL for the 2.x br",
@@ -1026,7 +1026,7 @@
       }
     },
     {
-      "finding_id": "2f0dcf1a-2a70-4cfd-9aa5-80b166b5bcc9",
+      "finding_id": "ff59b238-385e-41b2-aac5-a7743707feca",
       "source": "nikto",
       "severity": "low",
       "title": "+ GET /: Server may leak inodes via ETags, header found with file /, inode: b1, size: 55e1c7758dcdb, mtime: gzip. See: C",
@@ -1040,7 +1040,7 @@
       }
     },
     {
-      "finding_id": "a0f5f0d1-0374-4181-9454-dec2053b5a8a",
+      "finding_id": "c948a1bf-a25e-4c03-9691-ad4a560241a2",
       "source": "nikto",
       "severity": "low",
       "title": "+ OPTIONS OPTIONS: Allowed HTTP Methods: OPTIONS, GET, HEAD, POST .",
@@ -1054,7 +1054,7 @@
       }
     },
     {
-      "finding_id": "24a18fc9-38bf-4783-96c3-ef0db638f463",
+      "finding_id": "a92fe0d5-d53d-42f2-9ecb-103d833e8474",
       "source": "nikto",
       "severity": "low",
       "title": "+ GET /secret/: Drupal Link header found with value: <http://vtcsec/secret/index.php/wp-json/>; rel=\"https://api.w.org/\"",
@@ -1068,7 +1068,7 @@
       }
     },
     {
-      "finding_id": "2342236f-0741-4676-9c3a-df5d694f1748",
+      "finding_id": "edbb578f-c6f8-42e6-8a56-3bf1f777645f",
       "source": "nikto",
       "severity": "low",
       "title": "+ GET /secret/: This might be interesting.",
@@ -1082,7 +1082,7 @@
       }
     },
     {
-      "finding_id": "b9ec0b95-6775-4d2c-a6df-f2258947644b",
+      "finding_id": "172d05e6-4cc1-4424-833f-a0826157ccdf",
       "source": "nikto",
       "severity": "low",
       "title": "+ GET /icons/README: Apache default file found. See: https://www.vntweb.co.uk/apache-restricting-access-to-iconsreadme/:",
@@ -1096,7 +1096,7 @@
       }
     },
     {
-      "finding_id": "ebea8e4d-8fa6-4ba5-94a0-485013bf7de9",
+      "finding_id": "e32acab3-03a2-4369-9c53-c1bef868780c",
       "source": "nikto",
       "severity": "low",
       "title": "+ Target Host: 192.168.100.137",
@@ -1110,7 +1110,7 @@
       }
     },
     {
-      "finding_id": "995b9553-2e23-4a15-bb92-a18d153e1804",
+      "finding_id": "a5aa2fce-44ab-414a-9280-44007aee657a",
       "source": "nikto",
       "severity": "low",
       "title": "+ Target Port: 80",
@@ -1124,7 +1124,7 @@
       }
     },
     {
-      "finding_id": "5ec7e400-a16f-4d3f-998c-82f88745c3a8",
+      "finding_id": "4b2bfbbf-d4e6-4124-8e94-e90f760b82ff",
       "source": "nikto",
       "severity": "low",
       "title": "+ GET /: The anti-clickjacking X-Frame-Options header is not present. See: https://developer.mozilla.org/en-US/docs/Web/",
@@ -1138,7 +1138,7 @@
       }
     },
     {
-      "finding_id": "5021bc89-450c-4ce2-8703-1269444da5de",
+      "finding_id": "23095ff0-6c5a-4a63-9558-63b6b11424c3",
       "source": "nikto",
       "severity": "low",
       "title": "+ GET /: The X-Content-Type-Options header is not set. This could allow the user agent to render the content of the site",
@@ -1152,7 +1152,7 @@
       }
     },
     {
-      "finding_id": "6e0088d9-3377-453f-a104-7a95a546eb73",
+      "finding_id": "5c69ef5f-2854-407e-83c4-2bd6513318e8",
       "source": "nikto",
       "severity": "low",
       "title": "+ HEAD Apache/2.4.18 appears to be outdated (current is at least Apache/2.4.54). Apache 2.2.34 is the EOL for the 2.x br",
@@ -1166,7 +1166,7 @@
       }
     },
     {
-      "finding_id": "3a9bf832-bfb7-40f8-b1e5-a1d7ccf17b38",
+      "finding_id": "d5b6ee7d-2033-4457-8d02-8a224bb0282a",
       "source": "nikto",
       "severity": "low",
       "title": "+ GET /: Server may leak inodes via ETags, header found with file /, inode: b1, size: 55e1c7758dcdb, mtime: gzip. See: C",
@@ -1180,7 +1180,7 @@
       }
     },
     {
-      "finding_id": "822c78c2-10b1-480b-8f35-f46326694a54",
+      "finding_id": "8500cf08-7f5d-4629-b52c-1de3e93023ae",
       "source": "nikto",
       "severity": "low",
       "title": "+ OPTIONS OPTIONS: Allowed HTTP Methods: OPTIONS, GET, HEAD, POST .",
@@ -1194,7 +1194,7 @@
       }
     },
     {
-      "finding_id": "e7ea28e9-7955-4d06-8eb7-c0ad5bdc1ff0",
+      "finding_id": "343aeedc-9a30-473a-b73b-779dcdc0ced4",
       "source": "nikto",
       "severity": "low",
       "title": "+ GET /secret/: Drupal Link header found with value: <http://vtcsec/secret/index.php/wp-json/>; rel=\"https://api.w.org/\"",
@@ -1208,7 +1208,7 @@
       }
     },
     {
-      "finding_id": "96324ce4-1b3f-4564-bd2d-189d2500d084",
+      "finding_id": "6e413f2e-2f0b-4bf7-8976-b2eec00705ee",
       "source": "nikto",
       "severity": "low",
       "title": "+ GET /secret/: This might be interesting.",
@@ -1222,231 +1222,7 @@
       }
     },
     {
-      "finding_id": "54c89f4d-7ac1-4aec-b9fb-074b5471fd31",
-      "source": "nikto",
-      "severity": "low",
-      "title": "+ GET /icons/README: Apache default file found. See: https://www.vntweb.co.uk/apache-restricting-access-to-iconsreadme/:",
-      "description": "+ GET /icons/README: Apache default file found. See: https://www.vntweb.co.uk/apache-restricting-access-to-iconsreadme/:",
-      "semantic": {
-        "classification": "Informational",
-        "cvss_score": 3.4,
-        "attack_capability": "Gather system and service information",
-        "mitre_tactic": "Discovery",
-        "mitre_technique": "T1082"
-      }
-    },
-    {
-      "finding_id": "598e5a00-e040-4f39-b60c-7321c6fd692e",
-      "source": "nikto",
-      "severity": "low",
-      "title": "+ Target Host: 192.168.100.136",
-      "description": "+ Target Host: 192.168.100.136",
-      "semantic": {
-        "classification": "Informational",
-        "cvss_score": 3.4,
-        "attack_capability": "Gather system and service information",
-        "mitre_tactic": "Discovery",
-        "mitre_technique": "T1082"
-      }
-    },
-    {
-      "finding_id": "3316f4d9-e80b-4a78-b639-7e1521086044",
-      "source": "nikto",
-      "severity": "low",
-      "title": "+ Target Port: 80",
-      "description": "+ Target Port: 80",
-      "semantic": {
-        "classification": "Informational",
-        "cvss_score": 3.4,
-        "attack_capability": "Gather system and service information",
-        "mitre_tactic": "Discovery",
-        "mitre_technique": "T1082"
-      }
-    },
-    {
-      "finding_id": "4d675929-c9d6-40b8-a297-b80bf3f1c2d5",
-      "source": "nikto",
-      "severity": "low",
-      "title": "+ GET /: The anti-clickjacking X-Frame-Options header is not present. See: https://developer.mozilla.org/en-US/docs/Web/",
-      "description": "+ GET /: The anti-clickjacking X-Frame-Options header is not present. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options:",
-      "semantic": {
-        "classification": "Informational",
-        "cvss_score": 3.4,
-        "attack_capability": "Gather system and service information",
-        "mitre_tactic": "Discovery",
-        "mitre_technique": "T1082"
-      }
-    },
-    {
-      "finding_id": "9557c1bd-059d-49d5-a755-d958f2f2a0e3",
-      "source": "nikto",
-      "severity": "low",
-      "title": "+ GET /: The X-Content-Type-Options header is not set. This could allow the user agent to render the content of the site",
-      "description": "+ GET /: The X-Content-Type-Options header is not set. This could allow the user agent to render the content of the site in a different fashion to the MIME type. See: https://www.netsparker.com/web-vulnerability-scanner/vulnerabilities/missing-content-type-header/:",
-      "semantic": {
-        "classification": "Informational",
-        "cvss_score": 3.4,
-        "attack_capability": "Gather system and service information",
-        "mitre_tactic": "Discovery",
-        "mitre_technique": "T1082"
-      }
-    },
-    {
-      "finding_id": "b9bf8039-002d-4783-98e9-be6f5ee3a554",
-      "source": "nikto",
-      "severity": "low",
-      "title": "+ GET /: Server may leak inodes via ETags, header found with file /, inode: 15c, size: 5cf63c252ab85, mtime: gzip. See: ",
-      "description": "+ GET /: Server may leak inodes via ETags, header found with file /, inode: 15c, size: 5cf63c252ab85, mtime: gzip. See: CVE-2003-1418:",
-      "semantic": {
-        "classification": "Information Disclosure",
-        "cvss_score": 5.6,
-        "attack_capability": "Access sensitive system information",
-        "mitre_tactic": "Discovery",
-        "mitre_technique": "T1082"
-      }
-    },
-    {
-      "finding_id": "019d8983-1b32-4b7c-a029-e322588289f4",
-      "source": "nikto",
-      "severity": "low",
-      "title": "+ OPTIONS OPTIONS: Allowed HTTP Methods: OPTIONS, HEAD, GET, POST .",
-      "description": "+ OPTIONS OPTIONS: Allowed HTTP Methods: OPTIONS, HEAD, GET, POST .",
-      "semantic": {
-        "classification": "Informational",
-        "cvss_score": 3.4,
-        "attack_capability": "Gather system and service information",
-        "mitre_tactic": "Discovery",
-        "mitre_technique": "T1082"
-      }
-    },
-    {
-      "finding_id": "27bb7872-d1fc-4d74-9abe-5747956016da",
-      "source": "nikto",
-      "severity": "low",
-      "title": "+ Target Host: 192.168.100.137",
-      "description": "+ Target Host: 192.168.100.137",
-      "semantic": {
-        "classification": "Informational",
-        "cvss_score": 3.4,
-        "attack_capability": "Gather system and service information",
-        "mitre_tactic": "Discovery",
-        "mitre_technique": "T1082"
-      }
-    },
-    {
-      "finding_id": "8406b783-7b4d-4def-9a3e-cc7693a6e16c",
-      "source": "nikto",
-      "severity": "low",
-      "title": "+ Target Port: 80",
-      "description": "+ Target Port: 80",
-      "semantic": {
-        "classification": "Informational",
-        "cvss_score": 3.4,
-        "attack_capability": "Gather system and service information",
-        "mitre_tactic": "Discovery",
-        "mitre_technique": "T1082"
-      }
-    },
-    {
-      "finding_id": "9663d8c7-c4a8-4396-a8ee-d52e69a41a06",
-      "source": "nikto",
-      "severity": "low",
-      "title": "+ GET /: The anti-clickjacking X-Frame-Options header is not present. See: https://developer.mozilla.org/en-US/docs/Web/",
-      "description": "+ GET /: The anti-clickjacking X-Frame-Options header is not present. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options:",
-      "semantic": {
-        "classification": "Informational",
-        "cvss_score": 3.4,
-        "attack_capability": "Gather system and service information",
-        "mitre_tactic": "Discovery",
-        "mitre_technique": "T1082"
-      }
-    },
-    {
-      "finding_id": "86da5be1-4fcc-4e6c-be74-d61537c7bd1a",
-      "source": "nikto",
-      "severity": "low",
-      "title": "+ GET /: The X-Content-Type-Options header is not set. This could allow the user agent to render the content of the site",
-      "description": "+ GET /: The X-Content-Type-Options header is not set. This could allow the user agent to render the content of the site in a different fashion to the MIME type. See: https://www.netsparker.com/web-vulnerability-scanner/vulnerabilities/missing-content-type-header/:",
-      "semantic": {
-        "classification": "Informational",
-        "cvss_score": 3.4,
-        "attack_capability": "Gather system and service information",
-        "mitre_tactic": "Discovery",
-        "mitre_technique": "T1082"
-      }
-    },
-    {
-      "finding_id": "443df725-286f-4c9f-ba09-e24008c9c074",
-      "source": "nikto",
-      "severity": "low",
-      "title": "+ HEAD Apache/2.4.18 appears to be outdated (current is at least Apache/2.4.54). Apache 2.2.34 is the EOL for the 2.x br",
-      "description": "+ HEAD Apache/2.4.18 appears to be outdated (current is at least Apache/2.4.54). Apache 2.2.34 is the EOL for the 2.x branch.",
-      "semantic": {
-        "classification": "Informational",
-        "cvss_score": 3.4,
-        "attack_capability": "Gather system and service information",
-        "mitre_tactic": "Discovery",
-        "mitre_technique": "T1082"
-      }
-    },
-    {
-      "finding_id": "6ce53775-a135-4c40-8ae9-3186ebdfa361",
-      "source": "nikto",
-      "severity": "low",
-      "title": "+ GET /: Server may leak inodes via ETags, header found with file /, inode: b1, size: 55e1c7758dcdb, mtime: gzip. See: C",
-      "description": "+ GET /: Server may leak inodes via ETags, header found with file /, inode: b1, size: 55e1c7758dcdb, mtime: gzip. See: CVE-2003-1418:",
-      "semantic": {
-        "classification": "Information Disclosure",
-        "cvss_score": 5.6,
-        "attack_capability": "Access sensitive system information",
-        "mitre_tactic": "Discovery",
-        "mitre_technique": "T1082"
-      }
-    },
-    {
-      "finding_id": "fc009479-6014-4a1f-be32-ccd42d7ef29e",
-      "source": "nikto",
-      "severity": "low",
-      "title": "+ OPTIONS OPTIONS: Allowed HTTP Methods: OPTIONS, GET, HEAD, POST .",
-      "description": "+ OPTIONS OPTIONS: Allowed HTTP Methods: OPTIONS, GET, HEAD, POST .",
-      "semantic": {
-        "classification": "Informational",
-        "cvss_score": 3.4,
-        "attack_capability": "Gather system and service information",
-        "mitre_tactic": "Discovery",
-        "mitre_technique": "T1082"
-      }
-    },
-    {
-      "finding_id": "c16d4a6b-cc5d-439f-929c-30aad62db273",
-      "source": "nikto",
-      "severity": "low",
-      "title": "+ GET /secret/: Drupal Link header found with value: <http://vtcsec/secret/index.php/wp-json/>; rel=\"https://api.w.org/\"",
-      "description": "+ GET /secret/: Drupal Link header found with value: <http://vtcsec/secret/index.php/wp-json/>; rel=\"https://api.w.org/\". See: https://www.drupal.org/:",
-      "semantic": {
-        "classification": "Informational",
-        "cvss_score": 3.4,
-        "attack_capability": "Gather system and service information",
-        "mitre_tactic": "Discovery",
-        "mitre_technique": "T1082"
-      }
-    },
-    {
-      "finding_id": "8cdb344f-1486-4a69-b058-937c2b52ca53",
-      "source": "nikto",
-      "severity": "low",
-      "title": "+ GET /secret/: This might be interesting.",
-      "description": "+ GET /secret/: This might be interesting.",
-      "semantic": {
-        "classification": "Informational",
-        "cvss_score": 3.4,
-        "attack_capability": "Gather system and service information",
-        "mitre_tactic": "Discovery",
-        "mitre_technique": "T1082"
-      }
-    },
-    {
-      "finding_id": "0a25d931-29f8-48c9-a53d-60df5c0d3965",
+      "finding_id": "d1017706-8e16-4896-b8d0-7a0b60783f29",
       "source": "nikto",
       "severity": "low",
       "title": "+ GET /icons/README: Apache default file found. See: https://www.vntweb.co.uk/apache-restricting-access-to-iconsreadme/:",

@@ -1,0 +1,777 @@
+{
+  "export_timestamp": "2026-01-27T09:12:03.795377",
+  "scan_id": "3fe915ba-c3ca-4612-bd7e-4175dc6a1406",
+  "total_findings": 55,
+  "findings": [
+    {
+      "finding_id": "7061856e-2448-42b2-b449-3326b337ec1d",
+      "source": "nuclei",
+      "severity": "medium",
+      "title": "OpenSSH Terrapin Attack - Detection",
+      "description": "ssh service on port 22",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "5ef181f2-e163-4b85-a942-db5b5d80cd70",
+      "source": "nuclei",
+      "severity": "medium",
+      "title": "SSH Server Software Enumeration",
+      "description": "ssh service on port 22",
+      "semantic": {
+        "classification": "Information Disclosure",
+        "cvss_score": 5.6,
+        "attack_capability": "Access sensitive system information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "c4543545-b490-44e5-8fce-93d6095a58a1",
+      "source": "nuclei",
+      "severity": "medium",
+      "title": "SSH SHA-1 HMAC Algorithms Enabled",
+      "description": "ssh service on port 22",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "2752e997-cf44-4382-ba71-6c19a44bde10",
+      "source": "nuclei",
+      "severity": "medium",
+      "title": "SSH Auth Methods - Detection",
+      "description": "ssh service on port 22",
+      "semantic": {
+        "classification": "Authentication Weakness",
+        "cvss_score": 7.5,
+        "attack_capability": "Bypass authentication mechanisms",
+        "mitre_tactic": "Credential Access",
+        "mitre_technique": "T1110"
+      }
+    },
+    {
+      "finding_id": "0dcbd4de-cef5-4b49-a3b5-24e43d48a7ed",
+      "source": "nuclei",
+      "severity": "medium",
+      "title": "SSH Password-based Authentication",
+      "description": "ssh service on port 22",
+      "semantic": {
+        "classification": "Authentication Weakness",
+        "cvss_score": 7.5,
+        "attack_capability": "Bypass authentication mechanisms",
+        "mitre_tactic": "Credential Access",
+        "mitre_technique": "T1110"
+      }
+    },
+    {
+      "finding_id": "7a7cbb4f-a051-4913-a6c9-5ee3f7b3496c",
+      "source": "nuclei",
+      "severity": "medium",
+      "title": "OpenSSH Service - Detect",
+      "description": "ssh service on port 22",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "05a64a76-7ccc-49ef-96c3-6ebfa6e9db50",
+      "source": "searchsploit",
+      "severity": "high",
+      "title": "Debian OpenSSH - (Authenticated) Remote SELinux Privilege Escalation",
+      "description": "Exploit related to ssh on port 22",
+      "semantic": {
+        "classification": "Authentication Weakness",
+        "cvss_score": 7.5,
+        "attack_capability": "Bypass authentication mechanisms",
+        "mitre_tactic": "Credential Access",
+        "mitre_technique": "T1110"
+      }
+    },
+    {
+      "finding_id": "199eda66-b5ba-4d15-8f55-11452abf0d7d",
+      "source": "searchsploit",
+      "severity": "high",
+      "title": "Dropbear / OpenSSH Server - 'MAX_UNAUTH_CLIENTS' Denial of Service",
+      "description": "Exploit related to ssh on port 22",
+      "semantic": {
+        "classification": "Authentication Weakness",
+        "cvss_score": 7.5,
+        "attack_capability": "Bypass authentication mechanisms",
+        "mitre_tactic": "Credential Access",
+        "mitre_technique": "T1110"
+      }
+    },
+    {
+      "finding_id": "4ff47504-e959-4a26-93c6-cdfa357ff7b7",
+      "source": "searchsploit",
+      "severity": "high",
+      "title": "FreeBSD OpenSSH 3.5p1 - Remote Command Execution",
+      "description": "Exploit related to ssh on port 22",
+      "semantic": {
+        "classification": "Remote Code Execution",
+        "cvss_score": 10.0,
+        "attack_capability": "Execute arbitrary commands remotely",
+        "mitre_tactic": "Execution",
+        "mitre_technique": "T1059"
+      }
+    },
+    {
+      "finding_id": "b62a1ca9-8dec-49f2-903f-ab692b923183",
+      "source": "searchsploit",
+      "severity": "high",
+      "title": "glibc-2.2 / openssh-2.3.0p1 / glibc 2.1.9x - File Read",
+      "description": "Exploit related to ssh on port 22",
+      "semantic": {
+        "classification": "Directory Traversal",
+        "cvss_score": 6.8,
+        "attack_capability": "Read arbitrary files from the system",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1083"
+      }
+    },
+    {
+      "finding_id": "738a0416-92d6-4f2f-8654-3ad47d3351df",
+      "source": "searchsploit",
+      "severity": "high",
+      "title": "Novell Netware 6.5 - OpenSSH Remote Stack Overflow",
+      "description": "Exploit related to ssh on port 22",
+      "semantic": {
+        "classification": "Denial of Service",
+        "cvss_score": 7.8,
+        "attack_capability": "Disrupt service availability",
+        "mitre_tactic": "Impact",
+        "mitre_technique": "T1499"
+      }
+    },
+    {
+      "finding_id": "92caf677-6733-4ad6-a7cb-beab4cef66b2",
+      "source": "searchsploit",
+      "severity": "high",
+      "title": "OpenSSH 1.2 - '.scp' File Create/Overwrite",
+      "description": "Exploit related to ssh on port 22",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "075511b1-1f44-4d87-a820-cb2a3702d96e",
+      "source": "searchsploit",
+      "severity": "high",
+      "title": "OpenSSH 2.3 < 7.7 - Username Enumeration (PoC)",
+      "description": "Exploit related to ssh on port 22",
+      "semantic": {
+        "classification": "Information Disclosure",
+        "cvss_score": 5.6,
+        "attack_capability": "Access sensitive system information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "c0ed93ef-1b71-45fc-9b25-a0c7286edf42",
+      "source": "searchsploit",
+      "severity": "high",
+      "title": "OpenSSH 2.3 < 7.7 - Username Enumeration",
+      "description": "Exploit related to ssh on port 22",
+      "semantic": {
+        "classification": "Information Disclosure",
+        "cvss_score": 5.6,
+        "attack_capability": "Access sensitive system information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "bb28d178-72fb-4499-ad00-ad6cd19b324a",
+      "source": "searchsploit",
+      "severity": "high",
+      "title": "OpenSSH 2.x/3.0.1/3.0.2 - Channel Code Off-by-One",
+      "description": "Exploit related to ssh on port 22",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "8a8da476-3903-4e31-874b-e86d53aab4fc",
+      "source": "searchsploit",
+      "severity": "high",
+      "title": "OpenSSH 2.x/3.x - Kerberos 4 TGT/AFS Token Buffer Overflow",
+      "description": "Exploit related to ssh on port 22",
+      "semantic": {
+        "classification": "Denial of Service",
+        "cvss_score": 7.8,
+        "attack_capability": "Disrupt service availability",
+        "mitre_tactic": "Impact",
+        "mitre_technique": "T1499"
+      }
+    },
+    {
+      "finding_id": "8d4a833c-5a5d-4e37-9dc8-67b2f19c4244",
+      "source": "searchsploit",
+      "severity": "high",
+      "title": "OpenSSH 3.x - Challenge-Response Buffer Overflow (1)",
+      "description": "Exploit related to ssh on port 22",
+      "semantic": {
+        "classification": "Denial of Service",
+        "cvss_score": 7.8,
+        "attack_capability": "Disrupt service availability",
+        "mitre_tactic": "Impact",
+        "mitre_technique": "T1499"
+      }
+    },
+    {
+      "finding_id": "39a86bbc-fd21-4528-8370-796a98ed2aeb",
+      "source": "searchsploit",
+      "severity": "high",
+      "title": "OpenSSH 3.x - Challenge-Response Buffer Overflow (2)",
+      "description": "Exploit related to ssh on port 22",
+      "semantic": {
+        "classification": "Denial of Service",
+        "cvss_score": 7.8,
+        "attack_capability": "Disrupt service availability",
+        "mitre_tactic": "Impact",
+        "mitre_technique": "T1499"
+      }
+    },
+    {
+      "finding_id": "ff21ac9f-9274-455d-b503-5493b34f24a9",
+      "source": "searchsploit",
+      "severity": "high",
+      "title": "OpenSSH 4.3 p1 - Duplicated Block Remote Denial of Service",
+      "description": "Exploit related to ssh on port 22",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "f4727dc8-ad9a-418a-8691-c49eac723062",
+      "source": "searchsploit",
+      "severity": "high",
+      "title": "OpenSSH 6.8 < 6.9 - 'PTY' Local Privilege Escalation",
+      "description": "Exploit related to ssh on port 22",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "e7dd7039-aec1-422f-9b4d-4e68719049c1",
+      "source": "searchsploit",
+      "severity": "high",
+      "title": "OpenSSH 7.2 - Denial of Service",
+      "description": "Exploit related to ssh on port 22",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "bd37057d-0ac2-41f4-9b56-0ff5af99929f",
+      "source": "searchsploit",
+      "severity": "high",
+      "title": "OpenSSH 7.2p1 - (Authenticated) xauth Command Injection",
+      "description": "Exploit related to ssh on port 22",
+      "semantic": {
+        "classification": "Authentication Weakness",
+        "cvss_score": 7.5,
+        "attack_capability": "Bypass authentication mechanisms",
+        "mitre_tactic": "Credential Access",
+        "mitre_technique": "T1110"
+      }
+    },
+    {
+      "finding_id": "de130e3f-01fe-4b45-a19a-814e79c1fcc9",
+      "source": "searchsploit",
+      "severity": "high",
+      "title": "OpenSSH 7.2p2 - Username Enumeration",
+      "description": "Exploit related to ssh on port 22",
+      "semantic": {
+        "classification": "Information Disclosure",
+        "cvss_score": 5.6,
+        "attack_capability": "Access sensitive system information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "0ba9081d-6bc2-4fe9-bf73-d233ee07dd43",
+      "source": "searchsploit",
+      "severity": "high",
+      "title": "OpenSSH < 6.6 SFTP (x64) - Command Execution",
+      "description": "Exploit related to ssh on port 22",
+      "semantic": {
+        "classification": "Remote Code Execution",
+        "cvss_score": 10.0,
+        "attack_capability": "Execute arbitrary commands remotely",
+        "mitre_tactic": "Execution",
+        "mitre_technique": "T1059"
+      }
+    },
+    {
+      "finding_id": "26a6b979-d310-4f7a-bcf1-34e9352151a0",
+      "source": "searchsploit",
+      "severity": "high",
+      "title": "OpenSSH < 6.6 SFTP - Command Execution",
+      "description": "Exploit related to ssh on port 22",
+      "semantic": {
+        "classification": "Remote Code Execution",
+        "cvss_score": 10.0,
+        "attack_capability": "Execute arbitrary commands remotely",
+        "mitre_tactic": "Execution",
+        "mitre_technique": "T1059"
+      }
+    },
+    {
+      "finding_id": "d6d65899-b6ad-4abd-8180-f3de95f2ea46",
+      "source": "searchsploit",
+      "severity": "high",
+      "title": "OpenSSH < 7.4 - 'UsePrivilegeSeparation Disabled' Forwarded Unix Domain Sockets Privilege Escalation",
+      "description": "Exploit related to ssh on port 22",
+      "semantic": {
+        "classification": "Cross-Site Scripting",
+        "cvss_score": 6.4,
+        "attack_capability": "Execute arbitrary JavaScript in user browser",
+        "mitre_tactic": "Initial Access",
+        "mitre_technique": "T1189"
+      }
+    },
+    {
+      "finding_id": "df003303-24d0-43b5-ac14-1b94bfd92506",
+      "source": "searchsploit",
+      "severity": "high",
+      "title": "OpenSSH < 7.4 - agent Protocol Arbitrary Library Loading",
+      "description": "Exploit related to ssh on port 22",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "9039aecd-0759-40f0-8697-885ce460b302",
+      "source": "searchsploit",
+      "severity": "high",
+      "title": "OpenSSH < 7.7 - User Enumeration (2)",
+      "description": "Exploit related to ssh on port 22",
+      "semantic": {
+        "classification": "Information Disclosure",
+        "cvss_score": 5.6,
+        "attack_capability": "Access sensitive system information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "7130d61e-712e-472e-b89d-7132036133cd",
+      "source": "searchsploit",
+      "severity": "high",
+      "title": "OpenSSH SCP Client - Write Arbitrary Files",
+      "description": "Exploit related to ssh on port 22",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "62ae8541-4210-4bd1-80e2-25c2be03db48",
+      "source": "searchsploit",
+      "severity": "high",
+      "title": "OpenSSH server (sshd) 9.8p1 - Race Condition",
+      "description": "Exploit related to ssh on port 22",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "0920e456-c24e-4b42-a8e7-a19b6c35cd5b",
+      "source": "searchsploit",
+      "severity": "high",
+      "title": "OpenSSH/PAM 3.6.1p1 - 'gossh.sh' Remote Users Ident",
+      "description": "Exploit related to ssh on port 22",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "7cbe2b24-4a4a-49f9-b09c-e40274890367",
+      "source": "searchsploit",
+      "severity": "high",
+      "title": "OpenSSH/PAM 3.6.1p1 - Remote Users Discovery Tool",
+      "description": "Exploit related to ssh on port 22",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "87fe9ee7-c5cd-4191-a85c-0916f84b8f16",
+      "source": "searchsploit",
+      "severity": "high",
+      "title": "OpenSSHd 7.2p2 - Username Enumeration",
+      "description": "Exploit related to ssh on port 22",
+      "semantic": {
+        "classification": "Information Disclosure",
+        "cvss_score": 5.6,
+        "attack_capability": "Access sensitive system information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "b26f8c0b-63fa-4c71-8255-07fe177f668b",
+      "source": "searchsploit",
+      "severity": "high",
+      "title": "Portable OpenSSH 3.6.1p-PAM/4.1-SuSE - Timing Attack",
+      "description": "Exploit related to ssh on port 22",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "874a8f31-a5c1-43c8-9657-3e50ad034d5e",
+      "source": "nuclei",
+      "severity": "medium",
+      "title": "WAF Detection",
+      "description": "http service on port 80",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "c36cda00-e57f-467f-98ba-452543d4380f",
+      "source": "nuclei",
+      "severity": "medium",
+      "title": "Allowed Options Method",
+      "description": "http service on port 80",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "146edd5e-ab8d-40ee-a969-99674578ba84",
+      "source": "nuclei",
+      "severity": "medium",
+      "title": "Apache Detection",
+      "description": "http service on port 80",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "6400dbed-821f-4c5c-8051-33913a6d96ad",
+      "source": "nuclei",
+      "severity": "medium",
+      "title": "HTTP Missing Security Headers",
+      "description": "http service on port 80",
+      "semantic": {
+        "classification": "Information Disclosure",
+        "cvss_score": 5.6,
+        "attack_capability": "Access sensitive system information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "5e91bbb3-aca2-49d1-bb8c-a657d68901db",
+      "source": "nuclei",
+      "severity": "medium",
+      "title": "HTTP Missing Security Headers",
+      "description": "http service on port 80",
+      "semantic": {
+        "classification": "Information Disclosure",
+        "cvss_score": 5.6,
+        "attack_capability": "Access sensitive system information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "3afe5dac-c5eb-46ce-a476-4dcdb996332a",
+      "source": "nuclei",
+      "severity": "medium",
+      "title": "HTTP Missing Security Headers",
+      "description": "http service on port 80",
+      "semantic": {
+        "classification": "Information Disclosure",
+        "cvss_score": 5.6,
+        "attack_capability": "Access sensitive system information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "012a11f6-cf90-4816-b3fa-4799a1303cd1",
+      "source": "nuclei",
+      "severity": "medium",
+      "title": "HTTP Missing Security Headers",
+      "description": "http service on port 80",
+      "semantic": {
+        "classification": "Information Disclosure",
+        "cvss_score": 5.6,
+        "attack_capability": "Access sensitive system information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "5d44a4d3-5082-4789-8fee-66e774b65a99",
+      "source": "nuclei",
+      "severity": "medium",
+      "title": "HTTP Missing Security Headers",
+      "description": "http service on port 80",
+      "semantic": {
+        "classification": "Information Disclosure",
+        "cvss_score": 5.6,
+        "attack_capability": "Access sensitive system information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "2dc2bf2b-7d2d-4bed-8821-7584f3b64636",
+      "source": "nuclei",
+      "severity": "medium",
+      "title": "HTTP Missing Security Headers",
+      "description": "http service on port 80",
+      "semantic": {
+        "classification": "Information Disclosure",
+        "cvss_score": 5.6,
+        "attack_capability": "Access sensitive system information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "ea053b38-a529-45b2-b784-c70fa6d3bd3e",
+      "source": "nuclei",
+      "severity": "medium",
+      "title": "HTTP Missing Security Headers",
+      "description": "http service on port 80",
+      "semantic": {
+        "classification": "Information Disclosure",
+        "cvss_score": 5.6,
+        "attack_capability": "Access sensitive system information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "df323fcf-d38f-411a-9f5e-a660b859e6c8",
+      "source": "nuclei",
+      "severity": "medium",
+      "title": "HTTP Missing Security Headers",
+      "description": "http service on port 80",
+      "semantic": {
+        "classification": "Information Disclosure",
+        "cvss_score": 5.6,
+        "attack_capability": "Access sensitive system information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "2f28d805-9aa3-4b92-aa72-d36b04b9650a",
+      "source": "nuclei",
+      "severity": "medium",
+      "title": "HTTP Missing Security Headers",
+      "description": "http service on port 80",
+      "semantic": {
+        "classification": "Information Disclosure",
+        "cvss_score": 5.6,
+        "attack_capability": "Access sensitive system information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "50515d16-8d11-422b-a79a-7fe33c0fa498",
+      "source": "nuclei",
+      "severity": "medium",
+      "title": "HTTP Missing Security Headers",
+      "description": "http service on port 80",
+      "semantic": {
+        "classification": "Information Disclosure",
+        "cvss_score": 5.6,
+        "attack_capability": "Access sensitive system information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "a4d93378-7a0d-4954-b0b3-e9c126e5c699",
+      "source": "nuclei",
+      "severity": "medium",
+      "title": "HTTP Missing Security Headers",
+      "description": "http service on port 80",
+      "semantic": {
+        "classification": "Information Disclosure",
+        "cvss_score": 5.6,
+        "attack_capability": "Access sensitive system information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "c42f83f5-3e00-400e-8126-b2377b5714c5",
+      "source": "nikto",
+      "severity": "low",
+      "title": "+ Target Host: 192.168.100.136",
+      "description": "+ Target Host: 192.168.100.136",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "4361ba39-2b0a-4a44-bb20-7600a3576881",
+      "source": "nikto",
+      "severity": "low",
+      "title": "+ Target Port: 80",
+      "description": "+ Target Port: 80",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "c19e1bf3-fe14-4f7c-ac0c-1a88eb3757ba",
+      "source": "nikto",
+      "severity": "low",
+      "title": "+ GET /: The anti-clickjacking X-Frame-Options header is not present. See: https://developer.mozilla.org/en-US/docs/Web/",
+      "description": "+ GET /: The anti-clickjacking X-Frame-Options header is not present. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options:",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "6f14adc1-2cf2-490c-b92e-2f1ffefab338",
+      "source": "nikto",
+      "severity": "low",
+      "title": "+ GET /: The X-Content-Type-Options header is not set. This could allow the user agent to render the content of the site",
+      "description": "+ GET /: The X-Content-Type-Options header is not set. This could allow the user agent to render the content of the site in a different fashion to the MIME type. See: https://www.netsparker.com/web-vulnerability-scanner/vulnerabilities/missing-content-type-header/:",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "b557ac8c-516d-4438-90a7-b0d58bd44d48",
+      "source": "nikto",
+      "severity": "low",
+      "title": "+ HEAD Apache/2.4.51 appears to be outdated (current is at least Apache/2.4.54). Apache 2.2.34 is the EOL for the 2.x br",
+      "description": "+ HEAD Apache/2.4.51 appears to be outdated (current is at least Apache/2.4.54). Apache 2.2.34 is the EOL for the 2.x branch.",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "cfac0bd8-a2d1-4641-8489-b1a21ab3529b",
+      "source": "nikto",
+      "severity": "low",
+      "title": "+ GET /: Server may leak inodes via ETags, header found with file /, inode: 15c, size: 5cf63c252ab85, mtime: gzip. See: ",
+      "description": "+ GET /: Server may leak inodes via ETags, header found with file /, inode: 15c, size: 5cf63c252ab85, mtime: gzip. See: CVE-2003-1418:",
+      "semantic": {
+        "classification": "Information Disclosure",
+        "cvss_score": 5.6,
+        "attack_capability": "Access sensitive system information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    },
+    {
+      "finding_id": "f6ea9039-91f7-4020-88dd-df25ed4a8f5f",
+      "source": "nikto",
+      "severity": "low",
+      "title": "+ OPTIONS OPTIONS: Allowed HTTP Methods: GET, POST, OPTIONS, HEAD .",
+      "description": "+ OPTIONS OPTIONS: Allowed HTTP Methods: GET, POST, OPTIONS, HEAD .",
+      "semantic": {
+        "classification": "Informational",
+        "cvss_score": 3.4,
+        "attack_capability": "Gather system and service information",
+        "mitre_tactic": "Discovery",
+        "mitre_technique": "T1082"
+      }
+    }
+  ]
+}

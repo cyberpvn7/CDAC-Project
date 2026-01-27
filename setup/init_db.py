@@ -82,6 +82,22 @@ def init_database():
             )
         """)
         
+        # Reports Table
+        cursor.execute("""
+            CREATE TABLE IF NOT EXISTS reports (
+                report_id INTEGER PRIMARY KEY AUTOINCREMENT,
+                asset_id TEXT NOT NULL,
+                scan_id TEXT,
+                target_name TEXT NOT NULL,
+                report_path TEXT NOT NULL,
+                generated_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+                report_type TEXT DEFAULT 'security_assessment',
+                status TEXT DEFAULT 'completed',
+                FOREIGN KEY (asset_id) REFERENCES assets(asset_id),
+                FOREIGN KEY (scan_id) REFERENCES scans(scan_id)
+            )
+        """)
+        
         # Create indexes for efficient querying
         cursor.execute("""
             CREATE INDEX IF NOT EXISTS idx_scans_asset_started 
@@ -96,6 +112,11 @@ def init_database():
         cursor.execute("""
             CREATE INDEX IF NOT EXISTS idx_findings_asset 
             ON findings(asset_id)
+        """)
+        
+        cursor.execute("""
+            CREATE INDEX IF NOT EXISTS idx_reports_asset_generated
+            ON reports(asset_id, generated_at DESC)
         """)
         
         conn.commit()
